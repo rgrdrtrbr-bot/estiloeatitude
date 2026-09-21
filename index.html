@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo e Atitude Modas Santiago | Moda Feminina & Multimarcas em Santiago RS</title>
+    <meta name="description" content="Sua loja de confecções, calçados e multimarcas em Santiago, RS. As melhores marcas de moda com atendimento personalizado. Esquina Tito Beccon com Barão do Rio Branco.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#C59B27',
+                            burgundy: '#5A1E32',
+                            rose: '#E8A598',
+                            softBg: '#FDFBF7',
+                            cardBg: '#F8EFEA',
+                            darkText: '#2C221E'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .img-top-center {
+            object-fit: cover !important;
+            object-position: top center !important;
+        }
+        
+        .hero-slide {
+            transition: opacity 0.8s ease-in-out;
+        }
+        
+        .backdrop-blur-glass {
+            background: rgba(253, 251, 247, 0.88);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-brand-softBg text-brand-darkText font-sans antialiased selection:bg-brand-rose selection:text-white">
+
+    <!-- TopBar Informativa -->
+    <div class="bg-brand-burgundy text-white text-xs sm:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap">
+                <span class="flex items-center gap-1.5 font-medium">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-gold"></i>
+                    Rua Tito Beccon, 1392 (Esquina Barão do Rio Branco) - Centro, Santiago RS
+                </span>
+                <span class="hidden md:inline-block text-white/30">|</span>
+                <span class="hidden md:flex items-center gap-1.5">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-gold"></i>
+                    Atendimento em Horário Comercial
+                </span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-white/10 px-2.5 py-0.5 rounded-full text-xs font-semibold flex items-center gap-1">
+                    <i data-lucide="star" class="w-3 h-3 fill-brand-gold text-brand-gold"></i>
+                    5.0 no Google (Excelente)
+                </span>
+                <a href="https://www.instagram.com/estiloeatitudesantiago/" target="_blank" rel="noopener" class="hover:text-brand-rose transition flex items-center gap-1 font-medium">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                    @estiloeatitudesantiago
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar Principal -->
+    <header class="sticky top-0 z-40 backdrop-blur-glass border-b border-brand-rose/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logomarcaestilo.jpg" alt="Estilo e Atitude Logo" class="w-12 h-12 rounded-full border-2 border-brand-gold shadow-sm group-hover:scale-105 transition duration-300 object-cover">
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-brand-burgundy block leading-tight">ESTILO E ATITUDE</span>
+                    <span class="text-[10px] tracking-widest text-brand-gold uppercase font-semibold block">Modas Santiago • RS</span>
+                </div>
+            </a>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-brand-burgundy transition py-1 border-b-2 border-transparent hover:border-brand-gold">Início</a>
+                <a href="#historia" class="hover:text-brand-burgundy transition py-1 border-b-2 border-transparent hover:border-brand-gold">Nossa História</a>
+                <a href="#multimarcas" class="hover:text-brand-burgundy transition py-1 border-b-2 border-transparent hover:border-brand-gold">Multimarcas</a>
+                <a href="#colecoes" class="hover:text-brand-burgundy transition py-1 border-b-2 border-transparent hover:border-brand-gold">Coleções & Serviços</a>
+                <a href="#videos" class="hover:text-brand-burgundy transition py-1 border-b-2 border-transparent hover:border-brand-gold">Vídeos da Loja</a>
+                <a href="#localizacao" class="hover:text-brand-burgundy transition py-1 border-b-2 border-transparent hover:border-brand-gold">Localização</a>
+            </nav>
+
+            <!-- Botão WhatsApp Nav -->
+            <div class="flex items-center gap-3">
+                <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">
+                    <i data-lucide="message-circle" class="w-4 h-4 fill-white"></i>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER HERO DINÂMICO -->
+    <section id="inicio" class="relative bg-brand-cardBg overflow-hidden min-h-[550px] lg:min-h-[620px] flex items-center">
+        <div id="carousel-slides" class="relative w-full h-full">
+            
+            <!-- Slide 1: Moda & Alfaiataria Chic -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-700 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
+                    <div class="lg:col-span-6 z-10 space-y-6 bg-white/90 p-6 sm:p-8 rounded-2xl border border-brand-rose/20 shadow-xl backdrop-blur-md">
+                        <span class="inline-block bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Destaque da Estação
+                        </span>
+                        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-burgundy leading-tight">
+                            Moda Feminina & Alfaiataria Chic
+                        </h1>
+                        <p class="text-brand-darkText/80 text-base sm:text-lg">
+                            Peças elegantes para elevar sua autoestima. Descubra nossa seleção de blazers estruturados, transparências e jeans com caimento perfeito.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#colecoes" class="bg-brand-burgundy hover:bg-brand-burgundy/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition shadow-md flex items-center gap-2">
+                                <span>Ver Coleção de Alfaiataria</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="border-2 border-brand-burgundy text-brand-burgundy hover:bg-brand-burgundy hover:text-white px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Consultar Peças</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 h-[380px] sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white">
+                        <img src="estilo1.jpg" alt="Moda e Alfaiataria Estilo e Atitude" class="w-full h-full img-top-center">
+                        <div class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1.5 rounded-lg backdrop-blur-md">
+                            Look Cheio de Atitude
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Malharia, Tricô & Estilo Único -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-700 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
+                    <div class="lg:col-span-6 z-10 space-y-6 bg-white/90 p-6 sm:p-8 rounded-2xl border border-brand-rose/20 shadow-xl backdrop-blur-md">
+                        <span class="inline-block bg-brand-gold text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            A Moda Aqui É Se Sentir Bem
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-burgundy leading-tight">
+                            Malharia Nobre & Conforto Absoluto
+                        </h2>
+                        <p class="text-brand-darkText/80 text-base sm:text-lg">
+                            Combinando tricot sofisticado, camisaria e sobreposições modernas que vestem você com elegância em qualquer ocasião.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#colecoes" class="bg-brand-burgundy hover:bg-brand-burgundy/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition shadow-md flex items-center gap-2">
+                                <span>Conhecer Malharia & Tricô</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="border-2 border-brand-burgundy text-brand-burgundy hover:bg-brand-burgundy hover:text-white px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Chamar no WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 h-[380px] sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white">
+                        <img src="estilo2.jpg" alt="Seja sua melhor versão com Estilo e Atitude" class="w-full h-full img-top-center">
+                        <div class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1.5 rounded-lg backdrop-blur-md">
+                            Seja Sua Melhor Versão
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Calçados, Botas & Acessórios -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-700 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
+                    <div class="lg:col-span-6 z-10 space-y-6 bg-white/90 p-6 sm:p-8 rounded-2xl border border-brand-rose/20 shadow-xl backdrop-blur-md">
+                        <span class="inline-block bg-emerald-700 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Calçados & Acessórios
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-burgundy leading-tight">
+                            Botas, Sapatos & Bolsas de Qualidade
+                        </h2>
+                        <p class="text-brand-darkText/80 text-base sm:text-lg">
+                            O toque final perfeito para o seu visual. Trabalhamos com botas em couro, coturnos, tênis Coca-Cola Comfort e bolsas exclusivas.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#colecoes" class="bg-brand-burgundy hover:bg-brand-burgundy/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition shadow-md flex items-center gap-2">
+                                <span>Ver Calçados & Bolsas</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="border-2 border-brand-burgundy text-brand-burgundy hover:bg-brand-burgundy hover:text-white px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Verificar Tamanhos</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 h-[380px] sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white grid grid-cols-2 gap-2 p-2 bg-white">
+                        <img src="estilo4.jpg" alt="Botas Pretas Elegantes" class="w-full h-full object-cover rounded-lg">
+                        <img src="estilo5.jpg" alt="Botas Camurça Caramelo" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: O Novo Endereço em Santiago RS -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-700 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
+                    <div class="lg:col-span-6 z-10 space-y-6 bg-white/90 p-6 sm:p-8 rounded-2xl border border-brand-rose/20 shadow-xl backdrop-blur-md">
+                        <span class="inline-block bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+                            Novo Endereço Unificado
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-burgundy leading-tight">
+                            Estilo & Atitude e Libidus Store Juntas
+                        </h2>
+                        <p class="text-brand-darkText/80 text-base sm:text-lg">
+                            Reunimos duas histórias marcantes em um espaço amplo, moderno e acolhedor para atender você e sua família com carinho em Santiago.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#historia" class="bg-brand-burgundy hover:bg-brand-burgundy/90 text-white px-6 py-3 rounded-xl font-semibold text-sm transition shadow-md flex items-center gap-2">
+                                <span>Conhecer Nossa História</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#localizacao" class="border-2 border-brand-burgundy text-brand-burgundy hover:bg-brand-burgundy hover:text-white px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                <span>Ver no Mapa</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 h-[380px] sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative border-4 border-white">
+                        <img src="estilo3.jpg" alt="Inauguração do Novo Endereço Estilo e Atitude" class="w-full h-full img-top-center">
+                        <div class="absolute bottom-4 right-4 bg-black/60 text-white text-xs px-3 py-1.5 rounded-lg backdrop-blur-md">
+                            Nossa Equipe Espera Por Você
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controles de Navegação -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-3 bg-white/80 px-4 py-2 rounded-full border border-brand-rose/30 shadow-md">
+            <button onclick="prevSlide()" class="p-1 rounded-full hover:bg-brand-rose/20 text-brand-burgundy transition" aria-label="Slide Anterior">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2">
+                <span class="slide-dot w-3 h-3 rounded-full bg-brand-burgundy transition-all cursor-pointer" onclick="goToSlide(0)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-brand-burgundy/30 transition-all cursor-pointer" onclick="goToSlide(1)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-brand-burgundy/30 transition-all cursor-pointer" onclick="goToSlide(2)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-brand-burgundy/30 transition-all cursor-pointer" onclick="goToSlide(3)"></span>
+            </div>
+            <button onclick="nextSlide()" class="p-1 rounded-full hover:bg-brand-rose/20 text-brand-burgundy transition" aria-label="Próximo Slide">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- FAIXA DE MULTIMARCAS EM DESTAQUE -->
+    <section id="multimarcas" class="bg-white py-12 border-y border-brand-rose/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block">Curadoria de Excelência</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-burgundy mt-1">Multimarcas Renomadas Presentes na Nossa Loja</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 text-center">
+                <div class="p-4 rounded-xl bg-brand-softBg border border-brand-rose/20 shadow-sm hover:shadow-md transition flex items-center justify-center font-serif text-lg font-bold text-brand-burgundy">
+                    ANSELMI
+                </div>
+                <div class="p-4 rounded-xl bg-brand-softBg border border-brand-rose/20 shadow-sm hover:shadow-md transition flex items-center justify-center font-serif text-lg font-bold text-brand-burgundy">
+                    BIAMAR
+                </div>
+                <div class="p-4 rounded-xl bg-brand-softBg border border-brand-rose/20 shadow-sm hover:shadow-md transition flex items-center justify-center font-serif text-lg font-bold text-brand-burgundy">
+                    LIBIDUS
+                </div>
+                <div class="p-4 rounded-xl bg-brand-softBg border border-brand-rose/20 shadow-sm hover:shadow-md transition flex items-center justify-center font-serif text-lg font-bold text-brand-burgundy">
+                    FEELING
+                </div>
+                <div class="p-4 rounded-xl bg-brand-softBg border border-brand-rose/20 shadow-sm hover:shadow-md transition flex items-center justify-center font-serif text-lg font-bold text-brand-burgundy">
+                    DON CARLI
+                </div>
+                <div class="p-4 rounded-xl bg-brand-softBg border border-brand-rose/20 shadow-sm hover:shadow-md transition flex items-center justify-center font-serif text-lg font-bold text-brand-burgundy">
+                    OPOSIÇÃO
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-brand-darkText/60 mt-6">
+                E mais: Coca-Cola Comfort, Beira Rio, calçados em couro e moda esportiva e casual.
+            </p>
+        </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section id="historia" class="py-16 sm:py-20 bg-brand-softBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Texto História -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-brand-rose/20 text-brand-burgundy px-3 py-1 rounded-full text-xs font-semibold">
+                        <i data-lucide="heart" class="w-3.5 h-3.5 text-brand-burgundy"></i>
+                        Duas Histórias em Um Só Endereço
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-burgundy leading-tight">
+                        A Moda Aqui É Se Sentir Bem
+                    </h2>
+                    <p class="text-brand-darkText/80 text-base leading-relaxed">
+                        A <strong>Estilo e Atitude Modas Santiago</strong> nasceu do sonho de oferecer roupas e calçados que expressam a personalidade e a essência de cada cliente. Com o crescimento e a oportunidade de unir forças com a tradicional <strong>Libidus Store</strong>, reunimos duas marcas queridas pela comunidade em uma loja ampla, moderna e aconchegante.
+                    </p>
+                    <p class="text-brand-darkText/80 text-base leading-relaxed">
+                        Estamos situados no coração de Santiago, RS (esquina da Rua Tito Beccon com a Rua Barão do Rio Branco), preparados para atender você e sua família com a melhor curadoria de moda e um atendimento atencioso e dedicado.
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-brand-rose/20 flex items-center justify-center text-brand-burgundy font-bold text-xl">
+                                5.0
+                            </div>
+                            <div>
+                                <div class="flex text-brand-gold text-xs">
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                </div>
+                                <span class="text-xs font-semibold text-brand-darkText">Avaliação Máxima no Google</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imagens da Loja -->
+                <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[320px]">
+                        <img src="cafeecha.jpg" alt="Ambiente Interno da Estilo e Atitude Santiago" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[320px] sm:translate-y-6">
+                        <img src="estilo6.jpg" alt="Atendimento e Roupas Estilo e Atitude" class="w-full h-full img-top-center">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COLEÇÕES, PRODUTOS & SERVIÇOS -->
+    <section id="colecoes" class="py-16 bg-white border-t border-brand-rose/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block">O Que Oferecemos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-burgundy mt-1">Nossos Produtos & Serviços Diversos</h2>
+                <p class="text-brand-darkText/70 text-sm mt-2">
+                    Oferecemos opções para todos os estilos e momentos, com diversidade de tamanhos (Juvenil, Adulto e Plus Size).
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Alfaiataria Feminina -->
+                <div class="bg-brand-softBg rounded-2xl overflow-hidden border border-brand-rose/20 shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="estilo1.jpg" alt="Alfaiataria Feminina" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Elegância
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Alfaiataria & Moda Fina</h3>
+                        <p class="text-xs sm:text-sm text-brand-darkText/80 leading-relaxed">
+                            Blazers acinturados, calças de corte impecável, terninhos e camisas elegantes das melhores marcas para trabalho e eventos sociais.
+                        </p>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-burgundy hover:text-brand-gold transition pt-2">
+                            <span>CONSULTAR OPÇÕES DE ALFAIATARIA</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Malharia Nobre e Tricôs -->
+                <div class="bg-brand-softBg rounded-2xl overflow-hidden border border-brand-rose/20 shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="estilo2.jpg" alt="Malharia Nobre e Tricôs" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-gold text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Conforto Chic
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Malharia, Tricô & Coletes</h3>
+                        <p class="text-xs sm:text-sm text-brand-darkText/80 leading-relaxed">
+                            Aconchego com sofisticação: peças Anselmi e Biamar com tramas nobres, coletes de tricot, blusas térmicas e conjuntos aconchegantes.
+                        </p>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-burgundy hover:text-brand-gold transition pt-2">
+                            <span>VER TRICÔS E MALHAS DISPONÍVEIS</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Calçados e Botas -->
+                <div class="bg-brand-softBg rounded-2xl overflow-hidden border border-brand-rose/20 shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="estilo4.jpg" alt="Calçados e Botas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Calçados
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Calçados, Botas & Tênis</h3>
+                        <p class="text-xs sm:text-sm text-brand-darkText/80 leading-relaxed">
+                            Botas de cano curto e longo em couro, coturnos Beira Rio, sapatilhas e linha casual Coca-Cola Comfort para o seu dia a dia.
+                        </p>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-burgundy hover:text-brand-gold transition pt-2">
+                            <span>CONSULTAR NUMERAÇÃO NO WHATSAPP</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Moda Casual, Fitness & Libidus -->
+                <div class="bg-brand-softBg rounded-2xl overflow-hidden border border-brand-rose/20 shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="estilo7.jpg" alt="Moda Casual e Fitness Libidus" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-burgundy text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Linha Libidus
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Casual, Fitness & Plus Size</h3>
+                        <p class="text-xs sm:text-sm text-brand-darkText/80 leading-relaxed">
+                            Moda inspirada em você! Leggings, moletons, bermudas, moda jovem e Plus Size com o conforto e alta tecnologia da marca Libidus.
+                        </p>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-burgundy hover:text-brand-gold transition pt-2">
+                            <span>CONHECER LINHA LIBIDUS</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Acessórios e Bolsas -->
+                <div class="bg-brand-softBg rounded-2xl overflow-hidden border border-brand-rose/20 shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="estilo5.jpg" alt="Bolsas e Acessórios" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-gold text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Complementos
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Bolsas & Acessórios de Estilo</h3>
+                        <p class="text-xs sm:text-sm text-brand-darkText/80 leading-relaxed">
+                            Bolsas estruturadas, carteiras, mochilas, cintos e acessórios refinados selecionados especialmente para harmonizar com seus looks.
+                        </p>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-burgundy hover:text-brand-gold transition pt-2">
+                            <span>VER BOLSAS E ACESSÓRIOS</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Consultoria de Imagem Personalizada (Com a Foto da Equipe) -->
+                <div class="bg-brand-softBg rounded-2xl overflow-hidden border border-brand-rose/20 shadow-md hover:shadow-xl transition group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="consultoriapersonalizada.jpg" alt="Equipe Estilo e Atitude - Consultoria de Imagem Personalizada" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Atendimento Exclusivo
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-serif text-2xl font-bold text-brand-burgundy">Consultoria de Imagem Personalizada</h3>
+                        <p class="text-xs sm:text-sm text-brand-darkText/80 leading-relaxed">
+                            Nossa equipe atenta e dedicada auxilia você a montar combinações que valorizam sua silhueta e destacam seu estilo pessoal.
+                        </p>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-burgundy hover:text-brand-gold transition pt-2">
+                            <span>AGENDAR ATENDIMENTO PERSONALIZADO</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VÍDEOS DE APRESENTAÇÃO E AMBIENTE DA LOJA -->
+    <section id="videos" class="py-16 bg-brand-cardBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block">Sinta a Experiência</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-burgundy mt-1">Conheça Nossa Loja & Nosso Atendimento</h2>
+                <p class="text-brand-darkText/70 text-sm mt-2">
+                    Confira os vídeos de apresentação do nosso ambiente, pensados com muito carinho para que você se sinta em casa.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                
+                <!-- Vídeo 1 -->
+                <div class="bg-white p-4 rounded-2xl shadow-xl border border-brand-rose/20 space-y-4">
+                    <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[500px] mx-auto">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="estiloapresentacao1.mp4#t=0.1" type="video/mp4">
+                            Seu navegador não suporta reprodução de vídeos.
+                        </video>
+                    </div>
+                    <div class="p-2 space-y-1">
+                        <h3 class="font-serif text-xl font-bold text-brand-burgundy">Tour Pela Nossa Loja & Provadores</h3>
+                        <p class="text-xs text-brand-darkText/70">
+                            Acompanhe um passeio completo mostrando a diversidade de estilos, calçados e o ambiente preparado para receber você.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vídeo 2 -->
+                <div class="bg-white p-4 rounded-2xl shadow-xl border border-brand-rose/20 space-y-4">
+                    <div class="relative rounded-xl overflow-hidden bg-black aspect-[9/16] max-h-[500px] mx-auto">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="estiloapresentacao2.mp4#t=0.1" type="video/mp4">
+                            Seu navegador não suporta reprodução de vídeos.
+                        </video>
+                    </div>
+                    <div class="p-2 space-y-1">
+                        <h3 class="font-serif text-xl font-bold text-brand-burgundy">Celebrando a Nova Casa com Nossas Clientes</h3>
+                        <p class="text-xs text-brand-darkText/70">
+                            Veja a alegria do nosso novo endereço unificado, feito com muito carinho, dedicação e receptividade.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS E AVALIAÇÕES GOOGLE -->
+    <section class="py-16 bg-white border-t border-brand-rose/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-1 text-brand-gold mb-2">
+                    <i data-lucide="star" class="w-5 h-5 fill-brand-gold"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-brand-gold"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-brand-gold"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-brand-gold"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-brand-gold"></i>
+                </div>
+                <h2 class="font-serif text-3xl font-bold text-brand-burgundy">O Que Nossos Clientes Dizem</h2>
+                <p class="text-xs sm:text-sm text-brand-darkText/70 mt-1">
+                    Com nota máxima de <strong>5.0 no Google</strong>, nosso compromisso é ver você feliz e satisfeita com suas escolhas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-brand-softBg p-6 rounded-2xl border border-brand-rose/20 space-y-3 relative shadow-sm">
+                    <i data-lucide="quote" class="w-8 h-8 text-brand-rose/40 absolute top-4 right-4"></i>
+                    <div class="flex text-brand-gold text-xs">
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-brand-darkText/80 italic leading-relaxed">
+                        "Atendimento sensacional! As meninas são muito atenciosas, o espaço novo ficou lindo e aconchegante. Super recomendo!"
+                    </p>
+                    <span class="block text-xs font-bold text-brand-burgundy">— Cliente Frequente de Santiago</span>
+                </div>
+
+                <div class="bg-brand-softBg p-6 rounded-2xl border border-brand-rose/20 space-y-3 relative shadow-sm">
+                    <i data-lucide="quote" class="w-8 h-8 text-brand-rose/40 absolute top-4 right-4"></i>
+                    <div class="flex text-brand-gold text-xs">
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-brand-darkText/80 italic leading-relaxed">
+                        "A variedade de roupas de marca e sapatos é incrível. Encontro desde peças casuais da Libidus até roupas de alfaiataria elegantes para trabalhar."
+                    </p>
+                    <span class="block text-xs font-bold text-brand-burgundy">— Avaliação via Google</span>
+                </div>
+
+                <div class="bg-brand-softBg p-6 rounded-2xl border border-brand-rose/20 space-y-3 relative shadow-sm">
+                    <i data-lucide="quote" class="w-8 h-8 text-brand-rose/40 absolute top-4 right-4"></i>
+                    <div class="flex text-brand-gold text-xs">
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-brand-darkText/80 italic leading-relaxed">
+                        "Amo essa loja! O ambiente é super agradável, limpo e bem localizado no centro. Roupas e calçados com caimento maravilhoso!"
+                    </p>
+                    <span class="block text-xs font-bold text-brand-burgundy">— Cliente Santiago RS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO, HORÁRIO & CONTATO -->
+    <section id="localizacao" class="py-16 bg-brand-softBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block">Venha Nos Visitar</span>
+                    <h2 class="font-serif text-3xl font-bold text-brand-burgundy">Onde Estamos em Santiago RS</h2>
+                    <p class="text-sm text-brand-darkText/80 leading-relaxed">
+                        Estamos localizados no coração da cidade, em um ponto de fácil acesso e estacionamento nas proximidades.
+                    </p>
+
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-brand-rose/20 shadow-sm">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-burgundy shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-brand-burgundy font-semibold">Endereço Completo:</strong>
+                                Rua Tito Beccon, 1392 (Esquina com a Rua Barão do Rio Branco)<br>
+                                Centro, Santiago - RS, CEP 97700-400
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-brand-rose/20 shadow-sm">
+                            <i data-lucide="clock" class="w-5 h-5 text-brand-burgundy shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-brand-burgundy font-semibold">Horário de Funcionamento:</strong>
+                                Segunda a Sexta-Feira: Horário Comercial<br>
+                                Sábados: Horário Comercial Especial
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-brand-rose/20 shadow-sm">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-burgundy shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-brand-burgundy font-semibold">Atendimento Direct e WhatsApp:</strong>
+                                Entre em contato conosco para tirar dúvidas sobre tamanhos, peças e novidades.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://maps.google.com/?q=Rua+Tito+Beccon+1392+Santiago+RS" target="_blank" rel="noopener" class="bg-brand-burgundy hover:bg-brand-burgundy/90 text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm inline-flex items-center gap-2 shadow-md transition">
+                            <i data-lucide="navigation" class="w-4 h-4"></i>
+                            <span>COMO CHEGAR VIA GOOGLE MAPS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quadro com Endereço e Detalhes da Fachada -->
+                <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-brand-rose/20 shadow-xl space-y-4">
+                    <div class="h-80 rounded-xl overflow-hidden relative border border-brand-rose/20">
+                        <img src="estilo3.jpg" alt="Fachada da Estilo e Atitude Santiago" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                            <div class="text-white space-y-1">
+                                <span class="bg-brand-gold text-white text-[10px] font-bold px-2 py-0.5 rounded">NOVO ENDEREÇO</span>
+                                <h3 class="font-serif text-xl font-bold">Esquina da Tito Beccon com Barão do Rio Branco</h3>
+                                <p class="text-xs text-white/80">Esperamos por você com as melhores coleções de roupas e sapatos!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="bg-brand-burgundy text-white py-12 border-t border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                    <img src="logomarcaestilo.jpg" alt="Logo Estilo e Atitude" class="w-10 h-10 rounded-full border border-brand-gold object-cover">
+                    <span class="font-serif text-xl font-bold tracking-wide">ESTILO E ATITUDE</span>
+                </div>
+                <p class="text-xs text-white/70 leading-relaxed">
+                    Sua loja de confecções, vestuário, calçados e multimarcas em Santiago, Rio Grande do Sul. A moda aqui é se sentir bem!
+                </p>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="font-serif text-base font-bold text-brand-gold">Links Rápidos</h4>
+                <ul class="space-y-1 text-white/80">
+                    <li><a href="#inicio" class="hover:text-brand-rose transition">Início</a></li>
+                    <li><a href="#historia" class="hover:text-brand-rose transition">Nossa História & Libidus</a></li>
+                    <li><a href="#colecoes" class="hover:text-brand-rose transition">Coleções e Produtos</a></li>
+                    <li><a href="#videos" class="hover:text-brand-rose transition">Vídeos da Loja</a></li>
+                    <li><a href="#localizacao" class="hover:text-brand-rose transition">Localização</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="font-serif text-base font-bold text-brand-gold">Redes & Contato</h4>
+                <p class="text-white/80">Siga nossas novidades diárias no Instagram:</p>
+                <a href="https://www.instagram.com/estiloeatitudesantiago/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3 py-2 rounded-lg text-white font-medium transition">
+                    <i data-lucide="instagram" class="w-4 h-4 text-brand-rose"></i>
+                    <span>@estiloeatitudesantiago</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-white/10 text-center text-[11px] text-white/50">
+            © 2026 Estilo e Atitude Modas Santiago - Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center justify-center border-2 border-white">
+        <i data-lucide="message-circle" class="w-7 h-7 fill-white"></i>
+    </a>
+
+    <!-- SCRIPTS DE INTERATIVIDADE -->
+    <script>
+        // Inicializar Ícones Lucide
+        lucide.createIcons();
+
+        // Lógica de Carrossel Automático
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-brand-burgundy/30', 'w-2.5', 'h-2.5');
+                    dot.classList.add('bg-brand-burgundy', 'w-3.5', 'h-3.5');
+                } else {
+                    dot.classList.remove('bg-brand-burgundy', 'w-3.5', 'h-3.5');
+                    dot.classList.add('bg-brand-burgundy/30', 'w-2.5', 'h-2.5');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Troca automática a cada 6 segundos
+        setInterval(nextSlide, 6000);
+
+        // Garantir que os vídeos mostrem o primeiro frame imediatamente ao carregar
+        document.addEventListener("DOMContentLoaded", function() {
+            const videos = document.querySelectorAll("video");
+            videos.forEach(v => {
+                v.currentTime = 0.1;
+            });
+        });
+    </script>
+</body>
+</html>
