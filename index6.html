@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especial de Natal & Black Week | Estilo e Libídus Santiago</title>
+    <meta name="description" content="Moda Feminina Chic e Peças Ousadas na Estilo e Libídus Santiago. Confira os descontos de Black Week e Guia de Presentes de Natal.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#C9182B',         /* Vermelho Rubi Vibrante */
+                            redDark: '#800C19',     /* Carmim Profundo */
+                            redDeep: '#4A050E',     /* Vinho Nobre */
+                            gold: '#D4AF37',        /* Dourado Natalino */
+                            goldLight: '#FBE8A6',
+                            blackWeek: '#110608',   /* Vinho/Preto Black Week */
+                            softBg: '#FDF7F5',
+                            roseBg: '#F9E8EB',
+                            darkText: '#2C1A1D'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .img-top-center {
+            object-fit: cover !important;
+            object-position: top center !important;
+        }
+        
+        .hero-slide {
+            transition: opacity 0.8s ease-in-out;
+        }
+        
+        .backdrop-blur-glass {
+            background: rgba(74, 5, 14, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        /* Canvas de Neve Suave */
+        #snow-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        /* Texto Gradiente Dourado */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFE259 0%, #FFA751 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Borda com Brilho Natalino */
+        .christmas-glow-border {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(201, 24, 43, 0.2);
+        }
+
+        /* Pulso de Oferta */
+        @keyframes pulse-red {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201, 24, 43, 0.7); }
+            50% { transform: scale(1.03); box-shadow: 0 0 0 14px rgba(201, 24, 43, 0); }
+        }
+        .pulse-offer {
+            animation: pulse-red 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-brand-softBg text-brand-darkText font-sans antialiased selection:bg-brand-red selection:text-white relative">
+
+    <!-- Canvas para Efeito de Neve Natalina em Todo o Site -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- TOPBAR ESPECIAL NATAL & BLACK WEEK -->
+    <div class="bg-gradient-to-r from-brand-redDeep via-brand-red to-brand-redDark text-white text-xs sm:text-sm py-2.5 px-4 shadow-md relative z-50 border-b border-brand-gold/50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            
+            <div class="flex items-center gap-3 flex-wrap font-medium">
+                <span class="bg-brand-blackWeek text-brand-goldLight px-3 py-0.5 rounded-full text-xs font-black tracking-wider uppercase flex items-center gap-1 border border-brand-gold/60">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold fill-brand-gold"></i>
+                    ESPECIAL DE NATAL & BLACK WEEK
+                </span>
+                <span class="hidden md:inline-block text-white/40">|</span>
+                <span class="hidden sm:flex items-center gap-1 text-white/95">
+                    <i data-lucide="gift" class="w-3.5 h-3.5 text-brand-goldLight"></i>
+                    Combo Estilo (Chic) + Libídus (Ousada) com Desconto de Natal!
+                </span>
+            </div>
+
+            <!-- CONTADOR REGRESSIVO DE NATAL -->
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1.5 bg-black/50 px-3 py-1 rounded-full text-xs font-bold text-white border border-brand-gold/40 shadow-inner">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-goldLight"></i>
+                    <span>Ofertas de Natal:</span>
+                    <span id="countdown-days" class="text-brand-goldLight font-mono">--</span>d
+                    <span id="countdown-hours" class="text-brand-goldLight font-mono">--</span>h
+                    <span id="countdown-mins" class="text-brand-goldLight font-mono">--</span>m!
+                </div>
+
+                <!-- Botão Alternar Neve -->
+                <button onclick="toggleSnow()" title="Ativar/Desativar Efeito Neve" class="hidden lg:flex items-center gap-1 text-[11px] bg-white/15 hover:bg-white/30 px-2.5 py-1 rounded-full text-white/95 transition border border-white/20">
+                    <i data-lucide="snowflake" class="w-3.5 h-3.5 text-cyan-200"></i>
+                    <span id="snow-toggle-text">Neve On</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- HEADER NATALINO EM VINHO NOBRE E DOURADO -->
+    <header class="sticky top-0 z-40 backdrop-blur-glass border-b-2 border-brand-gold/50 shadow-2xl text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo Oficial Unificada -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative">
+                    <img src="logomarcaestilo.jpg" alt="Estilo e Libídus Logo" class="w-12 h-12 rounded-full border-2 border-brand-gold shadow-md group-hover:scale-105 transition duration-300 object-cover">
+                    <span class="absolute -top-1.5 -right-1.5 text-sm" title="Natal">🎅</span>
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white block leading-tight flex items-center gap-1">
+                        ESTILO E LIBÍDUS
+                    </span>
+                    <span class="text-[10px] tracking-widest text-brand-goldLight uppercase font-extrabold block">
+                        Modas Santiago • Especial Natal & Black Week
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navegação Desktop -->
+            <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-white/90">
+                <a href="#inicio" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold">Início</a>
+                <a href="#blackweek" class="text-brand-goldLight font-black hover:text-white transition py-1 border-b-2 border-transparent hover:border-brand-gold flex items-center gap-1">
+                    <i data-lucide="flame" class="w-4 h-4 text-brand-gold fill-brand-gold"></i> Black Week Natalina
+                </a>
+                <a href="#calcados-destaque" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold flex items-center gap-1">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold"></i> Vitrine Calçados
+                </a>
+                <a href="#estilo" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold">Mostruário & Presentes</a>
+                <a href="#multimarcas" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold">Multimarcas</a>
+                <a href="#historia" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold">Nossa Loja</a>
+                <a href="#localizacao" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold">Horário de Natal</a>
+            </nav>
+
+            <!-- Botão WhatsApp CTA de Natal -->
+            <div class="flex items-center gap-3">
+                <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 border border-white/30">
+                    <i data-lucide="message-circle" class="w-4.5 h-4.5 fill-white"></i>
+                    <span>Comprar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER HERO RED VERMELHO NATALINO + BLACK WEEK -->
+    <section id="inicio" class="relative bg-gradient-to-b from-brand-redDeep via-brand-redDark to-brand-red overflow-hidden min-h-[580px] lg:min-h-[640px] flex items-center text-white border-b-4 border-brand-gold">
+        
+        <!-- Elementos Decorativos de Fundo -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.3),transparent_60%)]"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-red/40 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Slides Container -->
+        <div id="carousel-slides" class="relative w-full h-full z-10">
+            
+            <!-- Slide 1: Fusão Estilo (Elegante) & Libídus (Ousada) -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-700 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
+                    
+                    <div class="lg:col-span-6 space-y-6 bg-black/50 p-6 sm:p-8 rounded-3xl border-2 border-brand-gold/70 shadow-2xl backdrop-blur-md christmas-glow-border">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="bg-brand-red text-white text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider flex items-center gap-1 border border-brand-gold/60">
+                                🎄 ESPECIAL DE NATAL & BLACK WEEK
+                            </span>
+                            <span class="bg-brand-gold text-brand-redDeep text-xs font-black px-3 py-1 rounded-full uppercase">
+                                Santiago RS
+                            </span>
+                        </div>
+                        
+                        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
+                            Moda Chic para as Festas & Peças Ousadas para Arrasar
+                        </h1>
+                        
+                        <p class="text-white/90 text-base sm:text-lg leading-relaxed">
+                            Na <strong>Estilo e Libídus</strong> você encontra desde a alfaiataria elegante e os tricôs nobres Anselmi até a linha <strong>Libídus</strong> com moda ousada, lingeries, fitness modelador e peças com atitude!
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#blackweek" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep px-7 py-3.5 rounded-xl font-black text-sm transition shadow-xl flex items-center gap-2 border border-white pulse-offer">
+                                <span>VER PROMOÇÕES BLACK WEEK</span>
+                                <i data-lucide="flame" class="w-4 h-4 fill-brand-redDeep"></i>
+                            </a>
+                            <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="border-2 border-white text-white hover:bg-white hover:text-brand-redDeep px-6 py-3.5 rounded-xl font-bold text-sm transition flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Chamar Consultora no Whats</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 h-[380px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl relative border-4 border-brand-gold bg-black">
+                        <img src="estilo1.jpg" alt="Moda e Alfaiataria Estilo e Libídus" class="w-full h-full img-top-center">
+                        <div class="absolute bottom-4 right-4 bg-brand-blackWeek/95 text-brand-goldLight text-xs px-4 py-2 rounded-xl backdrop-blur-md border border-brand-gold/60 flex items-center gap-2 shadow-lg">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+                            <span class="font-bold">Coleção Festas 2026 + Black Week</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slide 2: Linha Libídus (Ousada & Atitude) -->
+            <div class="hero-slide absolute inset-0 w-full h-full opacity-0 pointer-events-none transition-opacity duration-700 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-8 items-center py-12">
+                    
+                    <div class="lg:col-span-6 space-y-6 bg-black/50 p-6 sm:p-8 rounded-3xl border-2 border-brand-gold/70 shadow-2xl backdrop-blur-md christmas-glow-border">
+                        <div class="inline-flex items-center gap-2 bg-brand-red text-white text-xs font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-brand-gold/60">
+                            🔥 LINHA LIBÍDUS: OUSADA & SENSUAL
+                        </div>
+                        
+                        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white">
+                            Roupas Ousadas, Lingeries & Moda Fitness que Valorizam Suas Curvas
+                        </h2>
+                        
+                        <p class="text-white/90 text-base sm:text-lg leading-relaxed">
+                            Exalte sua sensualidade e poder com a linha Libídus! Tops marcantes, moda praia com atitude, fitness modelador e peças íntimas que destacam a sua beleza.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#estilo" class="bg-brand-red hover:bg-brand-redDark text-white px-7 py-3.5 rounded-xl font-bold text-sm transition shadow-xl flex items-center gap-2 border border-brand-gold/60">
+                                <span>VER LINHA LIBÍDUS OUSADA</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="border-2 border-brand-gold text-brand-goldLight hover:bg-brand-gold hover:text-brand-redDeep px-6 py-3.5 rounded-xl font-bold text-sm transition flex items-center gap-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Pedir Fotos no Whats</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 h-[380px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl relative border-4 border-brand-gold bg-black">
+                        <img src="estilo7.jpg" alt="Linha Libídus Moda Ousada e Fitness" class="w-full h-full img-top-center">
+                        <div class="absolute bottom-4 right-4 bg-brand-red/90 text-white text-xs px-4 py-2 rounded-xl backdrop-blur-md border border-brand-gold/60 flex items-center gap-2">
+                            <i data-lucide="flame" class="w-4 h-4 text-brand-gold"></i>
+                            <span class="font-bold">Libídus: Atitude & Poder</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Nav Controls -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-3 bg-black/80 px-4 py-2 rounded-full border border-brand-gold shadow-lg">
+            <button onclick="prevSlide()" class="p-1 rounded-full hover:bg-white/20 text-white transition" aria-label="Slide Anterior">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-2">
+                <span class="slide-dot w-3.5 h-3.5 rounded-full bg-brand-gold transition-all cursor-pointer" onclick="goToSlide(0)"></span>
+                <span class="slide-dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer" onclick="goToSlide(1)"></span>
+            </div>
+            <button onclick="nextSlide()" class="p-1 rounded-full hover:bg-white/20 text-white transition" aria-label="Próximo Slide">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO INOVADORA BLACK WEEK DE NATAL -->
+    <section id="blackweek" class="py-16 bg-brand-blackWeek text-white relative border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="bg-gradient-to-r from-brand-redDeep via-brand-redDark to-brand-redDeep p-8 sm:p-12 rounded-3xl border-2 border-brand-gold shadow-2xl relative overflow-hidden christmas-glow-border">
+                <div class="absolute top-0 right-0 bg-brand-gold text-brand-redDeep font-black text-xs px-6 py-2 rounded-bl-2xl uppercase tracking-widest shadow-md flex items-center gap-1">
+                    <span>🎅</span> PROMOÇÃO EXCLUSIVA DE FIM DE ANO
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider border border-brand-gold/60">
+                            <i data-lucide="zap" class="w-4 h-4 fill-brand-gold text-brand-gold"></i>
+                            BLACK WEEK + COMBO DE NATAL
+                        </div>
+
+                        <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+                            Compre um Look Chic <span class="gold-gradient-text">ESTILO</span> + Peça Ousada <span class="text-brand-goldLight">LIBÍDUS</span>
+                        </h2>
+
+                        <p class="text-white/90 text-sm sm:text-base leading-relaxed">
+                            Preparamos a promoção mais inovadora da estação em Santiago! Escolha sua produção de festa (alfaiataria ou tricô nobre) e receba um **Cupom Secreto no WhatsApp** com desconto imperdível em qualquer peça da linha Libídus (fitness, lingerie e moda ousada).
+                        </p>
+
+                        <!-- Gerador de Cupom Interativo -->
+                        <div class="bg-black/40 p-4 rounded-2xl border border-brand-gold/60 space-y-3">
+                            <span class="text-xs font-bold text-brand-goldLight uppercase tracking-wider block flex items-center gap-1">
+                                🎁 Resgate seu Cupom de Black Week de Natal:
+                            </span>
+                            <div class="flex flex-wrap sm:flex-nowrap gap-2">
+                                <input id="coupon-input" type="text" readonly value="BLACKWEEK-ESTILOLIBIDUS" class="bg-black/90 text-brand-gold font-mono text-center font-bold px-4 py-3 rounded-xl border border-brand-gold text-xs sm:text-sm w-full focus:outline-none">
+                                <button onclick="copyCoupon()" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-6 py-3 rounded-xl text-xs sm:text-sm transition flex items-center justify-center gap-1.5 shrink-0 border border-white">
+                                    <i data-lucide="copy" class="w-4 h-4"></i>
+                                    <span id="copy-btn-text">COPIAR CUPOM</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex flex-wrap gap-4">
+                            <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-3.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 shadow-xl border border-white">
+                                <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                                <span>ENVIAR CUPOM PELO WHATSAPP AGORA</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Visual do Combo -->
+                    <div class="lg:col-span-5 bg-black/60 p-6 rounded-3xl border-2 border-brand-gold/60 space-y-4 text-center">
+                        <span class="text-xs font-black text-brand-gold uppercase tracking-widest block flex items-center justify-center gap-1">
+                            ✨ O Combo Perfeito de Natal
+                        </span>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-brand-redDeep/90 p-4 rounded-2xl border border-brand-gold/50">
+                                <span class="text-2xl block mb-1">👗</span>
+                                <strong class="text-xs font-bold text-white block">LINHA ESTILO</strong>
+                                <span class="text-[10px] text-white/80 block">Elegância, Alfaiataria & Tricô</span>
+                            </div>
+                            <div class="bg-brand-red/90 p-4 rounded-2xl border border-brand-gold/50">
+                                <span class="text-2xl block mb-1">🔥</span>
+                                <strong class="text-xs font-bold text-white block">LINHA LIBÍDUS</strong>
+                                <span class="text-[10px] text-white/80 block">Roupas Ousadas & Atitude</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-brand-gold/25 rounded-xl text-xs font-bold text-brand-goldLight border border-brand-gold/50">
+                            🎁 Embalagem Especial de Presente de Natal Incluída!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO ESPECIAL VITRINE DE CALÇADOS DE FESTA & BRILHO -->
+    <section id="calcados-destaque" class="py-16 bg-gradient-to-b from-brand-blackWeek via-brand-redDeep to-brand-redDark text-white relative border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 bg-brand-gold text-brand-redDeep text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white shadow-lg">
+                    <span>✨</span> NOVIDADES EM CALÇADOS & BRILHO
+                </span>
+                <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3">
+                    Passos Elegantes para Fim de Ano & Festas
+                </h2>
+                <p class="text-brand-goldLight text-sm sm:text-base mt-2 font-medium">
+                    Do conforto ultra moderno aos saltos com strass e detalhes em ouro: confira nossa seleção de calçados pronta para entrega!
+                </p>
+            </div>
+
+            <!-- Cards dos Calçados com Frases Criativas -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Calçado 1: Tênis Actvitta Lilás -->
+                <div class="bg-black/50 rounded-3xl overflow-hidden border-2 border-brand-gold/60 shadow-2xl hover:shadow-brand-gold/30 transition duration-500 group flex flex-col justify-between backdrop-blur-md">
+                    <div>
+                        <div class="h-80 overflow-hidden relative bg-black/40">
+                            <img src="estilo8.jpg" 
+                                 alt="Tênis Actvitta Lilás Soft" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-md border border-brand-gold/60">
+                                💜 Cor Natural & Suave
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-black/90 text-brand-goldLight text-xs font-black px-3 py-1 rounded-xl border border-brand-gold/60 shadow">
+                                Tam: 35 ao 40
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider block">Actvitta • Conforto & Estilo Urbano</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Tênis Actvitta Lilás Soft</h3>
+                            <p class="text-xs text-white/85 leading-relaxed italic">
+                                "Para caminhadas leves ou um visual urbano moderno cheio de atitude — conforto nas nuvens com a cor pastel do momento!"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs bg-brand-redDeep/80 p-3 rounded-2xl border border-brand-gold/40">
+                            <span class="font-bold text-brand-goldLight">Produzido no Brasil</span>
+                            <span class="font-black text-emerald-400">Pronta Entrega</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3.5 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-xl border border-white/30 transition transform group-hover:scale-[1.02]">
+                            <i data-lucide="message-circle" class="w-4.5 h-4.5 fill-white"></i>
+                            <span>GARANTIR TAMANHO NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calçado 2: Sandália Preta com Brilhos -->
+                <div class="bg-black/50 rounded-3xl overflow-hidden border-2 border-brand-gold/60 shadow-2xl hover:shadow-brand-gold/30 transition duration-500 group flex flex-col justify-between backdrop-blur-md">
+                    <div>
+                        <div class="h-80 overflow-hidden relative bg-black/40">
+                            <img src="estilo9.jpg" alt="Sandália Beira Rio Preta com Brilhos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-md border border-brand-gold/60">
+                                🖤 Pretinho Nada Básico
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-brand-gold text-brand-redDeep text-xs font-black px-3 py-1 rounded-xl border border-white shadow">
+                                R$ 169,90
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider block">Beira Rio Glamour</span>
+                                <span class="text-[10px] bg-white/20 text-brand-goldLight font-bold px-2 py-0.5 rounded">35 ao 39</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Sandália Preta Salto Cristal & Strass</h3>
+                            <p class="text-xs text-white/85 leading-relaxed italic">
+                                "Tiras cintilantes e salto em acrílico cristal: elegância magnética e sofisticação pura para brilhar na noite de Natal!"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs bg-brand-redDeep/80 p-3 rounded-2xl border border-brand-gold/40">
+                            <span class="font-bold text-white">Salto Bloco Cristal</span>
+                            <span class="font-black text-brand-goldLight">R$ 169,90</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3.5 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-xl border border-white/30 transition transform group-hover:scale-[1.02]">
+                            <i data-lucide="message-circle" class="w-4.5 h-4.5 fill-white"></i>
+                            <span>COMPRAR SANDÁLIA PRETA NO WHATS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calçado 3: Rasteirinha Beira Rio Glamour Nude -->
+                <div class="bg-black/50 rounded-3xl overflow-hidden border-2 border-brand-gold/60 shadow-2xl hover:shadow-brand-gold/30 transition duration-500 group flex flex-col justify-between backdrop-blur-md">
+                    <div>
+                        <div class="h-80 overflow-hidden relative bg-black/40">
+                            <img src="estilo10.jpg" 
+                                 alt="Rasteirinha Beira Rio Nude com Laço Strass" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-gold text-brand-redDeep text-xs font-black px-3.5 py-1.5 rounded-full shadow-md border border-white">
+                                ✨ Brilho do Réveillon
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-black/90 text-brand-goldLight text-xs font-black px-3 py-1 rounded-xl border border-brand-gold/60 shadow">
+                                Tam: 34 ao 39
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider block">Beira Rio Comfort</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Rasteirinha Glamour Laço Strass</h3>
+                            <p class="text-xs text-white/85 leading-relaxed italic">
+                                "Delicadeza que ilumina cada passo! O laço cravejado de strass é perfeito para passar a virada de ano linda e radiante."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs bg-brand-redDeep/80 p-3 rounded-2xl border border-brand-gold/40">
+                            <span class="font-bold text-white">Palmilha Anatômica</span>
+                            <span class="font-black text-emerald-400">Pronta Entrega</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3.5 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-xl border border-white/30 transition transform group-hover:scale-[1.02]">
+                            <i data-lucide="message-circle" class="w-4.5 h-4.5 fill-white"></i>
+                            <span>RESERVAR RASTEIRINHA NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calçado 4: Sandália Dourada Modare Ultra Conforto -->
+                <div class="bg-black/50 rounded-3xl overflow-hidden border-2 border-brand-gold/60 shadow-2xl hover:shadow-brand-gold/30 transition duration-500 group flex flex-col justify-between backdrop-blur-md">
+                    <div>
+                        <div class="h-80 overflow-hidden relative bg-black/40">
+                            <img src="estilo11.jpg" alt="Sandália Dourada Modare Ultra Conforto" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-md border border-brand-gold/60">
+                                🌟 Ouro Reluzente
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-brand-gold text-brand-redDeep text-xs font-black px-3 py-1 rounded-xl border border-white shadow">
+                                R$ 169,90
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider block">Modare Ultra Conforto</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Sandália Dourada Salto Bloco</h3>
+                            <p class="text-xs text-white/85 leading-relaxed italic">
+                                "O toque de ouro impecável que o seu look festivo pede! Salto bloco ultra macio para você dançar a noite toda com muito conforto."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs bg-brand-redDeep/80 p-3 rounded-2xl border border-brand-gold/40">
+                            <span class="font-bold text-white">Tecnologia Conforto</span>
+                            <span class="font-black text-brand-goldLight">R$ 169,90</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3.5 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-xl border border-white/30 transition transform group-hover:scale-[1.02]">
+                            <i data-lucide="message-circle" class="w-4.5 h-4.5 fill-white"></i>
+                            <span>PEDIR SANDÁLIA DOURADA NO WHATS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calçado 5: Sandália Off-White com Dourado Beira Rio -->
+                <div class="bg-black/50 rounded-3xl overflow-hidden border-2 border-brand-gold/60 shadow-2xl hover:shadow-brand-gold/30 transition duration-500 group flex flex-col justify-between backdrop-blur-md lg:col-span-1 sm:col-span-2 lg:col-start-2">
+                    <div>
+                        <div class="h-80 overflow-hidden relative bg-black/40">
+                            <img src="estilo12.jpg" alt="Sandália Off-White com Dourado Beira Rio" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-gold text-brand-redDeep text-xs font-black px-3.5 py-1.5 rounded-full shadow-md border border-white">
+                                ✨ Off-White & Nó Dourado
+                            </span>
+                            <span class="absolute bottom-4 right-4 bg-brand-red text-white text-xs font-black px-3 py-1 rounded-xl border border-brand-gold/60 shadow">
+                                R$ 169,90
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider block">Beira Rio Flatform</span>
+                                <span class="text-[10px] bg-white/20 text-brand-goldLight font-bold px-2 py-0.5 rounded">36 ao 40</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Sandália Flatform Off & Nó Dourado</h3>
+                            <p class="text-xs text-white/85 leading-relaxed italic">
+                                "O contraste chic do Off-White com tiras douradas e nó metalizado — jovialidade, leveza e sofisticação contemporânea para o Verão!"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs bg-brand-redDeep/80 p-3 rounded-2xl border border-brand-gold/40">
+                            <span class="font-bold text-white">Solado Flatform Confort</span>
+                            <span class="font-black text-brand-goldLight">R$ 169,90</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3.5 rounded-2xl text-xs flex items-center justify-center gap-2 shadow-xl border border-white/30 transition transform group-hover:scale-[1.02]">
+                            <i data-lucide="message-circle" class="w-4.5 h-4.5 fill-white"></i>
+                            <span>COMPRAR FLATFORM NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MOSTRUÁRIO DE PRODUTOS COMPLETO (ESTILO & LIBÍDUS) COM DECORAÇÃO NATALINA -->
+    <section id="estilo" class="py-16 bg-gradient-to-b from-brand-roseBg via-brand-softBg to-brand-roseBg border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-1.5 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-brand-gold/50 shadow-md">
+                    <span>🎄</span> Guia de Presentes & Festas 2026
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-redDeep mt-3">
+                    Encontre Seu Look de Festa ou Presente Inesquecível
+                </h2>
+                <p class="text-brand-darkText/80 text-sm mt-1">
+                    Filtre abaixo pelas coleções natalinas e peça diretamente no WhatsApp com atendimento VIP da equipe Estilo e Libídus!
+                </p>
+            </div>
+
+            <!-- Botões de Filtro/Abas Natalinas -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
+                <button onclick="filterShowcase('all')" class="tab-btn active font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full border-2 border-brand-gold bg-brand-red text-white shadow-md transition flex items-center gap-1">
+                    <span>🎁</span> Ver Todos os Destaques
+                </button>
+                <button onclick="filterShowcase('estilo-chic')" class="tab-btn font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-brand-gold/50 bg-white text-brand-redDeep hover:bg-brand-red hover:text-white transition">
+                    ✨ Linha Estilo (Elegante & Alfaiataria)
+                </button>
+                <button onclick="filterShowcase('libidus-ousada')" class="tab-btn font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-brand-gold/50 bg-white text-brand-redDeep hover:bg-brand-red hover:text-white transition">
+                    🔥 Linha Libídus (Ousada & Fitness)
+                </button>
+                <button onclick="filterShowcase('trico-nobre')" class="tab-btn font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-brand-gold/50 bg-white text-brand-redDeep hover:bg-brand-red hover:text-white transition">
+                    🧶 Tricôs Anselmi & Biamar
+                </button>
+                <button onclick="filterShowcase('calcados-bolsas')" class="tab-btn font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-brand-gold/50 bg-white text-brand-redDeep hover:bg-brand-red hover:text-white transition">
+                    👠 Botas, Sapatos & Bolsas
+                </button>
+            </div>
+
+            <!-- Grid do Mostruário de Produtos -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Produto 1: Alfaiataria Estilo -->
+                <div class="product-card showcase-item estilo-chic bg-white rounded-3xl overflow-hidden border-2 border-brand-gold/50 shadow-lg hover:shadow-2xl transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-72 overflow-hidden relative bg-stone-100">
+                            <img src="estilo1.jpg" alt="Blazer e Alfaiataria Chic Estilo" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1 border border-brand-gold/50">
+                                ✨ Linha Estilo Chic
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-brand-gold text-brand-redDeep text-[11px] font-black px-2.5 py-1 rounded-lg shadow">
+                                🎅 Edição de Festas
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-bold text-brand-gold uppercase tracking-wider block">Alfaiataria Fina & Réveillon</span>
+                            <h3 class="font-serif text-2xl font-bold text-brand-redDeep">Blazers Acinturados & Conjuntos Finais</h3>
+                            <p class="text-xs text-brand-darkText/80 leading-relaxed">
+                                Caimento impecável para a noite de Natal e Réveillon. Peças clássicas das melhores multimarcas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-brand-darkText/80 bg-brand-roseBg p-2.5 rounded-xl border border-brand-gold/30">
+                            <span class="font-bold text-brand-red">Black Week de Natal</span>
+                            <span class="font-bold text-emerald-700">Disponível na Loja</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>PEDIR LOOK ESTILO NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 2: Linha Libídus Ousada & Fitness -->
+                <div id="libidus" class="product-card showcase-item libidus-ousada bg-white rounded-3xl overflow-hidden border-2 border-brand-gold/50 shadow-lg hover:shadow-2xl transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-72 overflow-hidden relative bg-stone-100">
+                            <img src="estilo7.jpg" alt="Moda Ousada e Fitness Libídus" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-blackWeek text-brand-goldLight text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1 border border-brand-gold/50">
+                                🔥 Linha Libídus Ousada
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-brand-red text-white text-[11px] font-black px-2.5 py-1 rounded-lg shadow">
+                                💥 Sucesso Black Week
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-bold text-brand-red uppercase tracking-wider block">Sensualidade & Atitude</span>
+                            <h3 class="font-serif text-2xl font-bold text-brand-redDeep">Roupas Ousadas, Fitness & Tops</h3>
+                            <p class="text-xs text-brand-darkText/80 leading-relaxed">
+                                Peças que modelam a silhueta, tops ousados, moda praiana e fitness de alta compressão da marca Libídus.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-brand-darkText/80 bg-brand-roseBg p-2.5 rounded-xl border border-brand-gold/30">
+                            <span class="font-bold text-brand-red">Combo Especial</span>
+                            <span class="font-bold text-emerald-700">Disponível na Loja</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>PEDIR LINHA LIBÍDUS NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 3: Tricô Nobre Anselmi / Biamar -->
+                <div class="product-card showcase-item trico-nobre bg-white rounded-3xl overflow-hidden border-2 border-brand-gold/50 shadow-lg hover:shadow-2xl transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-72 overflow-hidden relative bg-stone-100">
+                            <img src="estilo2.jpg" alt="Tricô Nobre Anselmi e Biamar" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-redDeep text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1 border border-brand-gold/50">
+                                🧶 Anselmi & Biamar
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-brand-gold text-brand-redDeep text-[11px] font-black px-2.5 py-1 rounded-lg shadow">
+                                🎁 Presente Perfeito
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-bold text-brand-gold uppercase tracking-wider block">Malharia Nobre</span>
+                            <h3 class="font-serif text-2xl font-bold text-brand-redDeep">Blusas & Coletes em Tricô Luxuoso</h3>
+                            <p class="text-xs text-brand-darkText/80 leading-relaxed">
+                                Toque extramacio e acabamentos nobres. O presente perfeito para surpreender no Natal com elegância.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-brand-darkText/80 bg-brand-roseBg p-2.5 rounded-xl border border-brand-gold/30">
+                            <span class="font-bold text-brand-red">Embalagem de Natal Grátis</span>
+                            <span class="font-bold text-emerald-700">Disponível na Loja</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>VER TRICÔS NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 4: Botas em Couro -->
+                <div class="product-card showcase-item calcados-bolsas bg-white rounded-3xl overflow-hidden border-2 border-brand-gold/50 shadow-lg hover:shadow-2xl transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-72 overflow-hidden relative bg-stone-100">
+                            <img src="estilo4.jpg" alt="Botas de Couro Femininas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1 border border-brand-gold/50">
+                                👠 Couro Legítimo
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-bold text-brand-gold uppercase tracking-wider block">Calçados & Botas</span>
+                            <h3 class="font-serif text-2xl font-bold text-brand-redDeep">Botas, Coturnos & Sapatos Elegantes</h3>
+                            <p class="text-xs text-brand-darkText/80 leading-relaxed">
+                                Botas de cano curto e longo em couro, coturnos Beira Rio e tênis Coca-Cola Comfort para arrematar o visual.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-brand-darkText/80 bg-brand-roseBg p-2.5 rounded-xl border border-brand-gold/30">
+                            <span class="font-bold text-brand-red">Consulte Numeração</span>
+                            <span class="font-bold text-emerald-700">Disponível na Loja</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>CONSULTAR NUMERAÇÃO NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 5: Bolsas & Acessórios Fim de Ano -->
+                <div class="product-card showcase-item calcados-bolsas bg-white rounded-3xl overflow-hidden border-2 border-brand-gold/50 shadow-lg hover:shadow-xl transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-72 overflow-hidden relative bg-stone-100">
+                            <img src="estilo5.jpg" alt="Bolsas e Acessórios Elegantes" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-brand-gold text-brand-redDeep text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                                ✨ Acessórios Finos
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-bold text-brand-gold uppercase tracking-wider block">Bolsas & Cintos</span>
+                            <h3 class="font-serif text-2xl font-bold text-brand-redDeep">Bolsas Estruturadas & Carteiras</h3>
+                            <p class="text-xs text-brand-darkText/80 leading-relaxed">
+                                Bolsas em couro e camurça que agregam charme imediato ao look da ceia e ao presente de amigo secreto.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-brand-darkText/80 bg-brand-roseBg p-2.5 rounded-xl border border-brand-gold/30">
+                            <span class="font-bold text-brand-red">Amigo Secreto</span>
+                            <span class="font-bold text-emerald-700">Disponível na Loja</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>VER BOLSAS PELO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 6: Consultoria de Imagem Personalizada (Com a Foto da Equipe) -->
+                <div class="product-card showcase-item estilo-chic bg-white rounded-3xl overflow-hidden border-2 border-brand-gold/50 shadow-lg hover:shadow-xl transition group flex flex-col justify-between">
+                    <div>
+                        <div class="h-72 overflow-hidden relative bg-stone-100">
+                            <img src="consultoriapersonalizada.jpg" alt="Equipe Estilo e Libídus Santiago" class="w-full h-full img-top-center group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md flex items-center gap-1 border border-white">
+                                🌟 Atendimento Exclusivo
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[10px] font-bold text-brand-gold uppercase tracking-wider block">Consultoria Personalizada</span>
+                            <h3 class="font-serif text-2xl font-bold text-brand-redDeep">Consultoria de Imagem Personalizada</h3>
+                            <p class="text-xs text-brand-darkText/80 leading-relaxed">
+                                Nossa equipe atenta ajuda você a combinar a elegância da linha Estilo com a atitude da linha Libídus para valorizar seu corpo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-brand-darkText/80 bg-brand-roseBg p-2.5 rounded-xl border border-brand-gold/30">
+                            <span class="font-bold text-brand-red">Atendimento Sincero</span>
+                            <span class="font-bold text-emerald-700">Loja & Whats</span>
+                        </div>
+                        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-brand-redDeep hover:bg-brand-redDark text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md transition border border-brand-gold/40">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>AGENDAR CONSULTORIA NO WHATSAPP</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MULTIMARCAS EM DESTAQUE COM TEMA NATALINO -->
+    <section id="multimarcas" class="bg-gradient-to-r from-brand-redDeep via-brand-redDark to-brand-redDeep py-14 border-b-4 border-brand-gold text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-xs font-black text-brand-goldLight uppercase tracking-widest block flex items-center justify-center gap-1">
+                    ✨ Curadoria Especial de Festas
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">Multimarcas Renomadas Presentes na Estilo e Libídus</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 text-center">
+                <div class="p-4 rounded-2xl bg-black/40 border-2 border-brand-gold/60 shadow-md hover:shadow-xl transition flex flex-col items-center justify-center">
+                    <span class="font-serif text-lg font-bold text-brand-goldLight">ANSELMI</span>
+                    <span class="text-[10px] text-white font-bold uppercase">Tricô Nobre</span>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border-2 border-brand-gold/60 shadow-md hover:shadow-xl transition flex flex-col items-center justify-center">
+                    <span class="font-serif text-lg font-bold text-brand-goldLight">BIAMAR</span>
+                    <span class="text-[10px] text-white font-bold uppercase">Malharia Chic</span>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border-2 border-brand-gold/60 shadow-md hover:shadow-xl transition flex flex-col items-center justify-center">
+                    <span class="font-serif text-lg font-bold text-brand-goldLight">LIBÍDUS</span>
+                    <span class="text-[10px] text-white font-bold uppercase">Ousada & Fitness</span>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border-2 border-brand-gold/60 shadow-md hover:shadow-xl transition flex flex-col items-center justify-center">
+                    <span class="font-serif text-lg font-bold text-brand-goldLight">FEELING</span>
+                    <span class="text-[10px] text-white font-bold uppercase">Feminina Fina</span>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border-2 border-brand-gold/60 shadow-md hover:shadow-xl transition flex flex-col items-center justify-center">
+                    <span class="font-serif text-lg font-bold text-brand-goldLight">DON CARLI</span>
+                    <span class="text-[10px] text-white font-bold uppercase">Alfaiataria</span>
+                </div>
+                <div class="p-4 rounded-2xl bg-black/40 border-2 border-brand-gold/60 shadow-md hover:shadow-xl transition flex flex-col items-center justify-center">
+                    <span class="font-serif text-lg font-bold text-brand-goldLight">OPOSIÇÃO</span>
+                    <span class="text-[10px] text-white font-bold uppercase">Tendências</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A LOJA & UNIFICAÇÃO DA MARCA -->
+    <section id="historia" class="py-16 sm:py-20 bg-brand-softBg border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-brand-red/15 text-brand-redDeep px-4 py-1.5 rounded-full text-xs font-black border border-brand-gold/50 shadow-sm">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold"></i>
+                        Um Só Endereço Unificado em Santiago
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-redDeep leading-tight">
+                        A Moda Aqui É Se Sentir Bem & Bonita
+                    </h2>
+                    <p class="text-brand-darkText/85 text-base leading-relaxed">
+                        A <strong>Estilo e Libídus Modas Santiago</strong> unificou o melhor da moda em um só espaço amplo, moderno e acolhedor na esquina da Tito Beccon com Barão do Rio Branco. 
+                    </p>
+                    <p class="text-brand-darkText/85 text-base leading-relaxed">
+                        Aqui você tem a sofisticação e elegância da <strong>Linha Estilo</strong> aliada ao poder e ousadia da <strong>Linha Libídus</strong>. Nossa loja física está decorada com o clima natalino e pronta para receber você com carinho e ótimas ofertas!
+                    </p>
+
+                    <div class="pt-2 flex flex-wrap items-center gap-6">
+                        <div class="flex items-center gap-3 bg-white p-3 rounded-2xl border border-brand-gold/40 shadow-sm">
+                            <div class="w-12 h-12 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xl border-2 border-brand-gold shadow">
+                                5.0
+                            </div>
+                            <div>
+                                <div class="flex text-brand-gold text-xs">
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                </div>
+                                <span class="text-xs font-bold text-brand-redDeep">Avaliação Máxima no Google em Santiago RS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-brand-gold h-[320px]">
+                        <img src="cafeecha.jpg" alt="Ambiente Interno da Loja Estilo e Libídus" class="w-full h-full object-cover">
+                    </div>
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-brand-gold h-[320px] sm:translate-y-6">
+                        <img src="estilo6.jpg" alt="Atendimento e Roupas Femininas Santiago" class="w-full h-full img-top-center">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VÍDEOS DE APRESENTAÇÃO E AMBIENTE DA LOJA -->
+    <section id="videos" class="py-16 bg-gradient-to-b from-brand-roseBg via-brand-softBg to-brand-roseBg border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-black text-brand-red uppercase tracking-widest block flex items-center justify-center gap-1">
+                    🎬 Sinta a Experiência Natalina
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-redDeep mt-1">Conheça Nossa Loja & Nosso Atendimento</h2>
+                <p class="text-brand-darkText/80 text-sm mt-2">
+                    Confira os vídeos de apresentação do nosso ambiente preparado para receber você neste fim de ano.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                
+                <!-- Vídeo 1 -->
+                <div class="bg-white p-4 rounded-3xl shadow-xl border-2 border-brand-gold/50 space-y-4">
+                    <div class="relative rounded-2xl overflow-hidden bg-black aspect-[9/16] max-h-[500px] mx-auto border border-brand-gold">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="estiloapresentacao1.mp4#t=0.1" type="video/mp4">
+                            Seu navegador não suporta reprodução de vídeos.
+                        </video>
+                    </div>
+                    <div class="p-2 space-y-1 text-center">
+                        <h3 class="font-serif text-xl font-bold text-brand-redDeep">Tour Pela Nossa Loja & Provadores</h3>
+                        <p class="text-xs text-brand-darkText/80">
+                            Passeio completo mostrando a diversidade de estilos, sapatos e o espaço preparado para atender você.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vídeo 2 -->
+                <div class="bg-white p-4 rounded-3xl shadow-xl border-2 border-brand-gold/50 space-y-4">
+                    <div class="relative rounded-2xl overflow-hidden bg-black aspect-[9/16] max-h-[500px] mx-auto border border-brand-gold">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="estiloapresentacao2.mp4#t=0.1" type="video/mp4">
+                            Seu navegador não suporta reprodução de vídeos.
+                        </video>
+                    </div>
+                    <div class="p-2 space-y-1 text-center">
+                        <h3 class="font-serif text-xl font-bold text-brand-redDeep">Celebrando o Novo Endereço</h3>
+                        <p class="text-xs text-brand-darkText/80">
+                            Veja a alegria da unificação das marcas Estilo e Libídus em Santiago com receptividade e carinho.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO & HORÁRIO DE NATAL -->
+    <section id="localizacao" class="py-16 bg-brand-softBg border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-black text-brand-red uppercase tracking-widest block flex items-center gap-1">
+                        📍 Venha Nos Visitar
+                    </span>
+                    <h2 class="font-serif text-3xl font-bold text-brand-redDeep">Onde Estamos em Santiago RS</h2>
+                    <p class="text-sm text-brand-darkText/85 leading-relaxed">
+                        Estamos localizados no coração da cidade, em um ponto nobre e de fácil acesso para suas compras de fim de ano.
+                    </p>
+
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border-2 border-brand-gold/50 shadow-sm">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-brand-redDeep font-bold">Endereço Completo:</strong>
+                                Rua Tito Beccon, 1392 (Esquina com a Rua Barão do Rio Branco)<br>
+                                Centro, Santiago - RS, CEP 97700-400
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border-2 border-brand-gold/50 shadow-sm">
+                            <i data-lucide="clock" class="w-5 h-5 text-emerald-700 shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-brand-redDeep font-bold">Horário Especial de Natal:</strong>
+                                Segunda a Sexta: Horário Comercial Expandido<br>
+                                Sábados & Vésperas de Festas: Atendimento Especial de Compras
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border-2 border-brand-gold/50 shadow-sm">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+                            <div>
+                                <strong class="block text-brand-redDeep font-bold">Atendimento Online no WhatsApp:</strong>
+                                Envie mensagem para reservar peças da Black Week, separar tamanhos e tirar dúvidas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://maps.google.com/?q=Rua+Tito+Beccon+1392+Santiago+RS" target="_blank" rel="noopener" class="bg-brand-redDeep hover:bg-brand-redDark text-white px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-md transition border border-brand-gold/50">
+                            <i data-lucide="navigation" class="w-4 h-4 text-brand-gold"></i>
+                            <span>COMO CHEGAR VIA GOOGLE MAPS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-6 rounded-3xl border-4 border-brand-gold shadow-xl space-y-4">
+                    <div class="h-80 rounded-2xl overflow-hidden relative border border-brand-roseBg">
+                        <img src="estilo3.jpg" alt="Fachada da Estilo e Libídus Santiago" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex items-end p-6">
+                            <div class="text-white space-y-1">
+                                <span class="bg-brand-red text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase border border-brand-gold/50">NOVO ENDEREÇO UNIFICADO</span>
+                                <h3 class="font-serif text-xl font-bold">Esquina Tito Beccon com Barão do Rio Branco</h3>
+                                <p class="text-xs text-white/90">Esperamos por você com os melhores presentes de Natal e Black Week!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INSTITUCIONAL EM VINHO E DOURADO -->
+    <footer class="bg-brand-redDeep text-white py-12 border-t-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                    <img src="logomarcaestilo.jpg" alt="Logo Estilo e Libídus" class="w-10 h-10 rounded-full border border-brand-gold object-cover">
+                    <span class="font-serif text-xl font-bold tracking-wide">ESTILO E LIBÍDUS</span>
+                </div>
+                <p class="text-xs text-white/80 leading-relaxed">
+                    Sua loja de confecções, vestuário, calçados e multimarcas em Santiago, Rio Grande do Sul. Elegância Chic & Atitude Ousada!
+                </p>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="font-serif text-base font-bold text-brand-goldLight">Navegação Rápida</h4>
+                <ul class="space-y-1 text-white/85">
+                    <li><a href="#inicio" class="hover:text-brand-goldLight transition">Início</a></li>
+                    <li><a href="#blackweek" class="hover:text-brand-goldLight transition">Combo Black Week de Natal</a></li>
+                    <li><a href="#estilo" class="hover:text-brand-goldLight transition">Linha Estilo & Libídus</a></li>
+                    <li><a href="#videos" class="hover:text-brand-goldLight transition">Vídeos da Loja</a></li>
+                    <li><a href="#localizacao" class="hover:text-brand-goldLight transition">Horário de Natal</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="font-serif text-base font-bold text-brand-goldLight">Redes & WhatsApp</h4>
+                <p class="text-white/85">Acompanhe nossas novidades no Instagram:</p>
+                <a href="https://www.instagram.com/estiloeatitudesantiago/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-xl text-white font-medium transition border border-brand-gold/40">
+                    <i data-lucide="instagram" class="w-4 h-4 text-brand-gold"></i>
+                    <span>@estiloelibidus</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-white/15 text-center text-[11px] text-white/60">
+            © 2026 Estilo e Libídus Santiago - Especial Natal & Black Week. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP COM NATAL & BLACK WEEK -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <div class="hidden sm:flex items-center gap-2 bg-black text-brand-goldLight px-3.5 py-2 rounded-full shadow-2xl border-2 border-brand-gold mb-2 text-xs font-black animate-bounce">
+            <span>⚡ Resgatar Cupom de Black Week no Whats!</span>
+        </div>
+
+        <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" aria-label="Comprar no WhatsApp" class="bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center justify-center border-2 border-brand-gold relative">
+            <i data-lucide="message-circle" class="w-8 h-8 fill-white"></i>
+            <span class="absolute -top-2 -right-1 text-sm" title="Presente de Natal">🎁</span>
+        </a>
+    </div>
+
+    <!-- SCRIPTS DE INTERATIVIDADE NATALINA & BLACK WEEK -->
+    <script>
+        // 1. Inicializar Ícones Lucide
+        lucide.createIcons();
+
+        // 2. Regressiva de Black Week & Natal (25 de Dezembro)
+        function updateChristmasCountdown() {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            let christmasDate = new Date(currentYear, 11, 25);
+            
+            if (now > christmasDate) {
+                christmasDate = new Date(currentYear + 1, 11, 25);
+            }
+            
+            const diff = christmasDate - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('countdown-days').innerText = String(days).padStart(2, '0');
+            document.getElementById('countdown-hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('countdown-mins').innerText = String(mins).padStart(2, '0');
+        }
+        updateChristmasCountdown();
+        setInterval(updateChristmasCountdown, 60000);
+
+        // 3. Efeito Neve no Canvas (Leve e Elegante em Toda a Tela)
+        const canvas = document.getElementById('snow-canvas');
+        const ctx = canvas.getContext('2d');
+        let snowActive = true;
+        let flakes = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createFlakes() {
+            flakes = [];
+            const count = Math.floor(window.innerWidth / 25);
+            for (let i = 0; i < count; i++) {
+                flakes.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 2.5 + 1,
+                    d: Math.random() * 1 + 0.5,
+                    opacity: Math.random() * 0.5 + 0.3
+                });
+            }
+        }
+        createFlakes();
+
+        function drawSnow() {
+            if (!snowActive) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                return;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+            ctx.beginPath();
+            for (let i = 0; i < flakes.length; i++) {
+                const f = flakes[i];
+                ctx.moveTo(f.x, f.y);
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+            }
+            ctx.fill();
+            updateSnow();
+            requestAnimationFrame(drawSnow);
+        }
+
+        function updateSnow() {
+            for (let i = 0; i < flakes.length; i++) {
+                const f = flakes[i];
+                f.y += f.d * 0.8;
+                f.x += Math.sin(f.y * 0.01) * 0.5;
+                if (f.y > canvas.height) {
+                    flakes[i] = {
+                        x: Math.random() * canvas.width,
+                        y: -10,
+                        r: f.r,
+                        d: f.d,
+                        opacity: f.opacity
+                    };
+                }
+            }
+        }
+        requestAnimationFrame(drawSnow);
+
+        function toggleSnow() {
+            snowActive = !snowActive;
+            const toggleText = document.getElementById('snow-toggle-text');
+            if (snowActive) {
+                toggleText.innerText = "Neve On";
+                requestAnimationFrame(drawSnow);
+            } else {
+                toggleText.innerText = "Neve Off";
+            }
+        }
+
+        // 4. Copiar Cupom de Black Week
+        function copyCoupon() {
+            const copyText = document.getElementById("coupon-input");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            
+            const btnText = document.getElementById("copy-btn-text");
+            btnText.innerText = "CUPOM COPIADO! ✅";
+            setTimeout(() => {
+                btnText.innerText = "COPIAR CUPOM";
+            }, 3000);
+        }
+
+        // 5. Carrossel Hero
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slide-dot');
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('bg-white/40', 'w-2.5', 'h-2.5');
+                    dot.classList.add('bg-brand-gold', 'w-3.5', 'h-3.5');
+                } else {
+                    dot.classList.remove('bg-brand-gold', 'w-3.5', 'h-3.5');
+                    dot.classList.add('bg-white/40', 'w-2.5', 'h-2.5');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        setInterval(nextSlide, 7000);
+
+        // 6. Filtro do Mostruário
+        function filterShowcase(category) {
+            const items = document.querySelectorAll('.showcase-item');
+            const btns = document.querySelectorAll('.tab-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('bg-brand-red', 'text-white', 'active');
+                btn.classList.add('bg-white', 'text-brand-redDeep');
+            });
+
+            event.target.classList.remove('bg-white', 'text-brand-redDeep');
+            event.target.classList.add('bg-brand-red', 'text-white', 'active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
