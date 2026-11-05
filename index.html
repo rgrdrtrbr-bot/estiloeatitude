@@ -158,6 +158,9 @@
                 <a href="#blackweek" class="text-brand-goldLight font-black hover:text-white transition py-1 border-b-2 border-transparent hover:border-brand-gold flex items-center gap-1">
                     <i data-lucide="flame" class="w-4 h-4 text-brand-gold fill-brand-gold"></i> Black Week Natalina
                 </a>
+                <a href="#albuns-secretos" class="text-brand-goldLight font-black hover:text-white transition py-1 border-b-2 border-transparent hover:border-brand-gold flex items-center gap-1">
+                    <i data-lucide="lock" class="w-3.5 h-3.5 text-brand-gold"></i> Álbuns Secretos VIP
+                </a>
                 <a href="#calcados-destaque" class="hover:text-brand-goldLight transition py-1 border-b-2 border-transparent hover:border-brand-gold flex items-center gap-1">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-gold"></i> Vitrine Calçados
                 </a>
@@ -361,6 +364,96 @@
                     </div>
 
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NOVO: SEÇÃO DE ÁLBUNS SECRETOS & COFRES DE OFERTAS VIP -->
+    <section id="albuns-secretos" class="py-16 bg-gradient-to-b from-brand-redDeep via-brand-blackWeek to-brand-redDeep text-white relative border-b-4 border-brand-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-2 bg-brand-gold text-brand-redDeep text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest border border-white shadow-lg">
+                    <i data-lucide="key" class="w-4 h-4"></i> EXCLUSIVO & INTERATIVO
+                </span>
+                <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-black text-white mt-3">
+                    Álbuns Secretos de Ofertas VIP
+                </h2>
+                <p class="text-brand-goldLight text-sm sm:text-base mt-2 font-medium">
+                    Clique nas capas abaixo para abrir o leque de produtos e desbloquear o acesso às promoções exclusivas!
+                </p>
+            </div>
+
+            <!-- Grid com as Capas Secretas -->
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- CAPA 1: COFRE DE CALÇADOS & FESTAS -->
+                <div onclick="openAlbumModal('modal-calcados')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-4 border-brand-gold shadow-2xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1">
+                    <div class="relative h-96 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <!-- Imagem de Capa em Mosaico -->
+                        <img src="scarpinblack.jpg" alt="Capa Álbum Calçados" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        
+                        <!-- Selo de Cadeado Natalino -->
+                        <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full border border-brand-gold flex items-center gap-2 shadow-lg">
+                            <i data-lucide="lock" class="w-4 h-4 text-brand-gold"></i>
+                            ÁLBUM FECHADO • 8 OFERTAS DE CALÇADOS
+                        </div>
+
+                        <!-- Conteúdo da Capa -->
+                        <div class="absolute inset-0 flex flex-col justify-end p-8 text-center space-y-3">
+                            <div class="w-16 h-16 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border-2 border-white shadow-2xl group-hover:rotate-12 transition transform">
+                                <i data-lucide="sparkles" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="font-cinzel text-2xl sm:text-3xl font-black text-white">
+                                Álbum VIP: Calçados, Sandálias & Scarpins
+                            </h3>
+                            <p class="text-xs sm:text-sm text-brand-goldLight max-w-md mx-auto">
+                                Toque aqui para desbloquear a galeria inteira de Scarpins (por R$ 119,90), Sandálias com Strass e Tênis!
+                            </p>
+                            <div class="pt-2">
+                                <span class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-6 py-3 rounded-full text-xs transition border border-white shadow-lg">
+                                    <i data-lucide="unlock" class="w-4 h-4"></i> CLIQUE PARA ABRIR O LEQUE DE PRODUTOS
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 2: LIQUIDA PROMO DE BOTAS -->
+                <div onclick="openAlbumModal('modal-botas')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-4 border-brand-gold shadow-2xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1">
+                    <div class="relative h-96 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <!-- Imagem de Capa em Mosaico -->
+                        <img src="estilo4.jpg" alt="Capa Liquida Promo de Botas" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        
+                        <!-- Selo Fogo Promo -->
+                        <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full border border-brand-gold flex items-center gap-2 shadow-lg">
+                            <i data-lucide="flame" class="w-4 h-4 text-brand-gold"></i>
+                            LIQUIDA PROMO DE BOTAS & COTURNOS
+                        </div>
+
+                        <!-- Conteúdo da Capa -->
+                        <div class="absolute inset-0 flex flex-col justify-end p-8 text-center space-y-3">
+                            <div class="w-16 h-16 mx-auto bg-brand-red text-white rounded-full flex items-center justify-center border-2 border-brand-gold shadow-2xl group-hover:rotate-12 transition transform">
+                                <i data-lucide="gift" class="w-8 h-8 text-brand-gold"></i>
+                            </div>
+                            <h3 class="font-cinzel text-2xl sm:text-3xl font-black text-white">
+                                Liquidação Secreta: Botas & Coturnos
+                            </h3>
+                            <p class="text-xs sm:text-sm text-brand-goldLight max-w-md mx-auto">
+                                Toque aqui para abrir a seção especial de botas em couro, coturnos Beira Rio e ofertas exclusivas em queimão de estoque!
+                            </p>
+                            <div class="pt-2">
+                                <span class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-redDark text-white font-black px-6 py-3 rounded-full text-xs transition border border-brand-gold shadow-lg">
+                                    <i data-lucide="unlock" class="w-4 h-4"></i> CLIQUE PARA ABRIR A LIQUIDAÇÃO DE BOTAS
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -1141,6 +1234,215 @@
         </div>
     </footer>
 
+    <!-- MODAL POPUP: ÁLBUM VIP DE CALÇADOS (TELA CHEIA ISOLADA) -->
+    <div id="modal-calcados" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-7xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            
+            <!-- Header do Modal -->
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
+                        ✨ LEQUE DE OFERTAS DESBLOQUEADO
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Álbum VIP: Calçados & Scarpins em Promoção
+                    </h3>
+                </div>
+                <button onclick="closeAlbumModal('modal-calcados')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Grid de Produtos Isolados dentro do Álbum -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Item 1: Scarpin Black -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="scarpinblack.jpg" alt="Scarpin Black" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            R$ 119,90
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Scarpin Black Salto Bloco</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 35 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Scarpin
+                    </a>
+                </div>
+
+                <!-- Item 2: Scarpin Chocolate -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="scarpinchocolate.jpg" alt="Scarpin Chocolate" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            R$ 119,90
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Scarpin Chocolate Salto Bloco</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 35 / 38 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Scarpin
+                    </a>
+                </div>
+
+                <!-- Item 3: Scarpin Nude -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="scarpinnude.jpg" alt="Scarpin Nude" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            R$ 119,90
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Scarpin Nude Salto Bloco</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 37 / 38 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Scarpin
+                    </a>
+                </div>
+
+                <!-- Item 4: Sandália Preta Brilhos -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="estilo9.jpg" alt="Sandália Preta Brilhos" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            R$ 169,90
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Sandália Preta Salto Cristal</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 35 ao 39</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir esta Sandália
+                    </a>
+                </div>
+
+                <!-- Item 5: Tênis Actvitta -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="estilo8.jpg" alt="Tênis Actvitta" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            Conforto Soft
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Tênis Actvitta Lilás Soft</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 35 ao 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Tênis
+                    </a>
+                </div>
+
+                <!-- Item 6: Rasteirinha Beira Rio -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="estilo10.jpg" alt="Rasteirinha Glamour" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            Réveillon Strass
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Rasteirinha Glamour Nude</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 34 ao 39</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Rasteirinha
+                    </a>
+                </div>
+
+                <!-- Item 7: Sandália Dourada Modare -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="estilo11.jpg" alt="Sandália Dourada Modare" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            R$ 169,90
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Sandália Dourada Modare</h4>
+                    <p class="text-xs text-white/70">Ultra Conforto</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Sandália
+                    </a>
+                </div>
+
+                <!-- Item 8: Sandália Flatform Off -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="estilo12.jpg" alt="Sandália Flatform Off" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
+                            R$ 169,90
+                        </span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Flatform Off & Dourado</h4>
+                    <p class="text-xs text-white/70">Tamanhos: 36 ao 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Flatform
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-calcados')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM E VOLTAR À PÁGINA PRINCIPAL
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: LIQUIDA PROMO DE BOTAS (TELA CHEIA ISOLADA) -->
+    <div id="modal-botas" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            
+            <!-- Header do Modal -->
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-gold text-brand-redDeep text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-white">
+                        🔥 QUEIMÃO DE ESTOQUE DE BOTAS
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Liquida Promo: Botas & Coturnos em Couro
+                    </h3>
+                </div>
+                <button onclick="closeAlbumModal('modal-botas')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Destaque Principal da Liquidação -->
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
+                    <img src="estilo4.jpg" alt="Botas em Couro" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full border border-brand-gold">
+                        🔥 PROMOÇÃO LIQUIDA DE NATAL
+                    </span>
+                    <h4 class="font-serif text-3xl font-bold text-white">
+                        Botas em Couro Legítimo & Coturnos Confortáveis
+                    </h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Variedade de modelos de cano curto e cano longo, solado tratorado e materiais em couro e camurça com descontos imperdíveis de liquidação!
+                    </p>
+                    <div class="p-4 bg-black/60 rounded-2xl border border-brand-gold/50 space-y-1">
+                        <span class="text-xs font-bold text-brand-goldLight block">📲 Como funciona a liquidação:</span>
+                        <p class="text-xs text-white/80">
+                            Chame nossa equipe no WhatsApp informando a sua numeração para receber o catálogo completo em vídeo das botas com preço promocional!
+                        </p>
+                    </div>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>CONSULTAR MODELOS DE BOTAS NO WHATSAPP</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-botas')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR LIQUIDAÇÃO DE BOTAS E VOLTAR
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <!-- BOTÃO FLUTUANTE DO WHATSAPP COM NATAL & BLACK WEEK -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         <div class="hidden sm:flex items-center gap-2 bg-black text-brand-goldLight px-3.5 py-2 rounded-full shadow-2xl border-2 border-brand-gold mb-2 text-xs font-black animate-bounce">
@@ -1332,6 +1634,23 @@
                     item.style.display = 'none';
                 }
             });
+        }
+
+        // 7. Funções dos Álbuns Secretos Modal
+        function openAlbumModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Evita scroll de fundo
+            }
+        }
+
+        function closeAlbumModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restaura o scroll
+            }
         }
     </script>
 </body>
