@@ -369,7 +369,7 @@
         </div>
     </section>
 
-    <!-- NOVO: SEÇÃO DE ÁLBUNS SECRETOS & COFRES DE OFERTAS VIP -->
+    <!-- SEÇÃO ATUALIZADA: 10 ÁLBUNS SECRETOS & COFRES DE OFERTAS VIP -->
     <section id="albuns-secretos" class="py-16 bg-gradient-to-b from-brand-redDeep via-brand-blackWeek to-brand-redDeep text-white relative border-b-4 border-brand-gold">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
@@ -381,75 +381,219 @@
                     Álbuns Secretos de Ofertas VIP
                 </h2>
                 <p class="text-brand-goldLight text-sm sm:text-base mt-2 font-medium">
-                    Clique nas capas abaixo para abrir o leque de produtos e desbloquear o acesso às promoções exclusivas!
+                    Escolha uma das categorias abaixo e clique no cofre para abrir o leque exclusivo de produtos!
                 </p>
             </div>
 
-            <!-- Grid com as Capas Secretas -->
-            <div class="grid md:grid-cols-2 gap-8">
+            <!-- Grid com as 10 Capas Secretas -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
                 
-                <!-- CAPA 1: COFRE DE CALÇADOS & FESTAS -->
-                <div onclick="openAlbumModal('modal-calcados')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-4 border-brand-gold shadow-2xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1">
-                    <div class="relative h-96 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
-                        <!-- Imagem de Capa em Mosaico -->
-                        <img src="scarpinblack.jpg" alt="Capa Álbum Calçados" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                <!-- CAPA 1: SANDÁLIAS & RASTEIRAS -->
+                <div onclick="openAlbumModal('modal-sandalias')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo9.jpg" alt="Sandálias & Rasteiras" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                        
-                        <!-- Selo de Cadeado Natalino -->
-                        <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full border border-brand-gold flex items-center gap-2 shadow-lg">
-                            <i data-lucide="lock" class="w-4 h-4 text-brand-gold"></i>
-                            ÁLBUM FECHADO • 8 OFERTAS DE CALÇADOS
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="lock" class="w-3 h-3 text-brand-gold"></i> VIP
                         </div>
-
-                        <!-- Conteúdo da Capa -->
-                        <div class="absolute inset-0 flex flex-col justify-end p-8 text-center space-y-3">
-                            <div class="w-16 h-16 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border-2 border-white shadow-2xl group-hover:rotate-12 transition transform">
-                                <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border border-white shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">👡</span>
                             </div>
-                            <h3 class="font-cinzel text-2xl sm:text-3xl font-black text-white">
-                                Álbum VIP: Calçados, Sandálias & Scarpins
-                            </h3>
-                            <p class="text-xs sm:text-sm text-brand-goldLight max-w-md mx-auto">
-                                Toque aqui para desbloquear a galeria inteira de Scarpins (por R$ 119,90), Sandálias com Strass e Tênis!
-                            </p>
-                            <div class="pt-2">
-                                <span class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-6 py-3 rounded-full text-xs transition border border-white shadow-lg">
-                                    <i data-lucide="unlock" class="w-4 h-4"></i> CLIQUE PARA ABRIR O LEQUE DE PRODUTOS
-                                </span>
-                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Sandálias & Rasteiras</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Sandálias de salto, modelos cristal, dourados, flatforms e rasteirinhas com brilho. Elegância e conforto para todas as ocasiões.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- CAPA 2: LIQUIDA PROMO DE BOTAS -->
-                <div onclick="openAlbumModal('modal-botas')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-4 border-brand-gold shadow-2xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1">
-                    <div class="relative h-96 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
-                        <!-- Imagem de Capa em Mosaico -->
-                        <img src="estilo4.jpg" alt="Capa Liquida Promo de Botas" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                <!-- CAPA 2: TÊNIS & COMFORT -->
+                <div onclick="openAlbumModal('modal-tenis')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo8.jpg" alt="Tênis & Comfort" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                        
-                        <!-- Selo Fogo Promo -->
-                        <div class="absolute top-4 left-4 bg-brand-red text-white text-xs font-black px-4 py-1.5 rounded-full border border-brand-gold flex items-center gap-2 shadow-lg">
-                            <i data-lucide="flame" class="w-4 h-4 text-brand-gold"></i>
-                            LIQUIDA PROMO DE BOTAS & COTURNOS
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="lock" class="w-3 h-3 text-brand-gold"></i> VIP
                         </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border border-white shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">👟</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Tênis & Comfort</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Tênis urbanos, esportivos e casuais. Modelos que combinam conforto, versatilidade e estilo para acompanhar sua rotina.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Conteúdo da Capa -->
-                        <div class="absolute inset-0 flex flex-col justify-end p-8 text-center space-y-3">
-                            <div class="w-16 h-16 mx-auto bg-brand-red text-white rounded-full flex items-center justify-center border-2 border-brand-gold shadow-2xl group-hover:rotate-12 transition transform">
-                                <i data-lucide="gift" class="w-8 h-8 text-brand-gold"></i>
+                <!-- CAPA 3: SHOES SALE | PREÇOS ESPECIAIS -->
+                <div onclick="openAlbumModal('modal-shoessale')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="scarpinblack.jpg" alt="Shoes Sale" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="lock" class="w-3 h-3 text-brand-gold"></i> VIP
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border border-white shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">👠</span>
                             </div>
-                            <h3 class="font-cinzel text-2xl sm:text-3xl font-black text-white">
-                                Liquidação Secreta: Botas & Coturnos
-                            </h3>
-                            <p class="text-xs sm:text-sm text-brand-goldLight max-w-md mx-auto">
-                                Toque aqui para abrir a seção especial de botas em couro, coturnos Beira Rio e ofertas exclusivas em queimão de estoque!
-                            </p>
-                            <div class="pt-2">
-                                <span class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-redDark text-white font-black px-6 py-3 rounded-full text-xs transition border border-brand-gold shadow-lg">
-                                    <i data-lucide="unlock" class="w-4 h-4"></i> CLIQUE PARA ABRIR A LIQUIDAÇÃO DE BOTAS
-                                </span>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Shoes Sale</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Scarpins, saltos, sandálias e calçados selecionados com descontos especiais. Seus modelos favoritos por preços que surpreendem!</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 4: ÚLTIMA CHANCE | BOTAS R$ 99,90 -->
+                <div onclick="openAlbumModal('modal-botas')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo4.jpg" alt="Botas R$ 99,90" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="flame" class="w-3 h-3 text-brand-gold"></i> R$ 99,90
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-red text-white rounded-full flex items-center justify-center border border-brand-gold shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">👢</span>
                             </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Última Chance | Botas R$ 99,90</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">É agora ou nunca! Botas e coturnos selecionados por apenas R$ 99,90. Uma oportunidade especial!</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-red text-white font-black px-3 py-1.5 rounded-full text-[10px] border border-brand-gold mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 5: ACESSÓRIOS & BOLSAS -->
+                <div onclick="openAlbumModal('modal-acessorios')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo5.jpg" alt="Acessórios & Bolsas" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="lock" class="w-3 h-3 text-brand-gold"></i> VIP
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border border-white shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">👜</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Acessórios & Bolsas</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Bolsas estruturadas, carteiras, brincos, cintos e acessórios que complementam e valorizam qualquer produção.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 6: FITNESS & CASUAL | LIBIDUS -->
+                <div onclick="openAlbumModal('modal-libidus')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo7.jpg" alt="Fitness & Casual Libidus" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="flame" class="w-3 h-3 text-brand-gold"></i> LIBIDUS
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-red text-white rounded-full flex items-center justify-center border border-brand-gold shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">🔥</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Fitness & Casual | Libidus</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Do fitness ao casual, do conforto do dia a dia à produção especial com versatilidade e liberdade de movimento.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-red text-white font-black px-3 py-1.5 rounded-full text-[10px] border border-brand-gold mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 7: MODA MASCULINA | FITNESS & CASUAL -->
+                <div onclick="openAlbumModal('modal-masculino')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="cafeecha.jpg" alt="Moda Masculina" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-black text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="user" class="w-3 h-3 text-brand-gold"></i> MASCULINO
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-black text-white rounded-full flex items-center justify-center border border-brand-gold shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">🖤</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Moda Masculina</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Do treino à rotina, do básico ao estiloso. Moda masculina fitness e casual com peças confortáveis e modernas.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 8: PRIMAVERA VERÃO | ESTILO & ATITUDE -->
+                <div onclick="openAlbumModal('modal-primavera')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo1.jpg" alt="Primavera Verão" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[9px] font-black px-2.5 py-0.5 rounded-full border border-white flex items-center gap-1 shadow">
+                            <i data-lucide="sun" class="w-3 h-3 text-brand-redDeep"></i> NOVA COLEÇÃO
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border border-white shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">🌸</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Primavera Verão</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Linha jeans, vestidos, saias, t-shirts e muito mais. Seleção de tendências e novidades do universo feminino.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 9: MODA FITNESS | BRUNA BIA ATIVA -->
+                <div onclick="openAlbumModal('modal-brunabia')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo6.jpg" alt="Bruna Bia Ativa" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-red text-white text-[9px] font-black px-2.5 py-0.5 rounded-full border border-brand-gold flex items-center gap-1 shadow">
+                            <i data-lucide="zap" class="w-3 h-3 text-brand-gold"></i> ATIVA
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-red text-white rounded-full flex items-center justify-center border border-brand-gold shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">💪</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Bruna Bia Ativa</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Roupas para o dia a dia, lazer e trabalho com conforto. Peças comfy e estampas inovadoras com estilo.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-red text-white font-black px-3 py-1.5 rounded-full text-[10px] border border-brand-gold mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAPA 10: MODA ÍNTIMA & PRAIA | FEMININA E MASCULINA -->
+                <div onclick="openAlbumModal('modal-intimapraia')" class="group relative bg-gradient-to-br from-brand-redDeep via-black to-brand-redDark rounded-3xl p-2 border-2 border-brand-gold/80 shadow-xl hover:shadow-brand-gold/40 transition duration-500 cursor-pointer overflow-hidden transform hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                        <img src="estilo10.jpg" alt="Moda Íntima & Praia" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[9px] font-black px-2.5 py-0.5 rounded-full border border-white flex items-center gap-1 shadow">
+                            <i data-lucide="heart" class="w-3 h-3 text-brand-redDeep"></i> PRAIA & ÍNTIMA
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-4 text-center space-y-1">
+                            <div class="w-10 h-10 mx-auto bg-brand-gold text-brand-redDeep rounded-full flex items-center justify-center border border-white shadow-xl group-hover:rotate-12 transition">
+                                <span class="text-lg">🤍</span>
+                            </div>
+                            <h3 class="font-cinzel text-base font-black text-white leading-tight">Moda Íntima & Praia</h3>
+                            <p class="text-[10px] text-brand-goldLight line-clamp-3">Lingeries, calcinhas, sutiãs, cuecas, meias, biquínis, maiôs, sungas e saídas de praia com bem-estar.</p>
+                            <span class="inline-flex items-center justify-center gap-1 bg-brand-gold text-brand-redDeep font-black px-3 py-1.5 rounded-full text-[10px] border border-white mt-1">
+                                <i data-lucide="unlock" class="w-3 h-3"></i> ABRIR COFRE
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -1234,212 +1378,526 @@
         </div>
     </footer>
 
-    <!-- MODAL POPUP: ÁLBUM VIP DE CALÇADOS (TELA CHEIA ISOLADA) -->
-    <div id="modal-calcados" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+    <!-- MODAL 1: ÁLBUM VIP DE SANDÁLIAS & RASTEIRAS -->
+    <div id="modal-sandalias" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
         <div class="max-w-7xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
-            
-            <!-- Header do Modal -->
             <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
                 <div>
                     <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
-                        ✨ LEQUE DE OFERTAS DESBLOQUEADO
+                        👡 ÁLBUM VIP: SANDÁLIAS & RASTEIRAS
                     </span>
                     <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
-                        Álbum VIP: Calçados & Scarpins em Promoção
+                        Sandálias & Rasteiras
                     </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Sandálias de salto, modelos cristal, dourados, flatforms e rasteirinhas com brilho. Elegância e conforto para todas as ocasiões.
+                    </p>
                 </div>
-                <button onclick="closeAlbumModal('modal-calcados')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                <button onclick="closeAlbumModal('modal-sandalias')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
 
-            <!-- Grid de Produtos Isolados dentro do Álbum -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Item 1: Scarpin Black -->
-                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
-                        <img src="scarpinblack.jpg" alt="Scarpin Black" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            R$ 119,90
-                        </span>
-                    </div>
-                    <h4 class="font-bold text-sm text-white">Scarpin Black Salto Bloco</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 35 / 39 / 40</p>
-                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Scarpin
-                    </a>
-                </div>
-
-                <!-- Item 2: Scarpin Chocolate -->
-                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
-                        <img src="scarpinchocolate.jpg" alt="Scarpin Chocolate" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            R$ 119,90
-                        </span>
-                    </div>
-                    <h4 class="font-bold text-sm text-white">Scarpin Chocolate Salto Bloco</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 35 / 38 / 39 / 40</p>
-                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Scarpin
-                    </a>
-                </div>
-
-                <!-- Item 3: Scarpin Nude -->
-                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
-                        <img src="scarpinnude.jpg" alt="Scarpin Nude" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            R$ 119,90
-                        </span>
-                    </div>
-                    <h4 class="font-bold text-sm text-white">Scarpin Nude Salto Bloco</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 37 / 38 / 39 / 40</p>
-                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Scarpin
-                    </a>
-                </div>
-
-                <!-- Item 4: Sandália Preta Brilhos -->
+                <!-- Sandália Preta -->
                 <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
                     <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
                         <img src="estilo9.jpg" alt="Sandália Preta Brilhos" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            R$ 169,90
-                        </span>
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">R$ 169,90</span>
                     </div>
                     <h4 class="font-bold text-sm text-white">Sandália Preta Salto Cristal</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 35 ao 39</p>
+                    <p class="text-xs text-white/70">Tam: 35 ao 39 • Beira Rio Glamour</p>
                     <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir esta Sandália
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Sandália Preta
                     </a>
                 </div>
 
-                <!-- Item 5: Tênis Actvitta -->
-                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
-                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
-                        <img src="estilo8.jpg" alt="Tênis Actvitta" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            Conforto Soft
-                        </span>
-                    </div>
-                    <h4 class="font-bold text-sm text-white">Tênis Actvitta Lilás Soft</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 35 ao 40</p>
-                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir este Tênis
-                    </a>
-                </div>
-
-                <!-- Item 6: Rasteirinha Beira Rio -->
+                <!-- Rasteirinha Nude -->
                 <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
                     <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
                         <img src="estilo10.jpg" alt="Rasteirinha Glamour" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            Réveillon Strass
-                        </span>
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">Réveillon Strass</span>
                     </div>
-                    <h4 class="font-bold text-sm text-white">Rasteirinha Glamour Nude</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 34 ao 39</p>
+                    <h4 class="font-bold text-sm text-white">Rasteirinha Glamour Laço Strass</h4>
+                    <p class="text-xs text-white/70">Tam: 34 ao 39 • Beira Rio</p>
                     <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
                         <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Rasteirinha
                     </a>
                 </div>
 
-                <!-- Item 7: Sandália Dourada Modare -->
+                <!-- Sandália Dourada -->
                 <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
                     <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
-                        <img src="estilo11.jpg" alt="Sandália Dourada Modare" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            R$ 169,90
-                        </span>
+                        <img src="estilo11.jpg" alt="Sandália Dourada" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">R$ 169,90</span>
                     </div>
                     <h4 class="font-bold text-sm text-white">Sandália Dourada Modare</h4>
-                    <p class="text-xs text-white/70">Ultra Conforto</p>
+                    <p class="text-xs text-white/70">Ultra Conforto • Salto Bloco</p>
                     <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Sandália
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Sandália Dourada
                     </a>
                 </div>
 
-                <!-- Item 8: Sandália Flatform Off -->
+                <!-- Sandália Flatform Off -->
                 <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
                     <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
-                        <img src="estilo12.jpg" alt="Sandália Flatform Off" class="w-full h-full object-cover">
-                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">
-                            R$ 169,90
-                        </span>
+                        <img src="estilo12.jpg" alt="Flatform Off" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">R$ 169,90</span>
                     </div>
-                    <h4 class="font-bold text-sm text-white">Flatform Off & Dourado</h4>
-                    <p class="text-xs text-white/70">Tamanhos: 36 ao 40</p>
+                    <h4 class="font-bold text-sm text-white">Flatform Off & Nó Dourado</h4>
+                    <p class="text-xs text-white/70">Tam: 36 ao 40 • Beira Rio</p>
                     <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
                         <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Flatform
                     </a>
                 </div>
-
             </div>
 
             <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
-                <button onclick="closeAlbumModal('modal-calcados')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
-                    FECHAR ÁLBUM E VOLTAR À PÁGINA PRINCIPAL
+                <button onclick="closeAlbumModal('modal-sandalias')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM
                 </button>
             </div>
-
         </div>
     </div>
 
-    <!-- MODAL POPUP: LIQUIDA PROMO DE BOTAS (TELA CHEIA ISOLADA) -->
+    <!-- MODAL 2: ÁLBUM VIP DE TÊNIS & COMFORT -->
+    <div id="modal-tenis" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-7xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
+                        👟 ÁLBUM VIP: TÊNIS & COMFORT
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Tênis & Comfort
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Tênis urbanos, esportivos e casuais. Modelos que combinam conforto, versatilidade e estilo para acompanhar sua rotina.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-tenis')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tênis Actvitta -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="estilo8.jpg" alt="Tênis Actvitta Lilás Soft" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Cor Natural</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Tênis Actvitta Lilás Soft</h4>
+                    <p class="text-xs text-white/70">Tam: 35 ao 40 • Leveza & Maciez</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Espaço Reservado 1 -->
+                <div class="bg-black/40 rounded-2xl border-2 border-dashed border-brand-gold/40 p-6 flex flex-col items-center justify-center text-center space-y-3">
+                    <i data-lucide="plus-circle" class="w-10 h-10 text-brand-goldLight"></i>
+                    <h4 class="font-bold text-sm text-brand-goldLight">Espaço Reservado para Novo Modelo</h4>
+                    <p class="text-xs text-white/60">Envie a foto para adicionar a este álbum!</p>
+                </div>
+
+                <!-- Espaço Reservado 2 -->
+                <div class="bg-black/40 rounded-2xl border-2 border-dashed border-brand-gold/40 p-6 flex flex-col items-center justify-center text-center space-y-3">
+                    <i data-lucide="plus-circle" class="w-10 h-10 text-brand-goldLight"></i>
+                    <h4 class="font-bold text-sm text-brand-goldLight">Espaço Reservado para Novo Modelo</h4>
+                    <p class="text-xs text-white/60">Envie a foto para adicionar a este álbum!</p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-tenis')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ÁLBUM VIP DE SHOES SALE | PREÇOS ESPECIAIS -->
+    <div id="modal-shoessale" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-7xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
+                        👠 ÁLBUM VIP: SHOES SALE | PREÇOS ESPECIAIS
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Shoes Sale | Preços Especiais
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Scarpins, saltos, sandálias e calçados selecionados com descontos especiais. Seus modelos favoritos por preços que surpreendem!
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-shoessale')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Scarpin Black -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="scarpinblack.jpg" alt="Scarpin Black" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Por R$ 119,90</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Scarpin Black Salto Bloco</h4>
+                    <p class="text-xs text-white/70">De R$ 159,90 Por R$ 119,90 • Tam: 35 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Scarpin Preto
+                    </a>
+                </div>
+
+                <!-- Scarpin Chocolate -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="scarpinchocolate.jpg" alt="Scarpin Chocolate" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-gold text-brand-redDeep text-[10px] font-bold px-2.5 py-1 rounded-full">Por R$ 119,90</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Scarpin Chocolate Salto Bloco</h4>
+                    <p class="text-xs text-white/70">De R$ 159,90 Por R$ 119,90 • Tam: 35 / 38 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Scarpin Chocolate
+                    </a>
+                </div>
+
+                <!-- Scarpin Nude -->
+                <div class="bg-black/80 rounded-2xl overflow-hidden border border-brand-gold/60 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative">
+                        <img src="scarpinnude.jpg" alt="Scarpin Nude" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Por R$ 119,90</span>
+                    </div>
+                    <h4 class="font-bold text-sm text-white">Scarpin Nude Salto Bloco</h4>
+                    <p class="text-xs text-white/70">De R$ 159,90 Por R$ 119,90 • Tam: 37 / 38 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir Scarpin Nude
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-shoessale')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: ÚLTIMA CHANCE | BOTAS R$ 99,90 -->
     <div id="modal-botas" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
         <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
-            
-            <!-- Header do Modal -->
             <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
                 <div>
                     <span class="bg-brand-gold text-brand-redDeep text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-white">
-                        🔥 QUEIMÃO DE ESTOQUE DE BOTAS
+                        👢 OPORTUNIDADE ÚNICA: BOTAS R$ 99,90
                     </span>
                     <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
-                        Liquida Promo: Botas & Coturnos em Couro
+                        Última Chance | Botas R$ 99,90
                     </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        É agora ou nunca! Botas e coturnos selecionados por apenas R$ 99,90. Uma oportunidade especial para garantir seus favoritos antes que acabem!
+                    </p>
                 </div>
                 <button onclick="closeAlbumModal('modal-botas')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
 
-            <!-- Destaque Principal da Liquidação -->
             <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
                 <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
-                    <img src="estilo4.jpg" alt="Botas em Couro" class="w-full h-full object-cover">
+                    <img src="estilo4.jpg" alt="Botas R$ 99,90" class="w-full h-full object-cover">
                 </div>
                 <div class="space-y-4">
-                    <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full border border-brand-gold">
-                        🔥 PROMOÇÃO LIQUIDA DE NATAL
-                    </span>
-                    <h4 class="font-serif text-3xl font-bold text-white">
-                        Botas em Couro Legítimo & Coturnos Confortáveis
-                    </h4>
+                    <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full border border-brand-gold">🔥 APENAS R$ 99,90</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Botas em Couro Legítimo & Coturnos Selecionados</h4>
                     <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
-                        Variedade de modelos de cano curto e cano longo, solado tratorado e materiais em couro e camurça com descontos imperdíveis de liquidação!
+                        É agora ou nunca! Garanta modelos em couro e coturnos confortáveis da nossa liquidação exclusiva antes que o estoque esgoste.
                     </p>
-                    <div class="p-4 bg-black/60 rounded-2xl border border-brand-gold/50 space-y-1">
-                        <span class="text-xs font-bold text-brand-goldLight block">📲 Como funciona a liquidação:</span>
-                        <p class="text-xs text-white/80">
-                            Chame nossa equipe no WhatsApp informando a sua numeração para receber o catálogo completo em vídeo das botas com preço promocional!
-                        </p>
-                    </div>
                     <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
                         <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
-                        <span>CONSULTAR MODELOS DE BOTAS NO WHATSAPP</span>
+                        <span>GARANTIR BOTAS R$ 99,90 NO WHATSAPP</span>
                     </a>
                 </div>
             </div>
 
             <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
                 <button onclick="closeAlbumModal('modal-botas')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
-                    FECHAR LIQUIDAÇÃO DE BOTAS E VOLTAR
+                    FECHAR ÁLBUM DE BOTAS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5: ACESSÓRIOS & BOLSAS -->
+    <div id="modal-acessorios" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-gold text-brand-redDeep text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-white">
+                        👜 ÁLBUM VIP: ACESSÓRIOS & BOLSAS
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Acessórios & Bolsas
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Bolsas estruturadas, carteiras, brincos, cintos e acessórios que complementam e valorizam qualquer produção.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-acessorios')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
 
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
+                    <img src="estilo5.jpg" alt="Acessórios & Bolsas" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brand-gold text-brand-redDeep text-xs font-black px-3 py-1 rounded-full border border-white">✨ DETALHES DE LUXO</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Bolsas Estruturadas, Carteiras & Cintos</h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Peças selecionadas para completar o visual com elegância e sofisticação.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>PEDIR FOTOS DE BOLSAS NO WHATSAPP</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-acessorios')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ACESSÓRIOS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 6: FITNESS & CASUAL | LIBIDUS -->
+    <div id="modal-libidus" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
+                        🔥 ÁLBUM VIP: FITNESS & CASUAL | LIBIDUS
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Fitness & Casual | Libidus
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Do fitness ao casual, do conforto do dia a dia à produção para um evento especial. Uma seleção de peças versáteis, modernas e cheias de personalidade.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-libidus')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
+                    <img src="estilo7.jpg" alt="Fitness & Casual Libidus" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full border border-brand-gold">🔥 MARCA LIBIDUS</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Liberdade de Movimento & Atitude</h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Peças modernas para quem busca liberdade de movimento sem abrir mão de estar bem-vestida em qualquer ocasião.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>VER COLEÇÃO LIBIDUS NO WHATSAPP</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-libidus')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM LIBIDUS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 7: MODA MASCULINA | FITNESS & CASUAL -->
+    <div id="modal-masculino" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-black text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
+                        🖤 ÁLBUM VIP: MODA MASCULINA | FITNESS & CASUAL
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Moda Masculina | Fitness & Casual
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Do treino à rotina, do básico ao estiloso. Moda masculina fitness e casual com peças confortáveis, modernas e versáteis.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-masculino')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold flex items-center justify-center bg-black">
+                    <img src="cafeecha.jpg" alt="Moda Masculina" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-black text-white text-xs font-black px-3 py-1 rounded-full border border-brand-gold">🖤 LINHA MASCULINA</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Estilo & Conforto Para Eles</h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Camisetas, bermudas, moda fitness masculina e peças casuais perfeitas para o dia a dia e treinos.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>CONSULTAR MODA MASCULINA NO WHATS</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-masculino')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM MASCULINO
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 8: PRIMAVERA VERÃO | ESTILO & ATITUDE -->
+    <div id="modal-primavera" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-gold text-brand-redDeep text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-white">
+                        🌸 ÁLBUM VIP: PRIMAVERA VERÃO | ESTILO & ATITUDE
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Primavera Verão | Estilo & Atitude
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Linha jeans, vestidos, saias, t-shirts e muito mais. Uma seleção de tendências, peças versáteis e novidades.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-primavera')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
+                    <img src="estilo1.jpg" alt="Primavera Verão Estilo" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brand-gold text-brand-redDeep text-xs font-black px-3 py-1 rounded-full border border-white">🌸 TENDÊNCIAS DE VERÃO</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Vestidos, Jeans & T-Shirts Femininas</h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Peças leves, estampas vibrantes e novidades que traduzem o melhor da moda feminina nesta estação.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>PEDIR LOOKS PRIMAVERA VERÃO NO WHATS</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-primavera')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM PRIMAVERA VERÃO
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 9: MODA FITNESS | BRUNA BIA ATIVA -->
+    <div id="modal-brunabia" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-red text-white text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-brand-gold">
+                        💪 ÁLBUM VIP: MODA FITNESS | BRUNA BIA ATIVA
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Moda Fitness | Bruna Bia Ativa
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Roupas para o dia a dia, lazer e trabalho com conforto. Peças comfy, moda fitness versátil e estampas inovadoras.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-brunabia')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
+                    <img src="estilo6.jpg" alt="Bruna Bia Ativa" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brand-red text-white text-xs font-black px-3 py-1 rounded-full border border-brand-gold">💪 LINHA BRUNA BIA ATIVA</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Praticidade, Personalidade & Estilo Comfy</h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Peças extremamente confortáveis e versáteis que unem praticidade, estampas exclusivas e liberdade no dia a dia.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>VER LINHA BRUNA BIA NO WHATSAPP</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-brunabia')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM BRUNA BIA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 10: MODA ÍNTIMA & PRAIA | FEMININA E MASCULINA -->
+    <div id="modal-intimapraia" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden overflow-y-auto p-4 sm:p-6 transition-opacity duration-300">
+        <div class="max-w-6xl mx-auto my-6 bg-brand-blackWeek rounded-3xl border-4 border-brand-gold p-6 sm:p-8 shadow-2xl text-white relative">
+            <div class="flex items-center justify-between pb-6 border-b border-brand-gold/40 mb-6">
+                <div>
+                    <span class="bg-brand-gold text-brand-redDeep text-[11px] font-black px-3 py-1 rounded-full uppercase tracking-widest border border-white">
+                        🤍 ÁLBUM VIP: MODA ÍNTIMA & PRAIA
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-4xl font-black text-white mt-2">
+                        Moda Íntima & Praia | Feminina e Masculina
+                    </h3>
+                    <p class="text-xs sm:text-sm text-brand-goldLight mt-1">
+                        Conforto, beleza e estilo em todos os momentos! Lingeries, calcinhas, sutiãs, cuecas, meias, biquínis, maiôs, sungas e saídas de praia.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-intimapraia')" class="bg-brand-red hover:bg-brand-redDark text-white font-bold p-3 rounded-full transition border border-brand-gold flex items-center justify-center shadow-lg">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-brand-redDeep/60 p-6 rounded-3xl border border-brand-gold/40">
+                <div class="h-96 rounded-2xl overflow-hidden border-2 border-brand-gold">
+                    <img src="estilo10.jpg" alt="Moda Íntima & Praia" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-brand-gold text-brand-redDeep text-xs font-black px-3 py-1 rounded-full border border-white">☀️ DIAS DE SOL & BEM-ESTAR</span>
+                    <h4 class="font-serif text-3xl font-bold text-white">Lingerie, Moda Praia & Peças Íntimas</h4>
+                    <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+                        Seleção completa que une bem-estar, versatilidade e tendências, das lingeries aos biquínis, maiôs e sungas para o Verão.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl border border-white">
+                        <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+                        <span>CONSULTAR MODA ÍNTIMA & PRAIA NO WHATS</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center pt-6 border-t border-brand-gold/30">
+                <button onclick="closeAlbumModal('modal-intimapraia')" class="bg-brand-gold hover:bg-brand-goldLight text-brand-redDeep font-black px-8 py-3 rounded-full text-xs transition border border-white">
+                    FECHAR ÁLBUM ÍNTIMA & PRAIA
+                </button>
+            </div>
         </div>
     </div>
 
