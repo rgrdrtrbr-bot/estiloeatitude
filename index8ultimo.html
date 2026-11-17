@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo e Libídus — Curadoria de Moda, Natal & Black Week | Santiago RS</title>
+    <meta name="description" content="Moda que veste sem pressa. Conheça a curadoria da Estilo e Libídus em Santiago RS: alfaiataria, tricô nobre, linha Libídus e Cofres VIP de ofertas.">
+
+    <!-- Google Fonts: Instrument Serif (Estilo Editorial Moenda) + Cormorant + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: {
+                            base: '#F6F1E9',       /* Papel linho quente (fundo principal) */
+                            stone: '#EDE5D8',      /* Papel pedra suave (seções alternadas) */
+                            ink: '#191412',        /* Tinta café-expresso profunda */
+                            ruby: '#8E1B24',       /* Vermelho rubi natalino fosco */
+                            wine: '#4E1117',       /* Vinho veludo profundo */
+                            brass: '#A67F38',      /* Latão / dourado envelhecido */
+                            brassLight: '#E8D39E', /* Champanhe suave */
+                            muted: '#6B6058',      /* Texto secundário orgânico */
+                            line: '#DCD2C3'        /* Fio arquitetônico 1px */
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Instrument Serif"', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Textura sutil de papel artesanal em toda a página */
+        .paper-grain {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 60;
+            opacity: 0.032;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Enquadramento fotográfico superior */
+        .img-top-center {
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        /* Animação Marquee Contínua (Dupla Faixa Estilo Moenda) */
+        @keyframes marquee-left {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+        .animate-marquee-left {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 36s linear infinite;
+        }
+        .animate-marquee-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 42s linear infinite;
+        }
+        .marquee-wrapper:hover .animate-marquee-left,
+        .marquee-wrapper:hover .animate-marquee-right {
+            animation-play-state: paused;
+        }
+
+        /* Transições suaves das etapas de Scrollytelling */
+        .scroll-chapter {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 0.35;
+        }
+        .scroll-chapter.active {
+            opacity: 1;
+        }
+
+        /* Camadas fotográficas no palco visual sticky */
+        .stage-photo {
+            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0;
+            transform: scale(1.04);
+        }
+        .stage-photo.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Etiquetas apontadoras flutuantes (estilo callouts do Moenda Café) */
+        .callout-tag {
+            transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+            opacity: 0.45;
+            transform: translateY(4px);
+        }
+        .callout-tag.active {
+            opacity: 1;
+            transform: translateY(0);
+            border-color: #A67F38;
+            background-color: #191412;
+            color: #F6F1E9;
+        }
+
+        /* Barra de rolagem minimalista */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6F1E9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C4B7A4;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body class="bg-paper-base text-paper-ink font-sans antialiased selection:bg-paper-ruby selection:text-white relative">
+
+    <!-- Textura Tátil de Papel -->
+    <div class="paper-grain"></div>
+
+    <!-- CABEÇALHO ARQUITETÔNICO MINIMALISTA (ESTILO MOENDA) -->
+    <header class="sticky top-0 z-40 bg-paper-base/90 backdrop-blur-md border-b border-paper-line">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logotipo Editorial -->
+            <a href="#inicio" class="flex items-center gap-3 group">
+                <img src="logomarcaestilo.jpg" onerror="this.src='https://placehold.co/80x80/191412/E8D39E?text=E%26L'" alt="Estilo e Libídus" class="w-9 h-9 rounded-full object-cover border border-paper-line grayscale-[20%] group-hover:grayscale-0 transition">
+                <span class="font-display text-3xl tracking-tight text-paper-ink leading-none">
+                    estilo <span class="italic text-paper-ruby">&amp;</span> libídus
+                </span>
+            </a>
+
+            <!-- Navegação Limpa -->
+            <nav class="hidden lg:flex items-center gap-9 text-[13px] font-medium text-paper-muted">
+                <a href="#provador-ao-look" class="hover:text-paper-ink transition">Do provador ao look</a>
+                <a href="#curadoria" class="hover:text-paper-ink transition">Nossa curadoria</a>
+                <a href="#cofres-vip" class="hover:text-paper-ink transition inline-flex items-center gap-1.5">
+                    <span>Cofres VIP</span>
+                    <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-paper-stone text-paper-ink border border-paper-line">10</span>
+                </a>
+                <a href="#blackweek" class="hover:text-paper-ink transition">Natal &amp; Black Week</a>
+                <a href="#visite" class="hover:text-paper-ink transition">Visite</a>
+            </nav>
+
+            <!-- Status Ao Vivo + Botão Discreto -->
+            <div class="flex items-center gap-4">
+                <div id="header-status" class="hidden sm:inline-flex items-center gap-2 text-xs text-paper-muted">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                    <span>Aberto agora</span>
+                </div>
+
+                <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" class="bg-paper-ink hover:bg-paper-ruby text-paper-base px-5 py-2.5 rounded-full text-xs font-medium tracking-wide inline-flex items-center gap-2 transition duration-300">
+                    <span>WhatsApp</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO EDITORIAL (SILENCIOSO, CONFIANTE E POÉTICO COMO O MOENDA CAFÉ) -->
+    <section id="inicio" class="border-b border-paper-line">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Coluna Tipográfica -->
+            <div class="lg:col-span-6 space-y-8">
+                <div class="flex flex-wrap items-center gap-2 text-xs text-paper-muted tracking-wide">
+                    <span>Curadoria &amp; boutique</span>
+                    <span>·</span>
+                    <span>Centro, Santiago RS</span>
+                    <span>·</span>
+                    <span class="text-paper-ruby font-medium">Edição Natal &amp; Black Week</span>
+                </div>
+
+                <h1 class="font-display text-6xl sm:text-7xl lg:text-[84px] leading-[0.95] tracking-[-0.02em] text-paper-ink">
+                    Moda que veste <span class="italic text-paper-ruby block">sem pressa.</span>
+                </h1>
+
+                <p class="text-paper-muted text-base sm:text-lg leading-relaxed max-w-lg font-normal">
+                    Peças escolhidas a dedo — da alfaiataria e tricôs nobres da <strong class="text-paper-ink font-medium">Estilo</strong> à atitude marcante da <strong class="text-paper-ink font-medium">Libídus</strong> — provadas com calma e preparadas para celebrar este fim de ano.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#cofres-vip" class="bg-paper-ink hover:bg-paper-ruby text-paper-base px-7 py-3.5 rounded-full text-sm font-medium inline-flex items-center gap-2 transition duration-300">
+                        <span>Explorar os 10 Cofres</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#provador-ao-look" class="border border-paper-ink/25 hover:border-paper-ink text-paper-ink px-7 py-3.5 rounded-full text-sm font-medium transition">
+                        Montar meu look
+                    </a>
+                </div>
+
+                <!-- Micro-rodapé do Hero com contador natalino minimalista -->
+                <div class="pt-8 border-t border-paper-line flex flex-wrap items-center justify-between gap-4 text-xs text-paper-muted">
+                    <span>Rua Tito Beccon, 1392 · Esquina Barão</span>
+                    <span class="font-mono text-paper-ink">
+                        Natal em <strong id="countdown-days">--</strong>d <strong id="countdown-hours">--</strong>h <strong id="countdown-mins">--</strong>m
+                    </span>
+                </div>
+            </div>
+
+            <!-- Coluna Fotográfica com Moldura Editorial -->
+            <div class="lg:col-span-6">
+                <div class="relative max-w-md mx-auto lg:ml-auto">
+                    <div class="aspect-[4/5] rounded-t-[10rem] rounded-b-2xl overflow-hidden border border-paper-line bg-paper-stone shadow-sm">
+                        <img src="estilo1.jpg" onerror="this.src='https://placehold.co/800x1000/EDE5D8/191412?text=Estilo+%26+Libidus'" alt="Curadoria Estilo e Libídus" class="w-full h-full img-top-center">
+                    </div>
+
+                    <!-- Legenda Estilo Museu / Revista -->
+                    <div class="mt-4 flex items-center justify-between text-xs text-paper-muted border-b border-paper-line pb-3">
+                        <span>Coleção Festas &amp; Verão</span>
+                        <span class="italic font-serif text-sm text-paper-ink">Alfaiataria · Tricô · Atitude</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SEÇÃO SCROLLYTELLING REAL (A ASSINATURA DO MOENDA CAFÉ ADAPTADA COM FOTOS)
+         Conforme rola pelas etapas 01..04, a imagem no palco sticky muda e as
+         etiquetas apontadoras acendem ao redor da produção!
+         ========================================================================= -->
+    <section id="provador-ao-look" class="bg-paper-stone/65 border-b border-paper-line py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            
+            <!-- Cabeçalho da Seção -->
+            <div class="max-w-xl mb-16">
+                <span class="text-xs uppercase tracking-[0.2em] text-paper-ruby font-semibold block mb-3">
+                    Assinatura da casa · Role para montar
+                </span>
+                <h2 class="font-display text-5xl sm:text-6xl leading-[0.98] text-paper-ink">
+                    Quatro camadas. <span class="italic text-paper-muted">Nenhuma pressa.</span>
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- Coluna Esquerda: Os 4 Capítulos Roláveis (Espaçados como no Moenda) -->
+                <div class="lg:col-span-5 space-y-20 lg:space-y-32 py-6">
+                    
+                    <!-- Etapa 01 -->
+                    <div class="scroll-chapter active border-t border-paper-line pt-6" data-chapter="1">
+                        <span class="font-display text-5xl text-paper-ruby block mb-2">01</span>
+                        <span class="text-xs uppercase tracking-[0.18em] text-paper-muted block mb-2">A base elegante</span>
+                        <h3 class="font-display text-3xl sm:text-4xl text-paper-ink mb-3">
+                            Primeiro, a textura.
+                        </h3>
+                        <p class="text-paper-muted text-sm sm:text-base leading-relaxed">
+                            Tricôs nobres Anselmi e Biamar ou cortes de alfaiataria da linha <strong class="text-paper-ink font-medium">Estilo</strong> — macios ao toque e pensados para atravessar as festas com leveza.
+                        </p>
+                    </div>
+
+                    <!-- Etapa 02 -->
+                    <div class="scroll-chapter border-t border-paper-line pt-6" data-chapter="2">
+                        <span class="font-display text-5xl text-paper-ruby block mb-2">02</span>
+                        <span class="text-xs uppercase tracking-[0.18em] text-paper-muted block mb-2">O toque ousado</span>
+                        <h3 class="font-display text-3xl sm:text-4xl text-paper-ink mb-3">
+                            Depois, a atitude Libídus.
+                        </h3>
+                        <p class="text-paper-muted text-sm sm:text-base leading-relaxed">
+                            Peças marcantes da linha <strong class="text-paper-ink font-medium">Libídus</strong> que trazem personalidade, modelagem que valoriza e liberdade de movimento do casual à noite.
+                        </p>
+                    </div>
+
+                    <!-- Etapa 03 -->
+                    <div class="scroll-chapter border-t border-paper-line pt-6" data-chapter="3">
+                        <span class="font-display text-5xl text-paper-ruby block mb-2">03</span>
+                        <span class="text-xs uppercase tracking-[0.18em] text-paper-muted block mb-2">Nos pés</span>
+                        <h3 class="font-display text-3xl sm:text-4xl text-paper-ink mb-3">
+                            O passo firme.
+                        </h3>
+                        <p class="text-paper-muted text-sm sm:text-base leading-relaxed">
+                            Scarpin salto bloco em tons atemporais, sandália com brilho cristal ou botas em couro que transformam a postura instantaneamente.
+                        </p>
+                    </div>
+
+                    <!-- Etapa 04 -->
+                    <div class="scroll-chapter border-t border-paper-line pt-6" data-chapter="4">
+                        <span class="font-display text-5xl text-paper-ruby block mb-2">04</span>
+                        <span class="text-xs uppercase tracking-[0.18em] text-paper-muted block mb-2">O acabamento</span>
+                        <h3 class="font-display text-3xl sm:text-4xl text-paper-ink mb-3">
+                            E por cima, o detalhe.
+                        </h3>
+                        <p class="text-paper-muted text-sm sm:text-base leading-relaxed">
+                            Bolsa estruturada, acessórios dourados e nossa embalagem especial de Natal — pronta para celebrar ou presentear alguém querido.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Coluna Direita: Palco Visual Sticky Interativo com Fotos Reais & Etiquetas -->
+                <div class="lg:col-span-7 lg:sticky lg:top-24">
+                    <div class="bg-paper-base rounded-3xl border border-paper-line p-6 sm:p-8 shadow-sm">
+                        
+                        <div class="grid sm:grid-cols-12 gap-6 items-center">
+                            
+                            <!-- Quadro Fotográfico Dinâmico (Troca a foto conforme você rola!) -->
+                            <div class="sm:col-span-6 relative">
+                                <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line relative">
+                                    <!-- Foto Camada 1: Tricô / Base -->
+                                    <img id="stage-img-1" src="estilo2.jpg" onerror="this.src='https://placehold.co/600x800/EDE5D8/191412?text=01+Base+Estilo'" alt="Camada 1 Base" class="stage-photo active absolute inset-0 w-full h-full img-top-center">
+                                    <!-- Foto Camada 2: Libídus -->
+                                    <img id="stage-img-2" src="estilo7.jpg" onerror="this.src='https://placehold.co/600x800/5A141A/F6F1E9?text=02+Atitude+Libidus'" alt="Camada 2 Libídus" class="stage-photo absolute inset-0 w-full h-full img-top-center">
+                                    <!-- Foto Camada 3: Scarpin -->
+                                    <img id="stage-img-3" src="scarpinblack.jpg" onerror="this.src='https://placehold.co/600x800/191412/E8D39E?text=03+Scarpin+Bloco'" alt="Camada 3 Scarpin" class="stage-photo absolute inset-0 w-full h-full object-cover">
+                                    <!-- Foto Camada 4: Bolsa & Acabamento -->
+                                    <img id="stage-img-4" src="estilo5.jpg" onerror="this.src='https://placehold.co/600x800/A67F38/191412?text=04+Bolsas+%26+Detalhes'" alt="Camada 4 Acabamento" class="stage-photo absolute inset-0 w-full h-full object-cover">
+
+                                    <!-- Indicador de etapa sobre a foto -->
+                                    <div class="absolute top-3 left-3 bg-paper-base/90 backdrop-blur-sm px-3 py-1 rounded-full text-[11px] font-medium text-paper-ink border border-paper-line">
+                                        Camada <span id="stage-step-label" class="font-bold text-paper-ruby">01 / 04</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Etiquetas Apontadoras + Pedido Direto ("Aí está.") -->
+                            <div class="sm:col-span-6 space-y-5">
+                                <div>
+                                    <span class="text-[11px] uppercase tracking-[0.2em] text-paper-muted block">Aí está.</span>
+                                    <h3 class="font-display text-3xl sm:text-4xl text-paper-ink mt-0.5">
+                                        Produção Assinatura
+                                    </h3>
+                                </div>
+
+                                <!-- 4 Etiquetas Clicáveis (Clicar também troca a foto!) -->
+                                <div class="space-y-2">
+                                    <button type="button" onclick="activateChapter(1)" id="tag-1" class="callout-tag active w-full text-left px-3.5 py-2.5 rounded-xl border border-paper-line text-xs flex items-center justify-between">
+                                        <span><strong>01</strong> · Tricô Nobre / Alfaiataria</span>
+                                        <span>→</span>
+                                    </button>
+                                    <button type="button" onclick="activateChapter(2)" id="tag-2" class="callout-tag w-full text-left px-3.5 py-2.5 rounded-xl border border-paper-line text-xs flex items-center justify-between">
+                                        <span><strong>02</strong> · Peça Ousada Libídus</span>
+                                        <span>→</span>
+                                    </button>
+                                    <button type="button" onclick="activateChapter(3)" id="tag-3" class="callout-tag w-full text-left px-3.5 py-2.5 rounded-xl border border-paper-line text-xs flex items-center justify-between">
+                                        <span><strong>03</strong> · Scarpin ou Sandália Brilho</span>
+                                        <span>→</span>
+                                    </button>
+                                    <button type="button" onclick="activateChapter(4)" id="tag-4" class="callout-tag w-full text-left px-3.5 py-2.5 rounded-xl border border-paper-line text-xs flex items-center justify-between">
+                                        <span><strong>04</strong> · Bolsa &amp; Embalagem Natal</span>
+                                        <span>→</span>
+                                    </button>
+                                </div>
+
+                                <!-- Opções de Estilo (Como os botões "Extra espuma / Leite de aveia" do Moenda) -->
+                                <div class="pt-2 border-t border-paper-line">
+                                    <span class="text-[11px] text-paper-muted block mb-2">Toque final:</span>
+                                    <div class="flex flex-wrap gap-1.5">
+                                        <button type="button" onclick="selectMood(this, 'Clássico Estilo')" class="mood-pill px-3 py-1 rounded-full text-[11px] font-medium bg-paper-ink text-paper-base border border-paper-ink transition">
+                                            Clássico Estilo
+                                        </button>
+                                        <button type="button" onclick="selectMood(this, 'Ousado Libídus')" class="mood-pill px-3 py-1 rounded-full text-[11px] font-medium bg-transparent text-paper-muted border border-paper-line hover:border-paper-ink transition">
+                                            Ousado Libídus
+                                        </button>
+                                        <button type="button" onclick="selectMood(this, 'Presente de Natal')" class="mood-pill px-3 py-1 rounded-full text-[11px] font-medium bg-transparent text-paper-muted border border-paper-line hover:border-paper-ink transition">
+                                            Presente de Natal
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" class="w-full bg-paper-ruby hover:bg-paper-ink text-paper-base py-3.5 px-5 rounded-full text-xs font-medium flex items-center justify-center gap-2 transition duration-300">
+                                    <span>Pedir sugestão no WhatsApp</span>
+                                    <span>→</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DUPLA FAIXA CINÉTICA (EXATAMENTE COMO NO MOENDA CAFÉ) -->
+    <div class="border-b border-paper-line bg-paper-base py-3.5 overflow-hidden marquee-wrapper select-none">
+        <div class="animate-marquee-left flex items-center gap-8 text-xs uppercase tracking-[0.25em] text-paper-muted">
+            <span>Curadoria própria</span><span>·</span>
+            <span>Santiago RS</span><span>·</span>
+            <span class="text-paper-ruby font-semibold">Edição Natal &amp; Black Week</span><span>·</span>
+            <span>Anselmi</span><span>·</span>
+            <span>Biamar</span><span>·</span>
+            <span>Libídus</span><span>·</span>
+            <span>Bruna Bia Ativa</span><span>·</span>
+            <span>Beira Rio</span><span>·</span>
+            <span>Modare</span><span>·</span>
+            <span>Actvitta</span><span>·</span>
+            <!-- Loop -->
+            <span>Curadoria própria</span><span>·</span>
+            <span>Santiago RS</span><span>·</span>
+            <span class="text-paper-ruby font-semibold">Edição Natal &amp; Black Week</span><span>·</span>
+            <span>Anselmi</span><span>·</span>
+            <span>Biamar</span><span>·</span>
+            <span>Libídus</span><span>·</span>
+            <span>Bruna Bia Ativa</span><span>·</span>
+            <span>Beira Rio</span><span>·</span>
+            <span>Modare</span><span>·</span>
+            <span>Actvitta</span><span>·</span>
+        </div>
+    </div>
+
+    <div class="border-b border-paper-line bg-paper-stone/50 py-3 overflow-hidden marquee-wrapper select-none">
+        <div class="animate-marquee-right flex items-center gap-7 font-display text-2xl text-paper-ink/85">
+            <span>Alfaiataria</span><span class="text-paper-ruby text-base">✺</span>
+            <span class="italic">Moda Ousada Libídus</span><span class="text-paper-ruby text-base">✺</span>
+            <span>Tricô Nobre</span><span class="text-paper-ruby text-base">✺</span>
+            <span class="italic">Botas R$ 99,90</span><span class="text-paper-ruby text-base">✺</span>
+            <span>Scarpins R$ 119,90</span><span class="text-paper-ruby text-base">✺</span>
+            <span class="italic">Moda Íntima &amp; Praia</span><span class="text-paper-ruby text-base">✺</span>
+            <span>Fitness &amp; Casual</span><span class="text-paper-ruby text-base">✺</span>
+            <!-- Loop -->
+            <span>Alfaiataria</span><span class="text-paper-ruby text-base">✺</span>
+            <span class="italic">Moda Ousada Libídus</span><span class="text-paper-ruby text-base">✺</span>
+            <span>Tricô Nobre</span><span class="text-paper-ruby text-base">✺</span>
+            <span class="italic">Botas R$ 99,90</span><span class="text-paper-ruby text-base">✺</span>
+            <span>Scarpins R$ 119,90</span><span class="text-paper-ruby text-base">✺</span>
+            <span class="italic">Moda Íntima &amp; Praia</span><span class="text-paper-ruby text-base">✺</span>
+            <span>Fitness &amp; Casual</span><span class="text-paper-ruby text-base">✺</span>
+        </div>
+    </div>
+
+    <!-- SEÇÃO "POR QUE ESTILO & LIBÍDUS" (MANIFESTO + EQUIPE COMO NO MOENDA) -->
+    <section id="curadoria" class="border-b border-paper-line py-20 lg:py-28 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-center pb-20 border-b border-paper-line">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs uppercase tracking-[0.2em] text-paper-muted block">
+                        Por que Estilo e Libídus
+                    </span>
+                    <h2 class="font-display text-4xl sm:text-5xl lg:text-[54px] leading-[1.03] text-paper-ink">
+                        A gente acredita que vestir bem não tem atalho.
+                    </h2>
+                    <p class="text-paper-muted text-base leading-relaxed">
+                        Unimos em um só endereço dois universos complementares: a sofisticação atemporal da <strong class="text-paper-ink font-medium">Estilo</strong> e a expressão livre e ousada da <strong class="text-paper-ink font-medium">Libídus</strong>. Porque o melhor look é aquele que respeita o seu ritmo e faz você se sentir inteira.
+                    </p>
+                    <div class="pt-2">
+                        <strong class="font-serif italic text-xl text-paper-ink block">Equipe Estilo &amp; Libídus</strong>
+                        <span class="text-xs text-paper-muted">Curadoria e consultoria em Santiago, RS</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="rounded-2xl overflow-hidden border border-paper-line aspect-[16/11] bg-paper-stone">
+                        <img src="consultoriapersonalizada.jpg" onerror="this.src='https://placehold.co/900x600/EDE5D8/191412?text=Consultoria+Estilo+e+Libidus'" alt="Equipe Estilo e Libídus" class="w-full h-full img-top-center">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Etapas Arquitetônicas (01 a 04) -->
+            <div class="pt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-3">
+                    <span class="font-display text-4xl text-paper-ruby block">01</span>
+                    <h3 class="font-display text-2xl text-paper-ink">Seleção de origem</h3>
+                    <p class="text-xs sm:text-sm text-paper-muted leading-relaxed">
+                        Trabalhamos direto com marcas reconhecidas pelo caimento e durabilidade: Anselmi, Biamar, Libídus, Modare e Bruna Bia.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="font-display text-4xl text-paper-ruby block">02</span>
+                    <h3 class="font-display text-2xl text-paper-ink">Dois estilos, uma casa</h3>
+                    <p class="text-xs sm:text-sm text-paper-muted leading-relaxed">
+                        Transite entre a alfaiataria clássica, o fitness comfy e peças ousadas sem precisar mudar de endereço.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="font-display text-4xl text-paper-ruby block">03</span>
+                    <h3 class="font-display text-2xl text-paper-ink">Provador sem pressa</h3>
+                    <p class="text-xs sm:text-sm text-paper-muted leading-relaxed">
+                        Atendimento acolhedor na loja ou envio de fotos e medidas detalhadas direto no seu WhatsApp.
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <span class="font-display text-4xl text-paper-ruby block">04</span>
+                    <h3 class="font-display text-2xl text-paper-ink">Embalagem de Natal</h3>
+                    <p class="text-xs sm:text-sm text-paper-muted leading-relaxed">
+                        Cada presente sai pronto para encantar embaixo da árvore, com todo o cuidado da nossa equipe.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         OS 10 COFRES SECRETOS VIP (NO ESTILO "CARDÁPIO DE BALCÃO" DO MOENDA)
+         ========================================================================= -->
+    <section id="cofres-vip" class="py-20 lg:py-28 px-4 sm:px-8 bg-paper-stone/55 border-b border-paper-line">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Cabeçalho Editorial + Filtros Limpos -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-paper-line mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.2em] text-paper-ruby font-semibold block mb-2">
+                        Vitrines Isoladas · 01 / 10
+                    </span>
+                    <h2 class="font-display text-5xl sm:text-6xl leading-[0.98] text-paper-ink">
+                        Cofres Secretos VIP. <span class="italic text-paper-muted block sm:inline">Escolha o seu.</span>
+                    </h2>
+                </div>
+
+                <!-- Abas de Filtro Discretas -->
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" onclick="filterCofres('all', this)" class="cofre-filter-btn active px-4 py-2 rounded-full text-xs font-medium bg-paper-ink text-paper-base border border-paper-ink transition">
+                        Todos (10)
+                    </button>
+                    <button type="button" onclick="filterCofres('calcados', this)" class="cofre-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-transparent text-paper-muted border border-paper-line hover:border-paper-ink transition">
+                        Calçados &amp; Botas
+                    </button>
+                    <button type="button" onclick="filterCofres('moda', this)" class="cofre-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-transparent text-paper-muted border border-paper-line hover:border-paper-ink transition">
+                        Estilo, Libídus &amp; Masculino
+                    </button>
+                    <button type="button" onclick="filterCofres('fitness', this)" class="cofre-filter-btn px-4 py-2 rounded-full text-xs font-medium bg-transparent text-paper-muted border border-paper-line hover:border-paper-ink transition">
+                        Fitness, Íntima &amp; Acessórios
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Espaçado de 3 Colunas (Estilo Cartões do Moenda Café) -->
+            <div id="cofres-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                
+                <!-- 01 / 10: Sandálias & Rasteiras -->
+                <article data-cat="calcados" onclick="openAlbumModal('modal-sandalias')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">01 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Brilho &amp; Festas</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo9.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Sandalias+%26+Rasteiras'" alt="Sandálias & Rasteiras" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            👡 Sandálias &amp; Rasteiras
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Sandálias de salto, modelos cristal, dourados, flatforms e rasteirinhas com brilho. Elegância e conforto para todas as ocasiões.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">A partir de R$ 169,90</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 02 / 10: Tênis & Comfort -->
+                <article data-cat="calcados" onclick="openAlbumModal('modal-tenis')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">02 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Rotina &amp; Leveza</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo8.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Tenis+%26+Comfort'" alt="Tênis & Comfort" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            👟 Tênis &amp; Comfort
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Tênis urbanos, esportivos e casuais. Modelos que combinam conforto, versatilidade e estilo para acompanhar sua rotina.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Numeração 35 ao 40</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 03 / 10: Shoes Sale | Preços Especiais -->
+                <article data-cat="calcados" onclick="openAlbumModal('modal-shoessale')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">03 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px] text-paper-ruby font-semibold">Preços Especiais</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="scarpinblack.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Shoes+Sale'" alt="Shoes Sale" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            👠 Shoes Sale | Preços Especiais
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Scarpins, saltos, sandálias e calçados selecionados com descontos especiais. Seus modelos favoritos por preços que surpreendem!
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-ruby font-semibold">Scarpins por R$ 119,90</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 04 / 10: Última Chance | Botas R$ 99,90 -->
+                <article data-cat="calcados" onclick="openAlbumModal('modal-botas')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">04 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px] text-paper-ruby font-semibold">Última Chance</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo4.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Botas+R%24+99%2C90'" alt="Botas R$ 99,90" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            👢 Última Chance | Botas R$ 99,90
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            É agora ou nunca! Botas e coturnos selecionados por apenas R$ 99,90. Uma oportunidade especial para garantir seus favoritos antes que acabem!
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-ruby font-semibold">Valor único R$ 99,90</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 05 / 10: Acessórios & Bolsas -->
+                <article data-cat="fitness" onclick="openAlbumModal('modal-acessorios')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">05 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Detalhes &amp; Presentes</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo5.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Acessorios+%26+Bolsas'" alt="Acessórios & Bolsas" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            👜 Acessórios &amp; Bolsas
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Bolsas estruturadas, carteiras, brincos, cintos e acessórios que complementam e valorizam qualquer produção.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Sugestões de Natal</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 06 / 10: Fitness & Casual | Libidus -->
+                <article data-cat="moda" onclick="openAlbumModal('modal-libidus')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">06 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px] text-paper-ruby font-semibold">Assinatura Libídus</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo7.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Fitness+%26+Casual+Libidus'" alt="Fitness & Casual Libidus" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            🔥 Fitness &amp; Casual | Libidus
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Do fitness ao casual, do conforto do dia a dia à produção para um evento especial. Uma seleção de peças versáteis, modernas e cheias de personalidade, para quem busca liberdade de movimento sem abrir mão de estar bem-vestida.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Atitude &amp; Liberdade</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 07 / 10: Moda Masculina | Fitness & Casual -->
+                <article data-cat="moda" onclick="openAlbumModal('modal-masculino')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">07 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Para Eles</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="cafeecha.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Moda+Masculina'" alt="Moda Masculina" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            🖤 Moda Masculina | Fitness &amp; Casual
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Do treino à rotina, do básico ao estiloso. Moda masculina fitness e casual com peças confortáveis, modernas e versáteis para acompanhar diferentes momentos do dia.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Fitness &amp; Casual</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 08 / 10: Primavera Verão | Estilo & Atitude -->
+                <article data-cat="moda" onclick="openAlbumModal('modal-primavera')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">08 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Coleção Estação</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo1.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Primavera+Verao'" alt="Primavera Verão" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            🌸 Primavera Verão | Estilo &amp; Atitude
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Linha jeans, vestidos, saias, t-shirts e muito mais. Uma seleção de tendências, peças versáteis e novidades que traduzem o melhor do universo da moda feminina.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Jeans, Vestidos &amp; Saias</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 09 / 10: Moda Fitness | Bruna Bia Ativa -->
+                <article data-cat="fitness" onclick="openAlbumModal('modal-brunabia')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">09 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Comfy &amp; Ativa</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo6.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Bruna+Bia+Ativa'" alt="Bruna Bia Ativa" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            💪 Moda Fitness | Bruna Bia Ativa
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Roupas para o dia a dia, lazer e trabalho com conforto. Peças comfy, moda fitness versátil e estampas inovadoras que unem praticidade, personalidade e estilo.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Estampas Inovadoras</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+                <!-- 10 / 10: Moda Íntima & Praia | Feminina e Masculina -->
+                <article data-cat="fitness" onclick="openAlbumModal('modal-intimapraia')" class="cofre-card group cursor-pointer flex flex-col justify-between border-b border-paper-line pb-8">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-paper-muted mb-3">
+                            <span class="font-mono">10 / 10</span>
+                            <span class="uppercase tracking-widest text-[10px]">Sol &amp; Bem-Estar</span>
+                        </div>
+                        <div class="aspect-[16/11] rounded-2xl overflow-hidden bg-paper-stone border border-paper-line mb-5">
+                            <img src="estilo10.jpg" onerror="this.src='https://placehold.co/600x420/EDE5D8/191412?text=Moda+Intima+%26+Praia'" alt="Moda Íntima & Praia" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700">
+                        </div>
+                        <h3 class="font-display text-3xl text-paper-ink group-hover:text-paper-ruby transition mb-2">
+                            🤍 Moda Íntima &amp; Praia | Feminina e Masculina
+                        </h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Conforto, beleza e estilo em todos os momentos! Lingeries, calcinhas, sutiãs, cuecas, meias, biquínis, maiôs, sungas e saídas de praia. Uma seleção de peças que une bem-estar, versatilidade e tendências, do dia a dia aos dias de sol.
+                        </p>
+                    </div>
+                    <div class="pt-5 flex items-center justify-between text-xs font-medium text-paper-ink">
+                        <span class="text-paper-muted">Feminina &amp; Masculina</span>
+                        <span class="group-hover:translate-x-1 transition inline-flex items-center gap-1 text-paper-ruby">Abrir cofre →</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAIXA MANIFESTO COM CONTADORES ANIMADOS (EXATAMENTE COMO NO MOENDA CAFÉ) -->
+    <section class="bg-paper-wine text-paper-base py-20 px-4 sm:px-8 border-b border-paper-line">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] max-w-2xl mb-14">
+                Cada produção é pensada uma vez. <span class="italic text-paper-brassLight">Para você.</span>
+            </h2>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8 border-t border-white/15">
+                <div>
+                    <span class="font-display text-5xl sm:text-6xl text-paper-brassLight block counter-num" data-target="10">0</span>
+                    <span class="text-xs text-white/70 mt-1 block">vitrines VIP exclusivas</span>
+                </div>
+                <div>
+                    <span class="font-display text-5xl sm:text-6xl text-white block counter-num" data-target="2">0</span>
+                    <span class="text-xs text-white/70 mt-1 block">universos na mesma casa</span>
+                </div>
+                <div>
+                    <span class="font-display text-5xl sm:text-6xl text-paper-brassLight block">R$ 99</span>
+                    <span class="text-xs text-white/70 mt-1 block">botas última chance</span>
+                </div>
+                <div>
+                    <span class="font-display text-5xl sm:text-6xl text-white block">5.0 ★</span>
+                    <span class="text-xs text-white/70 mt-1 block">acolhimento em Santiago</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO BLACK WEEK & NATAL (3 CARTÕES ARQUITETÔNICOS COMO O "CLUBE MOENDA") -->
+    <section id="blackweek" class="py-20 lg:py-28 px-4 sm:px-8 bg-paper-base border-b border-paper-line">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="max-w-xl mb-14">
+                <span class="text-xs uppercase tracking-[0.2em] text-paper-ruby font-semibold block mb-2">
+                    Oportunidades de Fim de Ano
+                </span>
+                <h2 class="font-display text-5xl sm:text-6xl leading-[0.98] text-paper-ink">
+                    Natal &amp; Black Week <span class="italic text-paper-muted block">no seu ritmo.</span>
+                </h2>
+            </div>
+
+            <!-- 3 Colunas Arquitetônicas -->
+            <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+                
+                <!-- Card 1: Botas -->
+                <div class="rounded-3xl border border-paper-line bg-paper-stone/40 p-8 flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-xs uppercase tracking-widest text-paper-muted block">Última Chance</span>
+                        <h3 class="font-display text-4xl text-paper-ink">Botas R$ 99,90</h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            Botas e coturnos selecionados por valor único enquanto durarem os pares na loja.
+                        </p>
+                        <ul class="space-y-2 pt-4 border-t border-paper-line text-xs text-paper-ink">
+                            <li>✓ Modelos em couro e coturnos</li>
+                            <li>✓ Reserva imediata pelo WhatsApp</li>
+                            <li>✓ Retirada ou entrega em Santiago</li>
+                        </ul>
+                    </div>
+                    <button onclick="openAlbumModal('modal-botas')" class="w-full py-3.5 px-5 rounded-full border border-paper-ink text-paper-ink hover:bg-paper-ink hover:text-paper-base text-xs font-medium transition">
+                        Ver botas disponíveis →
+                    </button>
+                </div>
+
+                <!-- Card 2 (Destaque Escuro): Combo Estilo + Libídus -->
+                <div class="rounded-3xl bg-paper-ink text-paper-base p-8 flex flex-col justify-between space-y-8 shadow-xl relative">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-widest text-paper-brassLight">Mais escolhido</span>
+                            <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-paper-ruby text-white font-medium">Black Week</span>
+                        </div>
+                        <h3 class="font-display text-4xl text-white">Combo Estilo + Libídus</h3>
+                        <p class="text-sm text-white/75 leading-relaxed">
+                            Combine uma peça da linha Estilo com qualquer item da linha Libídus e ative o benefício especial de Natal.
+                        </p>
+                        
+                        <!-- Cupom Copiável Limpo -->
+                        <div class="pt-3">
+                            <div class="flex items-center gap-2 bg-white/10 p-2 rounded-xl border border-white/15">
+                                <input id="coupon-input" type="text" readonly value="BLACKWEEK-ESTILOLIBIDUS" class="bg-transparent text-paper-brassLight font-mono text-xs px-2 w-full focus:outline-none">
+                                <button onclick="copyCoupon()" class="bg-paper-brassLight text-paper-ink px-3 py-1.5 rounded-lg text-[11px] font-semibold shrink-0 hover:bg-white transition">
+                                    <span id="copy-btn-text">Copiar</span>
+                                </button>
+                            </div>
+                            <span id="copy-feedback" class="text-[11px] text-emerald-400 mt-1.5 hidden block">Código copiado para a conversa.</span>
+                        </div>
+                    </div>
+
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" class="w-full py-3.5 px-5 rounded-full bg-paper-ruby hover:bg-paper-brass text-white text-xs font-medium text-center transition">
+                        Ativar benefício no WhatsApp →
+                    </a>
+                </div>
+
+                <!-- Card 3: Shoes Sale -->
+                <div class="rounded-3xl border border-paper-line bg-paper-stone/40 p-8 flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-xs uppercase tracking-widest text-paper-muted block">Shoes Sale</span>
+                        <h3 class="font-display text-4xl text-paper-ink">Scarpins R$ 119,90</h3>
+                        <p class="text-sm text-paper-muted leading-relaxed">
+                            De R$ 159,90 por R$ 119,90 nas cores Black, Chocolate e Nude com salto bloco confortável.
+                        </p>
+                        <ul class="space-y-2 pt-4 border-t border-paper-line text-xs text-paper-ink">
+                            <li>✓ Salto bloco estável para festas</li>
+                            <li>✓ Numerações do 35 ao 40</li>
+                            <li>✓ Ideal para Natal &amp; Réveillon</li>
+                        </ul>
+                    </div>
+                    <button onclick="openAlbumModal('modal-shoessale')" class="w-full py-3.5 px-5 rounded-full border border-paper-ink text-paper-ink hover:bg-paper-ink hover:text-paper-base text-xs font-medium transition">
+                        Ver Scarpins em oferta →
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VÍDEOS DA LOJA (APRESENTAÇÃO EDITORIAL) -->
+    <section class="py-20 px-4 sm:px-8 bg-paper-stone/50 border-b border-paper-line">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.2em] text-paper-muted block mb-2">Por dentro da casa</span>
+                    <h2 class="font-display text-4xl sm:text-5xl text-paper-ink">Conheça nossos ambientes.</h2>
+                </div>
+                <span class="text-xs text-paper-muted">Tito Beccon, 1392 · Santiago</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-3">
+                    <div class="rounded-2xl overflow-hidden bg-paper-ink aspect-[9/16] max-h-[480px] border border-paper-line">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="estiloapresentacao1.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-paper-muted pt-1">
+                        <strong class="text-paper-ink font-medium">01 · Tour pelos provadores e coleções</strong>
+                        <span>Estilo &amp; Libídus</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="rounded-2xl overflow-hidden bg-paper-ink aspect-[9/16] max-h-[480px] border border-paper-line">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="estiloapresentacao2.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-paper-muted pt-1">
+                        <strong class="text-paper-ink font-medium">02 · Nosso espaço unificado no centro</strong>
+                        <span>Santiago RS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO "VISITE" (FECHAMENTO IDÊNTICO AO ESPÍRITO DO MOENDA CAFÉ) -->
+    <section id="visite" class="py-20 lg:py-28 px-4 sm:px-8 bg-paper-base">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-xs uppercase tracking-[0.2em] text-paper-ruby font-semibold block">
+                    Visite
+                </span>
+
+                <h2 class="font-display text-5xl sm:text-6xl leading-[0.98] text-paper-ink">
+                    Puxa uma cadeira. <span class="italic text-paper-muted block">O café já tá passando.</span>
+                </h2>
+
+                <div class="space-y-5 pt-4 border-t border-paper-line text-sm">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-widest text-paper-muted block">Endereço</span>
+                        <strong class="text-paper-ink font-medium block mt-0.5">Rua Tito Beccon, 1392</strong>
+                        <span class="text-paper-muted">Esquina com Barão do Rio Branco · Santiago, RS</span>
+                    </div>
+
+                    <div>
+                        <span class="text-[11px] uppercase tracking-widest text-paper-muted block">Horários</span>
+                        <span class="text-paper-ink block mt-0.5">Seg — Sex · 08h30 às 12h e 13h30 às 18h30</span>
+                        <span class="text-paper-muted">Sábados &amp; Vésperas de Natal · Horário Estendido</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <a href="https://maps.google.com/?q=Rua+Tito+Beccon+1392+Santiago+RS" target="_blank" rel="noopener" class="bg-paper-ink hover:bg-paper-ruby text-paper-base px-6 py-3 rounded-full text-xs font-medium transition">
+                        Como chegar →
+                    </a>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" rel="noopener" class="border border-paper-ink/25 hover:border-paper-ink text-paper-ink px-6 py-3 rounded-full text-xs font-medium transition">
+                        WhatsApp da loja
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                <div class="rounded-2xl overflow-hidden border border-paper-line aspect-[4/5] bg-paper-stone">
+                    <img src="cafeecha.jpg" onerror="this.src='https://placehold.co/600x750/EDE5D8/191412?text=Cantinho+do+Cafe'" alt="Espaço Café Estilo e Libídus" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-paper-line aspect-[4/5] bg-paper-stone sm:translate-y-6">
+                    <img src="estilo3.jpg" onerror="this.src='https://placehold.co/600x750/191412/E8D39E?text=Fachada+Estilo+e+Libidus'" alt="Fachada Estilo e Libídus" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RODAPÉ EDITORIAL MINIMALISTA -->
+    <footer class="border-t border-paper-line py-12 px-4 sm:px-8 bg-paper-stone/40 text-xs text-paper-muted">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
+                <span class="font-display text-2xl text-paper-ink block">estilo &amp; libídus</span>
+                <span class="block mt-1">© 2026 Estilo e Libídus Modas Santiago — Curadoria sem pressa em Santiago, RS.</span>
+            </div>
+            <div class="flex flex-wrap gap-6">
+                <a href="#provador-ao-look" class="hover:text-paper-ink transition">Do provador ao look</a>
+                <a href="#cofres-vip" class="hover:text-paper-ink transition">Cofres VIP</a>
+                <a href="#blackweek" class="hover:text-paper-ink transition">Black Week</a>
+                <a href="https://www.instagram.com/estiloeatitudesantiago/" target="_blank" rel="noopener" class="text-paper-ink font-medium hover:underline">@estiloelibidus ↗</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================================
+         10 MODAIS ISOLADOS DOS COFRES SECRETOS VIP (INTEGRALMENTE PRESERVADOS)
+         ========================================================================= -->
+
+    <!-- MODAL 1: ÁLBUM VIP DE SANDÁLIAS & RASTEIRAS -->
+    <div id="modal-sandalias" onclick="handleBackdropClose(event, 'modal-sandalias')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-7xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">01 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">👡 Sandálias &amp; Rasteiras</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1 max-w-2xl">
+                        Sandálias de salto, modelos cristal, dourados, flatforms e rasteirinhas com brilho. Elegância e conforto para todas as ocasiões.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-sandalias')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="estilo9.jpg" onerror="this.src='https://placehold.co/450x800/5A141A/E8D39E?text=Sandalia+Preta+R%24169%2C90'" alt="Sandália Preta Brilhos" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-brassLight text-paper-ink text-[11px] font-bold px-2.5 py-1 rounded-full">R$ 169,90</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Sandália Preta Salto Cristal</h4>
+                    <p class="text-xs text-white/70">Tam: 35 ao 39 · Beira Rio Glamour</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Sandália Preta →
+                    </a>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="estilo10.jpg" onerror="this.src='https://placehold.co/450x800/5A141A/E8D39E?text=Rasteirinha+Beira+Rio'" alt="Rasteirinha Glamour" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-brassLight text-paper-ink text-[11px] font-bold px-2.5 py-1 rounded-full">Réveillon Strass</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Rasteirinha Glamour Laço Strass</h4>
+                    <p class="text-xs text-white/70">Tam: 34 ao 39 · Beira Rio</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Rasteirinha →
+                    </a>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="estilo11.jpg" onerror="this.src='https://placehold.co/450x800/5A141A/E8D39E?text=Sandalia+Dourada+R%24169%2C90'" alt="Sandália Dourada" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-brassLight text-paper-ink text-[11px] font-bold px-2.5 py-1 rounded-full">R$ 169,90</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Sandália Dourada Modare</h4>
+                    <p class="text-xs text-white/70">Ultra Conforto · Salto Bloco</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Sandália Dourada →
+                    </a>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="estilo12.jpg" onerror="this.src='https://placehold.co/450x800/5A141A/E8D39E?text=Flatform+Off+R%24169%2C90'" alt="Flatform Off" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-brassLight text-paper-ink text-[11px] font-bold px-2.5 py-1 rounded-full">R$ 169,90</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Flatform Off &amp; Nó Dourado</h4>
+                    <p class="text-xs text-white/70">Tam: 36 ao 40 · Beira Rio</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Flatform →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: ÁLBUM VIP DE TÊNIS & COMFORT -->
+    <div id="modal-tenis" onclick="handleBackdropClose(event, 'modal-tenis')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-6xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">02 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">👟 Tênis &amp; Comfort</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Tênis urbanos, esportivos e casuais. Modelos que combinam conforto, versatilidade e estilo para acompanhar sua rotina.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-tenis')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="estilo8.jpg" onerror="this.src='https://placehold.co/450x800/5A141A/E8D39E?text=Tenis+Actvitta+35+ao+40'" alt="Tênis Actvitta Lilás Soft" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-ruby text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Cor Natural</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Tênis Actvitta Lilás Soft</h4>
+                    <p class="text-xs text-white/70">Tam: 35 ao 40 · Leveza &amp; Maciez</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir no WhatsApp →
+                    </a>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl border border-dashed border-white/20 p-6 flex flex-col items-center justify-center text-center space-y-2">
+                    <span class="font-display text-2xl text-paper-brassLight">Mais modelos na loja</span>
+                    <p class="text-xs text-white/60">Consulte numerações e cores disponíveis pelo WhatsApp.</p>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl border border-dashed border-white/20 p-6 flex flex-col items-center justify-center text-center space-y-2">
+                    <span class="font-display text-2xl text-paper-brassLight">Novidades semanais</span>
+                    <p class="text-xs text-white/60">Receba fotos em tempo real da nossa equipe.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ÁLBUM VIP DE SHOES SALE | PREÇOS ESPECIAIS -->
+    <div id="modal-shoessale" onclick="handleBackdropClose(event, 'modal-shoessale')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-6xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">03 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">👠 Shoes Sale | Preços Especiais</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Scarpins, saltos, sandálias e calçados selecionados com descontos especiais. Seus modelos favoritos por preços que surpreendem!
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-shoessale')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="scarpinblack.jpg" onerror="this.src='https://placehold.co/450x800/191412/E8D39E?text=Scarpin+Black+R%24119%2C90'" alt="Scarpin Black" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-ruby text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Por R$ 119,90</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Scarpin Black Salto Bloco</h4>
+                    <p class="text-xs text-white/70">De R$ 159,90 Por R$ 119,90 · Tam: 35 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Scarpin Preto →
+                    </a>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="scarpinchocolate.jpg" onerror="this.src='https://placehold.co/450x800/3D231D/E8D39E?text=Scarpin+Chocolate+R%24119%2C90'" alt="Scarpin Chocolate" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-brassLight text-paper-ink text-[11px] font-bold px-2.5 py-1 rounded-full">Por R$ 119,90</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Scarpin Chocolate Salto Bloco</h4>
+                    <p class="text-xs text-white/70">De R$ 159,90 Por R$ 119,90 · Tam: 35 / 38 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Scarpin Chocolate →
+                    </a>
+                </div>
+
+                <div class="bg-white/5 rounded-2xl overflow-hidden border border-white/15 p-3 space-y-3">
+                    <div class="aspect-[9/16] rounded-xl overflow-hidden relative bg-black">
+                        <img src="scarpinnude.jpg" onerror="this.src='https://placehold.co/450x800/D9CFC1/191412?text=Scarpin+Nude+R%24119%2C90'" alt="Scarpin Nude" class="w-full h-full object-cover">
+                        <span class="absolute top-2 left-2 bg-paper-ruby text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Por R$ 119,90</span>
+                    </div>
+                    <h4 class="font-semibold text-sm text-white">Scarpin Nude Salto Bloco</h4>
+                    <p class="text-xs text-white/70">De R$ 159,90 Por R$ 119,90 · Tam: 37 / 38 / 39 / 40</p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                        Pedir Scarpin Nude →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: ÚLTIMA CHANCE | BOTAS R$ 99,90 -->
+    <div id="modal-botas" onclick="handleBackdropClose(event, 'modal-botas')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">04 / 10 · Oportunidade Única</span>
+                    <h3 class="font-display text-4xl text-white mt-1">👢 Última Chance | Botas R$ 99,90</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        É agora ou nunca! Botas e coturnos selecionados por apenas R$ 99,90. Uma oportunidade especial para garantir seus favoritos antes que acabem!
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-botas')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="estilo4.jpg" onerror="this.src='https://placehold.co/600x700/5A141A/E8D39E?text=Botas+R%24+99%2C90'" alt="Botas R$ 99,90" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-paper-ruby text-white text-xs font-bold px-3 py-1 rounded-full">VALOR ÚNICO R$ 99,90</span>
+                    <h4 class="font-display text-3xl text-white">Botas em Couro &amp; Coturnos Selecionados</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        É agora ou nunca! Garanta modelos em couro e coturnos confortáveis da nossa liquidação exclusiva antes que o estoque esgote.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Garantir Botas R$ 99,90 no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5: ACESSÓRIOS & BOLSAS -->
+    <div id="modal-acessorios" onclick="handleBackdropClose(event, 'modal-acessorios')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">05 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">👜 Acessórios &amp; Bolsas</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Bolsas estruturadas, carteiras, brincos, cintos e acessórios que complementam e valorizam qualquer produção.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-acessorios')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="estilo5.jpg" onerror="this.src='https://placehold.co/600x700/5A141A/E8D39E?text=Acessorios+%26+Bolsas'" alt="Acessórios & Bolsas" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-paper-brassLight text-paper-ink text-xs font-bold px-3 py-1 rounded-full">DETALHES &amp; PRESENTES</span>
+                    <h4 class="font-display text-3xl text-white">Bolsas Estruturadas, Carteiras &amp; Cintos</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        Peças selecionadas para completar o visual com elegância e sofisticação — ideais também para presentes de Natal.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Pedir Fotos de Bolsas no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 6: FITNESS & CASUAL | LIBIDUS -->
+    <div id="modal-libidus" onclick="handleBackdropClose(event, 'modal-libidus')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">06 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">🔥 Fitness &amp; Casual | Libidus</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Do fitness ao casual, do conforto do dia a dia à produção para um evento especial. Uma seleção de peças versáteis, modernas e cheias de personalidade.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-libidus')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="estilo7.jpg" onerror="this.src='https://placehold.co/600x700/5A141A/E8D39E?text=Linha+Libidus'" alt="Fitness & Casual Libidus" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-paper-ruby text-white text-xs font-bold px-3 py-1 rounded-full">MARCA LIBÍDUS</span>
+                    <h4 class="font-display text-3xl text-white">Liberdade de Movimento &amp; Atitude</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        Peças modernas para quem busca liberdade de movimento sem abrir mão de estar bem-vestida em qualquer ocasião.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Ver Coleção Libídus no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 7: MODA MASCULINA | FITNESS & CASUAL -->
+    <div id="modal-masculino" onclick="handleBackdropClose(event, 'modal-masculino')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">07 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">🖤 Moda Masculina | Fitness &amp; Casual</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Do treino à rotina, do básico ao estiloso. Moda masculina fitness e casual com peças confortáveis, modernas e versáteis.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-masculino')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="cafeecha.jpg" onerror="this.src='https://placehold.co/600x700/191412/E8D39E?text=Moda+Masculina'" alt="Moda Masculina" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-white/10 text-paper-brassLight text-xs font-bold px-3 py-1 rounded-full">LINHA MASCULINA</span>
+                    <h4 class="font-display text-3xl text-white">Estilo &amp; Conforto Para Eles</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        Camisetas, bermudas, moda fitness masculina e peças casuais perfeitas para o dia a dia, treinos e presentes.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Consultar Moda Masculina no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 8: PRIMAVERA VERÃO | ESTILO & ATITUDE -->
+    <div id="modal-primavera" onclick="handleBackdropClose(event, 'modal-primavera')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">08 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">🌸 Primavera Verão | Estilo &amp; Atitude</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Linha jeans, vestidos, saias, t-shirts e muito mais. Uma seleção de tendências, peças versáteis e novidades.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-primavera')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="estilo1.jpg" onerror="this.src='https://placehold.co/600x700/5A141A/E8D39E?text=Primavera+Verao'" alt="Primavera Verão Estilo" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-paper-brassLight text-paper-ink text-xs font-bold px-3 py-1 rounded-full">TENDÊNCIAS DE VERÃO</span>
+                    <h4 class="font-display text-3xl text-white">Vestidos, Jeans &amp; T-Shirts Femininas</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        Peças leves, estampas vibrantes e novidades que traduzem o melhor da moda feminina nesta estação.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Pedir Looks Primavera Verão no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 9: MODA FITNESS | BRUNA BIA ATIVA -->
+    <div id="modal-brunabia" onclick="handleBackdropClose(event, 'modal-brunabia')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">09 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">💪 Moda Fitness | Bruna Bia Ativa</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Roupas para o dia a dia, lazer e trabalho com conforto. Peças comfy, moda fitness versátil e estampas inovadoras.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-brunabia')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="estilo6.jpg" onerror="this.src='https://placehold.co/600x700/5A141A/E8D39E?text=Bruna+Bia+Ativa'" alt="Bruna Bia Ativa" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-paper-ruby text-white text-xs font-bold px-3 py-1 rounded-full">BRUNA BIA ATIVA</span>
+                    <h4 class="font-display text-3xl text-white">Praticidade, Personalidade &amp; Estilo Comfy</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        Peças extremamente confortáveis e versáteis que unem praticidade, estampas exclusivas e liberdade no dia a dia.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Ver Linha Bruna Bia no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 10: MODA ÍNTIMA & PRAIA | FEMININA E MASCULINA -->
+    <div id="modal-intimapraia" onclick="handleBackdropClose(event, 'modal-intimapraia')" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto my-6 bg-paper-ink rounded-3xl border border-paper-brass/40 p-6 sm:p-8 shadow-2xl text-paper-base relative">
+            <div class="flex items-start justify-between gap-4 pb-6 border-b border-white/15 mb-6">
+                <div>
+                    <span class="text-paper-brassLight text-xs font-mono uppercase tracking-widest block">10 / 10 · Cofre Secreto VIP</span>
+                    <h3 class="font-display text-4xl text-white mt-1">🤍 Moda Íntima &amp; Praia | Feminina e Masculina</h3>
+                    <p class="text-xs sm:text-sm text-white/75 mt-1">
+                        Conforto, beleza e estilo em todos os momentos! Lingeries, calcinhas, sutiãs, cuecas, meias, biquínis, maiôs, sungas e saídas de praia.
+                    </p>
+                </div>
+                <button onclick="closeAlbumModal('modal-intimapraia')" class="bg-white/10 hover:bg-paper-ruby text-white p-3 rounded-full transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/15">
+                <div class="h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
+                    <img src="estilo10.jpg" onerror="this.src='https://placehold.co/600x700/5A141A/E8D39E?text=Moda+Intima+%26+Praia'" alt="Moda Íntima & Praia" class="w-full h-full object-cover">
+                </div>
+                <div class="space-y-4">
+                    <span class="bg-paper-brassLight text-paper-ink text-xs font-bold px-3 py-1 rounded-full">DIAS DE SOL &amp; BEM-ESTAR</span>
+                    <h4 class="font-display text-3xl text-white">Lingerie, Moda Praia &amp; Peças Íntimas</h4>
+                    <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        Seleção completa que une bem-estar, versatilidade e tendências, das lingeries aos biquínis, maiôs e sungas para o Verão.
+                    </p>
+                    <a href="https://chat.whatsapp.com/BP4RyfXaRfE44bFVMhgXZo" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-4 rounded-2xl text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                        Consultar Moda Íntima &amp; Praia no WhatsApp →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE INTERATIVIDADE -->
+    <script>
+        lucide.createIcons();
+
+        // 1. Contador Regressivo de Natal
+        function updateChristmasCountdown() {
+            const now = new Date();
+            let year = now.getFullYear();
+            let christmas = new Date(year, 11, 25);
+            if (now > christmas) {
+                christmas = new Date(year + 1, 11, 25);
+            }
+            const diff = christmas - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('countdown-days').innerText = String(days).padStart(2, '0');
+            document.getElementById('countdown-hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('countdown-mins').innerText = String(mins).padStart(2, '0');
+        }
+        updateChristmasCountdown();
+        setInterval(updateChristmasCountdown, 60000);
+
+        // 2. Scrollytelling Visual Real ("Do provador ao look")
+        function activateChapter(step) {
+            // Atualiza capítulos à esquerda
+            document.querySelectorAll('.scroll-chapter').forEach(el => {
+                const c = parseInt(el.getAttribute('data-chapter'), 10);
+                el.classList.toggle('active', c === step);
+            });
+
+            // Troca a foto no palco visual à direita
+            for (let i = 1; i <= 4; i++) {
+                const img = document.getElementById(`stage-img-${i}`);
+                const tag = document.getElementById(`tag-${i}`);
+                if (img) img.classList.toggle('active', i === step);
+                if (tag) tag.classList.toggle('active', i === step);
+            }
+
+            const label = document.getElementById('stage-step-label');
+            if (label) label.innerText = `0${step} / 04`;
+        }
+
+        const chapters = document.querySelectorAll('.scroll-chapter');
+        const chapterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const step = parseInt(entry.target.getAttribute('data-chapter'), 10);
+                    activateChapter(step);
+                }
+            });
+        }, { threshold: 0.55 });
+        chapters.forEach(ch => chapterObserver.observe(ch));
+
+        // 3. Seleção de Estilo no Palco Sticky
+        function selectMood(btn, moodName) {
+            document.querySelectorAll('.mood-pill').forEach(pill => {
+                pill.classList.remove('bg-paper-ink', 'text-paper-base', 'border-paper-ink');
+                pill.classList.add('bg-transparent', 'text-paper-muted', 'border-paper-line');
+            });
+            btn.classList.remove('bg-transparent', 'text-paper-muted', 'border-paper-line');
+            btn.classList.add('bg-paper-ink', 'text-paper-base', 'border-paper-ink');
+
+            if (moodName === 'Ousado Libídus') activateChapter(2);
+            if (moodName === 'Clássico Estilo') activateChapter(1);
+            if (moodName === 'Presente de Natal') activateChapter(4);
+        }
+
+        // 4. Filtro Editorial dos 10 Cofres VIP
+        function filterCofres(category, btn) {
+            document.querySelectorAll('.cofre-filter-btn').forEach(b => {
+                b.classList.remove('bg-paper-ink', 'text-paper-base', 'border-paper-ink');
+                b.classList.add('bg-transparent', 'text-paper-muted', 'border-paper-line');
+            });
+            btn.classList.remove('bg-transparent', 'text-paper-muted', 'border-paper-line');
+            btn.classList.add('bg-paper-ink', 'text-paper-base', 'border-paper-ink');
+
+            document.querySelectorAll('.cofre-card').forEach(card => {
+                const cat = card.getAttribute('data-cat');
+                if (category === 'all' || cat === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // 5. Contadores Animados na Faixa Manifesto
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'), 10);
+                    let current = 0;
+                    const step = Math.max(1, Math.ceil(target / 25));
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            el.innerText = target;
+                            clearInterval(timer);
+                        } else {
+                            el.innerText = current;
+                        }
+                    }, 35);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.counter-num').forEach(el => counterObserver.observe(el));
+
+        // 6. Copiar Cupom Black Week
+        function copyCoupon() {
+            const copyText = document.getElementById('coupon-input');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+
+            document.getElementById('copy-btn-text').innerText = 'Copiado ✓';
+            document.getElementById('copy-feedback').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('copy-btn-text').innerText = 'Copiar';
+            }, 3000);
+        }
+
+        // 7. Controle dos Modais dos 10 Cofres VIP
+        let activeModalId = null;
+        function openAlbumModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                activeModalId = modalId;
+            }
+        }
+        function closeAlbumModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                activeModalId = null;
+            }
+        }
+        function handleBackdropClose(event, modalId) {
+            if (event.target.id === modalId) {
+                closeAlbumModal(modalId);
+            }
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && activeModalId) {
+                closeAlbumModal(activeModalId);
+            }
+        });
+    </script>
+</body>
+</html>
