@@ -51,11 +51,37 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Flocos de neve sutis */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      z-index: 99;
+      user-select: none;
+      pointer-events: none;
+      font-family: serif;
+      animation: fallSnow linear infinite;
+    }
+
+    @keyframes fallSnow {
+      0% {
+        transform: translateY(-10px) translateX(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(50vh) translateX(15px) rotate(180deg);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(105vh) translateX(-15px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
     .paper-grain {
       background-color: #F6F1E9;
       background-image:
-        radial-gradient(rgba(25, 20, 18, 0.032) 1px, transparent 0),
-        radial-gradient(rgba(184, 138, 68, 0.03) 1px, transparent 0);
+        radial-gradient(rgba(104, 18, 27, 0.04) 1px, transparent 0),
+        radial-gradient(rgba(184, 138, 68, 0.04) 1px, transparent 0);
       background-size: 24px 24px;
       background-position: 0 0, 12px 12px;
     }
@@ -75,47 +101,50 @@
       width: max-content;
       animation: marqueeLoop 36s linear infinite;
     }
-
-    .marquee-wrapper:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #F6F1E9;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(25, 20, 18, 0.22);
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #68121B;
-    }
-
-    .fade-image {
-      transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .vitrine-card:hover .vitrine-cover-img {
-      transform: scale(1.03);
-    }
   </style>
 </head>
 <body id="topo" class="paper-grain text-espresso selection:bg-ruby selection:text-linen">
 
+  <!-- Efeito de Neve Caindo (Sutil e Elegante) -->
+  <div id="snow-container" aria-hidden="true"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const snowContainer = document.getElementById('snow-container');
+      const snowflakeSymbols = ['✦', '✧', '·', '•'];
+      const numFlakes = 25;
+
+      for (let i = 0; i < numFlakes; i++) {
+        const flake = document.createElement('div');
+        flake.className = 'snowflake';
+        flake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
+        
+        const leftPos = Math.random() * 100;
+        const fallDuration = 8 + Math.random() * 12;
+        const flakeSize = 10 + Math.random() * 12;
+        const flakeOpacity = 0.2 + Math.random() * 0.5;
+
+        flake.style.left = `${leftPos}vw`;
+        flake.style.fontSize = `${flakeSize}px`;
+        flake.style.opacity = flakeOpacity;
+        flake.style.color = Math.random() > 0.5 ? '#B88A44' : '#68121B';
+        flake.style.animationDuration = `${fallDuration}s`;
+        flake.style.animationDelay = `${Math.random() * 10}s`;
+
+        snowContainer.appendChild(flake);
+      }
+    });
+  </script>
+
   <!-- ==========================================================================
-       BARRA DE AVISO & STATUS AO VIVO
+       BARRA DE AVISO & STATUS AO VIVO (TEMA NATALINO)
        ========================================================================== -->
-  <div class="bg-espresso text-linen py-2 px-4 text-center text-xs tracking-wide flex items-center justify-center gap-3 border-b border-gold/30">
+  <div class="bg-ruby text-linen py-2.5 px-4 text-center text-xs tracking-wide flex items-center justify-center gap-3 border-b border-gold/40 shadow-sm">
     <span class="inline-flex items-center gap-1.5 font-medium">
-      <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+      <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-300 inline-block animate-pulse"></span>
       <span id="live-status-text">Loja Aberta · Rua Tito Beccon, 1392, Santiago - RS</span>
     </span>
-    <span class="text-gold hidden sm:inline">✦</span>
-    <span class="hidden sm:inline text-linen/80">Atendimento Especial de Natal &amp; Fim de Ano</span>
+    <span class="text-gold">✦</span>
+    <span class="font-semibold text-goldLight tracking-wider uppercase text-[11px]">Especial de Natal &amp; Fim de Ano 2026</span>
   </div>
 
   <!-- ==========================================================================
@@ -197,16 +226,16 @@
   <!-- ==========================================================================
        HERO / ABERTURA EDITORIAL
        ========================================================================== -->
-  <section class="relative pt-12 pb-16 sm:py-24 border-b border-espresso/15">
+  <section class="relative pt-12 pb-16 sm:py-24 border-b border-espresso/15 bg-gradient-to-b from-ruby/5 via-transparent to-transparent">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7 space-y-6">
-          <span class="text-[11px] uppercase tracking-[0.24em] text-ruby font-semibold block">
-            Curadoria de Moda, Calçados &amp; Acessórios
+          <span class="text-[11px] uppercase tracking-[0.24em] text-ruby font-semibold block flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-ruby"></span> Curadoria de Moda &amp; Coleção Festas
           </span>
           <h1 class="font-editorial text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-espresso">
             Elegância em cada detalhe. <br />
-            <span class="italic text-ruby">Looks que definem a sua essência.</span>
+            <span class="italic text-ruby">Looks que marcam presença.</span>
           </h1>
           <p class="text-base sm:text-lg text-espresso/80 leading-relaxed max-w-xl">
             A união perfeita da <strong class="font-semibold">Estilo &amp; Atitude</strong> com a <strong class="font-semibold">Libídus Store</strong>. Curadoria exclusiva de moda feminina, masculina e calçados na Rua Tito Beccon.
@@ -214,7 +243,7 @@
           <div class="flex flex-wrap items-center gap-4 pt-2">
             <a
               href="#vitrines"
-              class="px-8 py-4 rounded-full bg-espresso text-linen hover:bg-ruby transition-colors text-xs font-medium uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer"
+              class="px-8 py-4 rounded-full bg-ruby text-linen hover:bg-rubyLight transition-colors text-xs font-medium uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer shadow-md"
             >
               <span>Explorar Cofres VIP</span>
               <span>→</span>
@@ -229,7 +258,7 @@
         </div>
 
         <div class="lg:col-span-5">
-          <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border border-espresso/20 shadow-2xl bg-linenDark">
+          <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border border-gold/40 shadow-2xl bg-linenDark">
             <img
               src="estilo1.jpg"
               alt="Vitrine Estilo & Libídus"
@@ -237,7 +266,7 @@
               onerror="handleImgFallback(this)"
               class="w-full h-full object-cover object-center"
             />
-            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-espresso/80 via-espresso/30 to-transparent text-linen">
+            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-ruby/90 via-espresso/40 to-transparent text-linen">
               <span class="text-[10px] uppercase tracking-[0.2em] text-goldLight block">Rua Tito Beccon, 1392</span>
               <p class="font-editorial text-2xl mt-0.5">Santiago, Rio Grande do Sul</p>
             </div>
@@ -252,6 +281,7 @@
        ========================================================================== -->
   <div class="bg-espresso text-linen py-4 overflow-hidden border-b border-gold/30 marquee-wrapper">
     <div class="marquee-track flex items-center gap-10 whitespace-nowrap text-xs uppercase tracking-[0.2em] text-linen/80">
+      <span>✦ ESTILO &amp; LIBÍDUS</span> <span>✺</span>
       <span>ANSELMI</span> <span>✺</span>
       <span>BIAMAR</span> <span>✺</span>
       <span>LIBÍDUS</span> <span>✺</span>
@@ -260,6 +290,7 @@
       <span>ACTIVITTA</span> <span>✺</span>
       <span>BRUNA BIA</span> <span>✺</span>
       <span>DON CARLI</span> <span>✺</span>
+      <span>✦ COLEÇÃO ESPECIAL DE NATAL</span> <span>✺</span>
       <span>ANSELMI</span> <span>✺</span>
       <span>BIAMAR</span> <span>✺</span>
       <span>LIBÍDUS</span> <span>✺</span>
@@ -435,7 +466,7 @@
   <!-- ==========================================================================
        SEÇÃO SELEÇÃO NATAL & FIM DE ANO (ASSINATURA DA CASA)
        ========================================================================== -->
-  <section id="selecao-natal" class="py-20 bg-linenDark/50 border-y border-espresso/15">
+  <section id="selecao-natal" class="py-20 bg-gradient-to-b from-ruby/10 via-linenDark/40 to-linen border-y border-gold/30">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         <div class="lg:col-span-5 space-y-6">
@@ -443,18 +474,18 @@
             Destaques de Fim de Ano
           </span>
           <h2 class="font-editorial text-4xl sm:text-5xl text-espresso leading-tight">
-            Assinatura da Casa. <br />
-            <span class="italic text-ruby">Escolha sua combinação.</span>
+            Assinatura de Natal. <br />
+            <span class="italic text-ruby">Escolha sua combinação festiva.</span>
           </h2>
           <p class="text-sm text-espresso/80 leading-relaxed">
-            Preparamos três seleções exclusivas para você acertar no presente ou garantir o seu look de Natal com atendimento personalizado.
+            Preparamos três seleções exclusivas para você acertar no presente ou garantir o seu look nas celebrações com atendimento personalizado.
           </p>
 
           <div class="flex flex-wrap gap-2 pt-2">
             <button
               type="button"
               data-signature="ceia"
-              class="sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-ruby bg-ruby text-linen transition-all cursor-pointer"
+              class="sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-ruby bg-ruby text-linen transition-all cursor-pointer shadow-sm"
             >
               Ceia &amp; Festas
             </button>
@@ -476,33 +507,45 @@
         </div>
 
         <div class="lg:col-span-7">
-          <div class="p-8 sm:p-10 rounded-3xl bg-linen border border-espresso/20 shadow-xl space-y-6">
-            <div class="flex items-center justify-between border-b border-espresso/10 pb-4">
-              <span id="sig-tag" class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">
-                Seleção Ceia &amp; Festas
-              </span>
-              <span class="text-xs text-espresso/60">Estilo &amp; Libídus · Santiago RS</span>
+          <div class="p-6 sm:p-8 rounded-3xl bg-linen border border-gold/40 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative overflow-hidden">
+            <div class="md:col-span-5 relative aspect-[3/4] rounded-2xl overflow-hidden border border-espresso/15 bg-linenDark">
+              <img
+                id="sig-img"
+                src="novo1.jpg"
+                alt="Seleção Festiva"
+                data-label="Seleção Natal"
+                onerror="handleImgFallback(this)"
+                class="w-full h-full object-cover object-top transition-all duration-500"
+              />
             </div>
+            <div class="md:col-span-7 space-y-4">
+              <div class="flex items-center justify-between border-b border-espresso/10 pb-3">
+                <span id="sig-tag" class="text-[11px] uppercase tracking-[0.2em] text-ruby font-semibold">
+                  Seleção Ceia &amp; Festas
+                </span>
+                <span class="text-[10px] text-espresso/60">Estilo &amp; Libídus</span>
+              </div>
 
-            <div class="space-y-3">
-              <h3 id="sig-pieces" class="font-editorial text-3xl sm:text-4xl text-espresso">
-                Sandália Metalizada Cristal + Tricô Nobre + Bolsa Estruturada
-              </h3>
-              <p id="sig-desc" class="text-sm text-espresso/75 leading-relaxed">
-                Brilho sutil nos pés, texturas sofisticadas e acabamento em dourado para celebrar o Natal e a virada do ano com conforto absoluto.
-              </p>
-            </div>
+              <div class="space-y-2">
+                <h3 id="sig-pieces" class="font-editorial text-2xl sm:text-3xl text-espresso">
+                  Sandália Metalizada Cristal + Tricô Nobre + Bolsa Estruturada
+                </h3>
+                <p id="sig-desc" class="text-xs sm:text-sm text-espresso/75 leading-relaxed">
+                  Brilho sutil nos pés, texturas sofisticadas e acabamento em dourado para celebrar o Natal e a virada do ano com conforto absoluto.
+                </p>
+              </div>
 
-            <div class="pt-4 border-t border-espresso/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span class="text-xs text-espresso/60">Disponível na loja física e para reserva no WhatsApp</span>
-              <button
-                id="sig-wa-btn"
-                type="button"
-                onclick="openWhatsApp('Olá! Gostaria de receber sugestões da seleção Ceia & Festas da Estilo & Libídus.')"
-                class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-ruby text-linen hover:bg-rubyLight transition-colors text-xs font-medium tracking-wide cursor-pointer"
-              >
-                <span>Pedir este look no WhatsApp →</span>
-              </button>
+              <div class="pt-3 border-t border-espresso/10 flex flex-col gap-3">
+                <span class="text-[11px] text-espresso/60">Disponível na loja física e para reserva no WhatsApp</span>
+                <button
+                  id="sig-wa-btn"
+                  type="button"
+                  onclick="openWhatsApp('Olá! Gostaria de receber sugestões da seleção Ceia & Festas da Estilo & Libídus.')"
+                  class="w-full py-3 rounded-full bg-ruby text-linen hover:bg-rubyLight transition-colors text-xs font-medium tracking-wide cursor-pointer shadow-md text-center"
+                >
+                  <span>Pedir este look no WhatsApp →</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1133,19 +1176,22 @@
         tag: 'Seleção Ceia & Festas',
         pieces: 'Sandália Metalizada Cristal + Tricô Nobre + Bolsa Estruturada',
         desc: 'Brilho sutil nos pés, texturas sofisticadas e acabamento em dourado para celebrar o Natal e a virada do ano com conforto absoluto.',
-        wa: 'Olá! Gostaria de receber sugestões da seleção Ceia & Festas (Assinatura da Casa) da Estilo & Libídus.'
+        wa: 'Olá! Gostaria de receber sugestões da seleção Ceia & Festas (Assinatura da Casa) da Estilo & Libídus.',
+        img: 'novo1.jpg'
       },
       verao: {
         tag: 'Seleção Verão & Leveza',
         pieces: 'Conjunto Tropical ou Poá + Papete Modare Brilho + Gloss Ted',
         desc: 'Tecidos frescos com amarração nas costas e calçados anatômicos que acompanham dias ensolarados com leveza.',
-        wa: 'Olá! Gostaria de ver as opções da seleção Verão & Leveza (Assinatura da Casa) da Estilo & Libídus.'
+        wa: 'Olá! Gostaria de ver as opções da seleção Verão & Leveza (Assinatura da Casa) da Estilo & Libídus.',
+        img: 'novo27.jpg'
       },
       libidus: {
         tag: 'Seleção Toque Ousado Libídus',
         pieces: 'Macaquinho Estampa Botânica + Scarpin Black + Acessórios Dourados',
         desc: 'Recortes estratégicos e contraste marcante para quem deseja presença imediata em eventos noturnos.',
-        wa: 'Olá! Gostaria de conhecer as peças da seleção Toque Ousado Libídus (Assinatura da Casa).'
+        wa: 'Olá! Gostaria de conhecer as peças da seleção Toque Ousado Libídus (Assinatura da Casa).',
+        img: 'novo30.jpg'
       }
     };
 
@@ -1222,6 +1268,16 @@
           document.getElementById('sig-pieces').textContent = sig.pieces;
           document.getElementById('sig-desc').textContent = sig.desc;
           document.getElementById('sig-wa-btn').onclick = () => openWhatsApp(sig.wa);
+
+          const sigImg = document.getElementById('sig-img');
+          if (sigImg) {
+            const parent = sigImg.parentElement;
+            const oldFallback = parent ? parent.querySelector('.editorial-fallback') : null;
+            if (oldFallback) oldFallback.remove();
+            sigImg.dataset.fallbackApplied = 'false';
+            sigImg.style.display = 'block';
+            sigImg.src = sig.img;
+          }
         });
       });
 

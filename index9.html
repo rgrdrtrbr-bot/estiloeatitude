@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estilo &amp; Libídus — Curadoria de Moda &amp; Calçados | Santiago, RS</title>
+  <meta name="description" content="Estilo & Libídus em Santiago, RS. A união da Estilo & Atitude com a Libídus Store na Rua Tito Beccon, 1392. Curadoria de moda feminina, masculina, calçados e acessórios." />
+
+  <!-- Google Fonts: Instrument Serif & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#F6F1E9',
+            linenDark: '#EDE5D8',
+            espresso: '#191412',
+            ruby: '#68121B',
+            rubyLight: '#831924',
+            gold: '#B88A44',
+            goldLight: '#CFA460',
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-linen: #F6F1E9;
+      --ink-espresso: #191412;
+      --accent-ruby: #68121B;
+      --accent-gold: #B88A44;
+    }
+
+    body {
+      background-color: var(--bg-linen);
+      color: var(--ink-espresso);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .paper-grain {
+      background-color: #F6F1E9;
+      background-image:
+        radial-gradient(rgba(25, 20, 18, 0.032) 1px, transparent 0),
+        radial-gradient(rgba(184, 138, 68, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+
+    .font-editorial {
+      font-family: 'Instrument Serif', Georgia, serif;
+      letter-spacing: -0.015em;
+    }
+
+    @keyframes marqueeLoop {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeLoop 36s linear infinite;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F6F1E9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(25, 20, 18, 0.22);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #68121B;
+    }
+
+    .fade-image {
+      transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vitrine-card:hover .vitrine-cover-img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body id="topo" class="paper-grain text-espresso selection:bg-ruby selection:text-linen">
+
+  <!-- ==========================================================================
+       BARRA DE AVISO & STATUS AO VIVO
+       ========================================================================== -->
+  <div class="bg-espresso text-linen py-2 px-4 text-center text-xs tracking-wide flex items-center justify-center gap-3 border-b border-gold/30">
+    <span class="inline-flex items-center gap-1.5 font-medium">
+      <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+      <span id="live-status-text">Loja Aberta · Rua Tito Beccon, 1392, Santiago - RS</span>
+    </span>
+    <span class="text-gold hidden sm:inline">✦</span>
+    <span class="hidden sm:inline text-linen/80">Atendimento Especial de Natal &amp; Fim de Ano</span>
+  </div>
+
+  <!-- ==========================================================================
+       CABEÇALHO / NAVEGAÇÃO EDITORIAL
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 bg-linen/90 backdrop-blur-md border-b border-espresso/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+      <a href="#topo" class="flex flex-col">
+        <span class="font-editorial text-2xl sm:text-3xl text-espresso tracking-tight leading-none">Estilo &amp; Libídus</span>
+        <span class="text-[9px] uppercase tracking-[0.24em] text-gold font-semibold mt-0.5">Santiago · RS</span>
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-[0.16em] text-espresso/80">
+        <a href="#provador" class="hover:text-ruby transition-colors">Do provador ao look</a>
+        <a href="#vitrines" class="hover:text-ruby transition-colors">Cofres VIP</a>
+        <a href="#selecao-natal" class="hover:text-ruby transition-colors">Seleção Natal</a>
+        <a href="#visite" class="hover:text-ruby transition-colors">Visite a Loja</a>
+      </nav>
+
+      <!-- Ações Header -->
+      <div class="flex items-center gap-3">
+        <a
+          href="https://www.instagram.com/estiloeatitudesantiago/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram Estilo & Atitude Santiago"
+          class="hidden sm:inline-flex items-center justify-center p-2.5 rounded-full border border-espresso/20 bg-linenDark/50 text-espresso hover:text-ruby transition-colors"
+        >
+          <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <button
+          type="button"
+          onclick="openWhatsApp('Olá! Vim pelo site da Estilo & Libídus e gostaria de atendimento.')"
+          class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ruby text-linen hover:bg-rubyLight transition-colors text-xs font-medium tracking-wide cursor-pointer"
+        >
+          <span>WhatsApp VIP</span>
+        </button>
+
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          aria-label="Abrir menu"
+          class="md:hidden p-2.5 rounded-full border border-espresso/20 bg-linenDark/50 text-espresso cursor-pointer"
+        >
+          <span class="block w-5 h-0.5 bg-espresso mb-1"></span>
+          <span class="block w-5 h-0.5 bg-espresso mb-1"></span>
+          <span class="block w-5 h-0.5 bg-espresso"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-linen border-b border-espresso/15 px-6 py-5 space-y-4">
+      <a href="#provador" class="mobile-nav-link block text-sm uppercase tracking-wider text-espresso hover:text-ruby">Do provador ao look</a>
+      <a href="#vitrines" class="mobile-nav-link block text-sm uppercase tracking-wider text-espresso hover:text-ruby">Cofres VIP</a>
+      <a href="#selecao-natal" class="mobile-nav-link block text-sm uppercase tracking-wider text-espresso hover:text-ruby">Seleção Natal</a>
+      <a href="#visite" class="mobile-nav-link block text-sm uppercase tracking-wider text-espresso hover:text-ruby">Visite a Loja</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a
+          href="https://www.instagram.com/estiloeatitudesantiago/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-3 rounded-full border border-espresso/20 text-espresso text-xs font-medium uppercase tracking-widest text-center"
+        >
+          Instagram @estiloeatitudesantiago
+        </a>
+        <button
+          type="button"
+          onclick="openWhatsApp('Olá! Vim pelo site e gostaria de atendimento.')"
+          class="w-full py-3 rounded-full bg-ruby text-linen text-xs font-medium uppercase tracking-widest text-center"
+        >
+          WhatsApp VIP
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO / ABERTURA EDITORIAL
+       ========================================================================== -->
+  <section class="relative pt-12 pb-16 sm:py-24 border-b border-espresso/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-[11px] uppercase tracking-[0.24em] text-ruby font-semibold block">
+            Curadoria de Moda, Calçados &amp; Acessórios
+          </span>
+          <h1 class="font-editorial text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-espresso">
+            Elegância em cada detalhe. <br />
+            <span class="italic text-ruby">Looks que definem a sua essência.</span>
+          </h1>
+          <p class="text-base sm:text-lg text-espresso/80 leading-relaxed max-w-xl">
+            A união perfeita da <strong class="font-semibold">Estilo &amp; Atitude</strong> com a <strong class="font-semibold">Libídus Store</strong>. Curadoria exclusiva de moda feminina, masculina e calçados na Rua Tito Beccon.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a
+              href="#vitrines"
+              class="px-8 py-4 rounded-full bg-espresso text-linen hover:bg-ruby transition-colors text-xs font-medium uppercase tracking-widest inline-flex items-center gap-2 cursor-pointer"
+            >
+              <span>Explorar Cofres VIP</span>
+              <span>→</span>
+            </a>
+            <a
+              href="#provador"
+              class="px-8 py-4 rounded-full border border-espresso/30 text-espresso hover:bg-espresso hover:text-linen transition-colors text-xs font-medium uppercase tracking-widest"
+            >
+              Do provador ao look
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border border-espresso/20 shadow-2xl bg-linenDark">
+            <img
+              src="estilo1.jpg"
+              alt="Vitrine Estilo & Libídus"
+              data-label="Vitrine Principal"
+              onerror="handleImgFallback(this)"
+              class="w-full h-full object-cover object-center"
+            />
+            <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-espresso/80 via-espresso/30 to-transparent text-linen">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-goldLight block">Rua Tito Beccon, 1392</span>
+              <p class="font-editorial text-2xl mt-0.5">Santiago, Rio Grande do Sul</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAIXA CINÉTICA DE MARCAS (MARQUEE)
+       ========================================================================== -->
+  <div class="bg-espresso text-linen py-4 overflow-hidden border-b border-gold/30 marquee-wrapper">
+    <div class="marquee-track flex items-center gap-10 whitespace-nowrap text-xs uppercase tracking-[0.2em] text-linen/80">
+      <span>ANSELMI</span> <span>✺</span>
+      <span>BIAMAR</span> <span>✺</span>
+      <span>LIBÍDUS</span> <span>✺</span>
+      <span>BEIRA RIO</span> <span>✺</span>
+      <span>MODARE</span> <span>✺</span>
+      <span>ACTIVITTA</span> <span>✺</span>
+      <span>BRUNA BIA</span> <span>✺</span>
+      <span>DON CARLI</span> <span>✺</span>
+      <span>ANSELMI</span> <span>✺</span>
+      <span>BIAMAR</span> <span>✺</span>
+      <span>LIBÍDUS</span> <span>✺</span>
+      <span>BEIRA RIO</span> <span>✺</span>
+      <span>MODARE</span> <span>✺</span>
+      <span>ACTIVITTA</span> <span>✺</span>
+      <span>BRUNA BIA</span> <span>✺</span>
+      <span>DON CARLI</span> <span>✺</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCROLLYTELLING INTERATIVO: DO PROVADOR AO LOOK (4 ETAPAS)
+       ========================================================================== -->
+  <section id="provador" class="py-20 sm:py-28 border-b border-espresso/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold block">
+          Experiência Interativa
+        </span>
+        <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-espresso">
+          Do provador ao look. <br />
+          <span class="italic text-ruby">Quatro camadas. Nenhuma pressa.</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-espresso/75">
+          Conforme você explora as etapas, nossa curadoria ganha vida com as peças reais da loja.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Coluna de Etapas Clicáveis -->
+        <div class="lg:col-span-5 space-y-4">
+          <div
+            role="button"
+            tabindex="0"
+            onclick="setProvadorStep(0)"
+            class="provador-step p-6 rounded-2xl border border-espresso/25 bg-linenDark/70 transition-all cursor-pointer text-left"
+            data-step="0"
+          >
+            <span class="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold block mb-1">Etapa 01</span>
+            <h3 class="font-editorial text-2xl sm:text-3xl text-ruby">01 A base — Alfaiataria &amp; tricôs nobres</h3>
+            <p class="text-xs text-espresso/75 mt-1">Linha Estilo · Caimento impecável e conforto térmico para todas as ocasiões.</p>
+          </div>
+
+          <div
+            role="button"
+            tabindex="0"
+            onclick="setProvadorStep(1)"
+            class="provador-step p-6 rounded-2xl border border-espresso/15 bg-transparent hover:border-espresso/30 transition-all cursor-pointer text-left"
+            data-step="1"
+          >
+            <span class="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold block mb-1">Etapa 02</span>
+            <h3 class="font-editorial text-2xl sm:text-3xl text-espresso">02 A atitude — Estampas &amp; recortes autorais</h3>
+            <p class="text-xs text-espresso/75 mt-1">Linha Libídus · Personalidade do dia para a noite com estampas exclusivas.</p>
+          </div>
+
+          <div
+            role="button"
+            tabindex="0"
+            onclick="setProvadorStep(2)"
+            class="provador-step p-6 rounded-2xl border border-espresso/15 bg-transparent hover:border-espresso/30 transition-all cursor-pointer text-left"
+            data-step="2"
+          >
+            <span class="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold block mb-1">Etapa 03</span>
+            <h3 class="font-editorial text-2xl sm:text-3xl text-espresso">03 Nos pés — Brilho, conforto &amp; estabilidade</h3>
+            <p class="text-xs text-espresso/75 mt-1">Calçados · Sandálias cristal, scarpins e papetes para acompanhar o passo.</p>
+          </div>
+
+          <div
+            role="button"
+            tabindex="0"
+            onclick="setProvadorStep(3)"
+            class="provador-step p-6 rounded-2xl border border-espresso/15 bg-transparent hover:border-espresso/30 transition-all cursor-pointer text-left"
+            data-step="3"
+          >
+            <span class="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold block mb-1">Etapa 04</span>
+            <h3 class="font-editorial text-2xl sm:text-3xl text-espresso">04 O detalhe — Acabamentos que assinam o visual</h3>
+            <p class="text-xs text-espresso/75 mt-1">Acessórios · Brilho labial e detalhes essenciais para completar o look.</p>
+          </div>
+        </div>
+
+        <!-- Coluna de Imagem do Palco Dinâmico -->
+        <div class="lg:col-span-7">
+          <div class="relative w-full aspect-[4/5] sm:aspect-[4/3] rounded-3xl overflow-hidden border border-espresso/20 shadow-2xl bg-linenDark">
+            <img
+              id="provador-stage-img"
+              src="estilo2.jpg"
+              alt="Etapa do Provador"
+              data-label="Etapa 01"
+              onerror="handleImgFallback(this)"
+              class="w-full h-full object-cover object-top transition-opacity duration-500"
+            />
+            <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 bg-gradient-to-t from-espresso/80 via-espresso/30 to-transparent text-linen flex items-end justify-between">
+              <div>
+                <span id="provador-stage-badge" class="text-[10px] uppercase tracking-[0.2em] text-goldLight block">Etapa 01 · A base</span>
+                <h4 id="provador-stage-title" class="font-editorial text-3xl sm:text-4xl mt-0.5">01 A base — Alfaiataria &amp; tricôs nobres</h4>
+                <p id="provador-stage-sub" class="text-xs text-linen/80 mt-1">Linha Estilo · Caimento impecável e conforto térmico</p>
+              </div>
+              <div class="hidden sm:flex items-center gap-1.5 flex-shrink-0">
+                <span class="step-dot w-5 h-2 rounded-full bg-ruby transition-all"></span>
+                <span class="step-dot w-2 h-2 rounded-full bg-espresso/20 transition-all"></span>
+                <span class="step-dot w-2 h-2 rounded-full bg-espresso/20 transition-all"></span>
+                <span class="step-dot w-2 h-2 rounded-full bg-espresso/20 transition-all"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VITRINES EXCLUSIVAS VIP (COFRES)
+       ========================================================================== -->
+  <section id="vitrines" class="py-20 sm:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-[11px] uppercase tracking-[0.22em] text-ruby font-semibold block mb-2">
+            Catálogo Interativo
+          </span>
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-espresso">
+            Cofres VIP &amp; Seleções <br />
+            <span class="italic text-ruby">Exclusivas Estilo &amp; Libídus</span>
+          </h2>
+        </div>
+
+        <!-- Filtros de Categorias -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            data-filter="all"
+            class="vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-espresso text-linen border border-espresso transition-all cursor-pointer"
+          >
+            Todos os Cofres
+          </button>
+          <button
+            type="button"
+            data-filter="calcados"
+            class="vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-transparent text-espresso border border-espresso/20 hover:border-espresso transition-all cursor-pointer"
+          >
+            Calçados &amp; Salto
+          </button>
+          <button
+            type="button"
+            data-filter="moda-feminina"
+            class="vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-transparent text-espresso border border-espresso/20 hover:border-espresso transition-all cursor-pointer"
+          >
+            Moda Feminina
+          </button>
+          <button
+            type="button"
+            data-filter="acessorios-intima"
+            class="vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-transparent text-espresso border border-espresso/20 hover:border-espresso transition-all cursor-pointer"
+          >
+            Acessórios &amp; Íntima
+          </button>
+          <button
+            type="button"
+            data-filter="fitness-masculino"
+            class="vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-transparent text-espresso border border-espresso/20 hover:border-espresso transition-all cursor-pointer"
+          >
+            Fitness &amp; Masculino
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid de Vitrines -->
+      <div id="vitrines-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO SELEÇÃO NATAL & FIM DE ANO (ASSINATURA DA CASA)
+       ========================================================================== -->
+  <section id="selecao-natal" class="py-20 bg-linenDark/50 border-y border-espresso/15">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-[11px] uppercase tracking-[0.22em] text-ruby font-semibold block">
+            Destaques de Fim de Ano
+          </span>
+          <h2 class="font-editorial text-4xl sm:text-5xl text-espresso leading-tight">
+            Assinatura da Casa. <br />
+            <span class="italic text-ruby">Escolha sua combinação.</span>
+          </h2>
+          <p class="text-sm text-espresso/80 leading-relaxed">
+            Preparamos três seleções exclusivas para você acertar no presente ou garantir o seu look de Natal com atendimento personalizado.
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <button
+              type="button"
+              data-signature="ceia"
+              class="sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-ruby bg-ruby text-linen transition-all cursor-pointer"
+            >
+              Ceia &amp; Festas
+            </button>
+            <button
+              type="button"
+              data-signature="verao"
+              class="sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-espresso/20 bg-linen text-espresso hover:border-espresso transition-all cursor-pointer"
+            >
+              Verão &amp; Leveza
+            </button>
+            <button
+              type="button"
+              data-signature="libidus"
+              class="sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-espresso/20 bg-linen text-espresso hover:border-espresso transition-all cursor-pointer"
+            >
+              Toque Ousado Libídus
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="p-8 sm:p-10 rounded-3xl bg-linen border border-espresso/20 shadow-xl space-y-6">
+            <div class="flex items-center justify-between border-b border-espresso/10 pb-4">
+              <span id="sig-tag" class="text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">
+                Seleção Ceia &amp; Festas
+              </span>
+              <span class="text-xs text-espresso/60">Estilo &amp; Libídus · Santiago RS</span>
+            </div>
+
+            <div class="space-y-3">
+              <h3 id="sig-pieces" class="font-editorial text-3xl sm:text-4xl text-espresso">
+                Sandália Metalizada Cristal + Tricô Nobre + Bolsa Estruturada
+              </h3>
+              <p id="sig-desc" class="text-sm text-espresso/75 leading-relaxed">
+                Brilho sutil nos pés, texturas sofisticadas e acabamento em dourado para celebrar o Natal e a virada do ano com conforto absoluto.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-espresso/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="text-xs text-espresso/60">Disponível na loja física e para reserva no WhatsApp</span>
+              <button
+                id="sig-wa-btn"
+                type="button"
+                onclick="openWhatsApp('Olá! Gostaria de receber sugestões da seleção Ceia & Festas da Estilo & Libídus.')"
+                class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-ruby text-linen hover:bg-rubyLight transition-colors text-xs font-medium tracking-wide cursor-pointer"
+              >
+                <span>Pedir este look no WhatsApp →</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO 'VISITE' — ENCONTRO PRESENCIAL, CAFÉ & MAPA GOOGLE
+       ========================================================================== -->
+  <section id="visite" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold block">
+            Santiago · Rio Grande do Sul
+          </span>
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-espresso">
+            Puxa uma cadeira. <br />
+            <span class="italic text-ruby">O café já tá passando.</span>
+          </h2>
+          <p class="text-base text-espresso/80 leading-relaxed max-w-xl">
+            Venha experimentar sem pressa, tomar um café fresquinho com a nossa equipe e montar combinações pensadas para o seu estilo e para as festas de fim de ano.
+          </p>
+
+          <div class="p-6 rounded-2xl border border-espresso/15 bg-linenDark/55 space-y-4">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-espresso/55 block">Endereço da Loja</span>
+                <p class="font-medium text-sm sm:text-base text-espresso mt-0.5">
+                  Rua Tito Beccon, 1392 — Esquina Barão do Rio Branco
+                </p>
+                <p class="text-xs text-espresso/65">Centro · Santiago, RS</p>
+              </div>
+              <button
+                type="button"
+                onclick="copyStoreAddress()"
+                class="px-3.5 py-2 rounded-full border border-espresso/20 bg-linen hover:bg-espresso hover:text-linen transition-colors text-[11px] font-medium flex-shrink-0 cursor-pointer"
+              >
+                <span id="copy-addr-label">Copiar endereço</span>
+              </button>
+            </div>
+
+            <!-- Notas do Google e Horários -->
+            <div class="pt-4 border-t border-espresso/10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div>
+                <span class="text-espresso/60 block">Horário de Atendimento:</span>
+                <strong class="text-espresso font-medium">Seg a Sáb: 09h às 19h</strong>
+              </div>
+              <div>
+                <span class="text-espresso/60 block">Avaliação dos Clientes:</span>
+                <div class="flex items-center gap-1.5 text-gold font-semibold mt-0.5">
+                  <span>★★★★★</span>
+                  <span class="text-espresso font-medium">5.0 / 5.0 no Google</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button
+              type="button"
+              onclick="openWhatsApp('Olá! Gostaria de agendar um horário ou tirar dúvidas sobre peças na loja da Tito Beccon, 1392.')"
+              class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-ruby text-linen hover:bg-rubyLight transition-all text-xs sm:text-sm font-medium tracking-wide cursor-pointer"
+            >
+              <span>Falar com a Equipe no WhatsApp →</span>
+            </button>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Tito+Beccon+1392+Santiago+RS"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-espresso/25 text-espresso hover:bg-espresso hover:text-linen transition-all text-xs sm:text-sm font-medium tracking-wide"
+            >
+              <span>Abrir rota no Google Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa embutido (Google Maps Iframe) & Como Chegar -->
+        <div class="lg:col-span-6 flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-3xl overflow-hidden border border-espresso/20 shadow-xl bg-linenDark relative">
+            <iframe
+              title="Mapa de localização Estilo & Libídus na Rua Tito Beccon Santiago RS"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.5552157451247!2d-54.8344!3d-29.1833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95037213456789ab%3A0x123456789abcdef!2sRua%20Tito%20Beccon%2C%201392%20-%20Santiago%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-500"
+            ></iframe>
+          </div>
+          <div class="flex items-center justify-between px-2 text-xs text-espresso/70">
+            <span>📍 Rua Tito Beccon, 1392 — Centro, Santiago (RS)</span>
+            <a href="https://www.google.com/maps/dir//Rua+Tito+Beccon,+1392+-+Santiago,+RS" target="_blank" rel="noopener noreferrer" class="font-semibold text-ruby hover:underline">
+              Como chegar →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RODAPÉ EDITORIAL
+       ========================================================================== -->
+  <footer class="bg-espresso text-linen border-t border-espresso">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12 sm:py-16">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-linen/15">
+        <div>
+          <span class="font-editorial text-3xl sm:text-4xl text-linen block">Estilo &amp; Libídus</span>
+          <p class="text-xs text-linen/65 mt-1">
+            Estilo &amp; Atitude + Libídus Store · Rua Tito Beccon, 1392 — Centro, Santiago - RS
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-6 text-xs uppercase tracking-[0.18em] text-linen/75">
+          <a href="#topo" class="hover:text-gold transition-colors">Início</a>
+          <a href="#provador" class="hover:text-gold transition-colors">Do provador ao look</a>
+          <a href="#vitrines" class="hover:text-gold transition-colors">Cofres VIP</a>
+          <a href="#selecao-natal" class="hover:text-gold transition-colors">Seleção Natal</a>
+          <a href="#visite" class="hover:text-gold transition-colors">Visite</a>
+          <a href="https://www.instagram.com/estiloeatitudesantiago/" target="_blank" rel="noopener noreferrer" class="text-gold font-semibold hover:underline">Instagram ↗</a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-linen/55">
+        <p>© 2026 Estilo &amp; Libídus · Todos os direitos reservados · Santiago, Rio Grande do Sul.</p>
+        <p class="text-goldLight">Curadoria de Moda, Calçados &amp; Acessórios</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BOTÃO FLUTUANTE DE WHATSAPP
+       ========================================================================== -->
+  <button
+    type="button"
+    onclick="openWhatsApp('Olá! Vim pelo site da Estilo & Libídus e gostaria de atendimento VIP.')"
+    aria-label="Atendimento via WhatsApp"
+    class="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-espresso text-linen border border-gold/60 hover:bg-ruby hover:border-ruby shadow-lg transition-all text-xs font-medium tracking-wide cursor-pointer"
+  >
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span>WhatsApp VIP</span>
+  </button>
+
+  <!-- ==========================================================================
+       MODAL INTERATIVO DAS VITRINES EXCLUSIVAS VIP (COFRES)
+       ========================================================================== -->
+  <div
+    id="vitrine-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-vitrine-title"
+    class="hidden fixed inset-0 z-50 overflow-y-auto bg-espresso/85 backdrop-blur-md p-3 sm:p-6 lg:p-10"
+  >
+    <div class="max-w-6xl mx-auto rounded-3xl bg-linen border border-espresso/20 shadow-2xl overflow-hidden my-2 sm:my-6">
+      <div class="sticky top-0 z-20 bg-linen/95 backdrop-blur-md border-b border-espresso/15 px-5 sm:px-8 py-5 flex items-start sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span id="modal-vitrine-tag" class="px-2.5 py-0.5 rounded-full bg-ruby/10 text-ruby text-[10px] uppercase tracking-[0.2em] font-semibold">
+              Cofre Secreto VIP
+            </span>
+          </div>
+          <h3 id="modal-vitrine-title" class="font-editorial text-3xl sm:text-4xl text-espresso leading-tight">
+            Título da Vitrine
+          </h3>
+        </div>
+
+        <button
+          type="button"
+          onclick="closeVitrineModal()"
+          aria-label="Fechar vitrine"
+          class="px-4 py-2.5 rounded-full border border-espresso/20 bg-linenDark/70 hover:bg-espresso hover:text-linen transition-colors text-xs font-medium tracking-wide flex items-center gap-1.5 flex-shrink-0 cursor-pointer"
+        >
+          <span>Fechar</span>
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+
+      <div class="px-5 sm:px-8 py-4 bg-linenDark/45 border-b border-espresso/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <p id="modal-vitrine-desc" class="text-xs sm:text-sm text-espresso/80 leading-relaxed max-w-3xl">
+          Descrição da seleção.
+        </p>
+        <button
+          id="modal-vitrine-wa-all"
+          type="button"
+          class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-espresso text-linen hover:bg-ruby transition-colors text-xs font-medium tracking-wide flex-shrink-0 cursor-pointer"
+        >
+          <span>Consultar cofre no WhatsApp →</span>
+        </button>
+      </div>
+
+      <div id="modal-products-grid" class="p-5 sm:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       BANCO DE DADOS & LÓGICA INTERATIVA
+       ========================================================================== -->
+  <script>
+    const STORE_WHATSAPP = '5555999999999';
+    const STORE_ADDRESS = 'Rua Tito Beccon, 1392 — Centro, Santiago - RS';
+
+    function openWhatsApp(message) {
+      const url = `https://wa.me/${STORE_WHATSAPP}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function handleImgFallback(imgElement) {
+      if (imgElement.dataset.fallbackApplied === 'true') return;
+      imgElement.dataset.fallbackApplied = 'true';
+
+      const src = imgElement.getAttribute('src') || '';
+      const label = imgElement.getAttribute('data-label') || 'Peça Exclusiva';
+      
+      const parent = imgElement.parentElement;
+      if (parent) {
+        imgElement.style.display = 'none';
+        const fallbackBox = document.createElement('div');
+        fallbackBox.className = 'editorial-fallback w-full h-full flex flex-col items-center justify-center p-6 bg-linenDark text-center border border-espresso/10';
+        fallbackBox.innerHTML = `
+          <span class="text-[10px] uppercase tracking-[0.2em] text-ruby font-semibold mb-2">Estilo &amp; Libídus</span>
+          <p class="font-editorial text-2xl text-espresso mb-1">${label}</p>
+          <code class="text-[11px] bg-linen px-2 py-1 rounded text-espresso/70 border border-espresso/10 mb-3">${src}</code>
+          <span class="text-[10px] text-espresso/50">Salve o arquivo na pasta do projeto</span>
+        `;
+        parent.appendChild(fallbackBox);
+      }
+    }
+
+    const VITRINES_DATA = [
+      {
+        id: 1,
+        filter: 'calcados',
+        tag: 'Cofre de Calçados · Coleção Festas & Verão',
+        title: 'Sandálias & Rasteiras',
+        description: 'Sandálias de salto, modelos cristal, dourados, flatforms e rasteirinhas com brilho. Elegância e conforto para todas as ocasiões.',
+        coverImg: 'novo1.jpg',
+        items: [
+          { name: 'Sandália Dourada com Brilhos', brand: 'Coleção Festas', price: 'R$ 179,90', note: 'Tiras cruzadas cravejadas em brilho e salto bloco confortável.', sizes: ['35', '36', '37', '38', '39'], angles: [{ label: 'Destaque', src: 'novo1.jpg' }] },
+          { name: 'Sandália Brown com Brilho', brand: 'Edição Especial', price: 'R$ 179,90', note: 'Tom terroso sofisticado com tiras iluminadas e bico quadrado.', sizes: ['35', '36', '37', '38', '39'], angles: [{ label: 'Destaque', src: 'novo2.jpg' }] },
+          { name: 'Sandália Ostra com Brilho', brand: 'Coleção Festas', price: 'R$ 199,90', note: 'Design assimétrico envolvente em tom ostra perolado.', sizes: ['35', '36', '37', '38', '39'], angles: [{ label: 'Destaque', src: 'novo3.jpg' }] },
+          { name: 'Sandália Metalizada Dourada', brand: 'Beira Rio', price: 'R$ 179,90', note: 'Salto bloco cristal transparente e acabamento dourado luminoso.', sizes: ['35', '36', '37', '38', '39'], angles: [{ label: 'Destaque', src: 'novo22.jpg' }] },
+          { name: 'Sandália Dourada Tiras Duplas', brand: 'Modare Ultraconforto', price: 'R$ 169,90', note: 'Palmilha anatômica macia com salto baixo estável.', sizes: ['35', '36', '37', '39'], angles: [{ label: 'Destaque', src: 'novo17.jpg' }] },
+          { name: 'Sandália Black Salto Cristal', brand: 'Beira Rio', price: 'Consulte na loja', note: 'Tira frontal em strass fumê e salto geométrico translúcido.', sizes: ['36', '37', '38', '39'], angles: [{ label: 'Destaque', src: 'novo7.jpg' }] },
+          { name: 'Sandália Black Clássica', brand: 'Modare Ultraconforto', price: 'R$ 169,90', note: 'Fivela dourada e palmilha de alto conforto para eventos e trabalho.', sizes: ['36', '37', '39', '40'], angles: [{ label: 'Destaque', src: 'novo19.jpg' }] },
+          { name: 'Sandália Off com Detalhe Dourado', brand: 'Modare Ultraconforto', price: 'R$ 159,90', note: 'Contraste elegante entre o off-white e a tira metalizada dourada.', sizes: ['34', '36', '37'], angles: [{ label: 'Destaque', src: 'novo21.jpg' }] },
+          { name: 'Sandália Off com Dourado Flatform', brand: 'Beira Rio', price: 'R$ 169,90', note: 'Solado leve com detalhe metalizado no dedo.', sizes: ['36', '37', '38', '39', '40'], angles: [{ label: 'Destaque', src: 'novo13.jpg' }] },
+          { name: 'Papete Modare Brilho Dourado', brand: 'Modare Ultraconforto', price: 'R$ 139,90', note: 'Duas tiras com aplicação de brilho e esferas massageadoras.', sizes: ['35', '39'], angles: [{ label: 'Destaque', src: 'novo11.jpg' }] },
+          { name: 'Papete Modare Brilho Black', brand: 'Modare Ultraconforto', price: 'R$ 139,90', note: 'Conforto absoluto com tiras cravejadas em grafite.', sizes: ['36', '37', '39', '40'], angles: [{ label: 'Destaque', src: 'novo12.jpg' }] },
+          { name: 'Sandália Nude Pedraria', brand: 'Beira Rio', price: 'R$ 169,90', note: 'Plataforma leve com pedrarias orgânicas na tira central.', sizes: ['35', '36', '37', '38', '39', '40'], angles: [{ label: 'Destaque', src: 'novo23.jpg' }] },
+          { name: 'Sandália Modare Pedras Naturais', brand: 'Modare Ultraconforto', price: 'R$ 159,90', note: 'Tecnologia Reflex Sense, Gel Tech e ponto de conforto no joanete.', sizes: ['36', '37', '40'], angles: [{ label: 'Destaque', src: 'novo18.jpg' }] },
+          { name: 'Sandália Modare Ultraconforto Marrom', brand: 'Modare Ultraconforto', price: 'R$ 139,90', note: 'Palmilha Reflex Sense, forro antibacteriano e calce fácil.', sizes: ['37', '39'], angles: [{ label: 'Destaque', src: 'novo15.jpg' }] },
+          { name: 'Sandália Modare Off Tiras Cruzadas', brand: 'Modare Ultraconforto', price: 'R$ 169,90', note: 'Último par disponível no 36 com detalhe dourado.', sizes: ['36'], angles: [{ label: 'Destaque', src: 'novo20.jpg' }] },
+          { name: 'Sandália Beira Rio Tachas Off', brand: 'Beira Rio', price: 'Consulte na loja', note: 'Tiras com tachas douradas e solado anatômico.', sizes: ['35', '37', '38', '40'], angles: [{ label: 'Destaque', src: 'novo5.jpg' }] },
+          { name: 'Rasteira Beira Rio Marrom Tachas', brand: 'Beira Rio', price: 'R$ 139,90', note: 'Aplicações metálicas e ajuste traseiro prático.', sizes: ['35', '36', '37', '39', '40'], angles: [{ label: 'Destaque', src: 'novo14.jpg' }] },
+          { name: 'Rasteira Beira Rio Preta Tachas', brand: 'Beira Rio', price: 'R$ 139,90', note: 'Versátil e elegante para acompanhar produções diurnas.', sizes: ['35', '36', '37', '39', '40'], angles: [{ label: 'Destaque', src: 'novo16.jpg' }] },
+          { name: 'Chinelo Tamanco Laço Caramelo', brand: 'Moleca / Beira Rio', price: 'R$ 159,90', note: 'Plataforma leve com nó frontal delicado.', sizes: ['34', '37', '38'], angles: [{ label: 'Destaque', src: 'novo6.jpg' }] },
+          { name: 'Slide Laço Animal Print Suave', brand: 'Última Unidade', price: 'R$ 149,90', note: 'Último par no 34 com acabamento acetinado.', sizes: ['34'], angles: [{ label: 'Destaque', src: 'novo4.jpg' }] },
+          { name: 'Chinelo Top com Brilho Black', brand: 'Edição Verão', price: 'R$ 99,90', note: 'Tiras finas iluminadas para máxima praticidade.', sizes: ['34', '35', '36', '38', '39', '40'], angles: [{ label: 'Destaque', src: 'novo8.jpg' }] }
+        ]
+      },
+      {
+        id: 2,
+        filter: 'calcados',
+        tag: 'Cofre Shoes Sale',
+        title: 'Shoes Sale | Preços Especiais',
+        description: 'Scarpins, saltos, sandálias e calçados selecionados com descontos especiais. Seus modelos favoritos por preços que surpreendem!',
+        coverImg: 'scarpinblack.jpg',
+        items: [
+          { name: 'Scarpin Black Salto Bloco', brand: 'De R$ 159,90 por R$ 119,90', price: 'R$ 119,90', note: 'Clássico indispensável de bico fino e salto bloco estável.', sizes: ['35', '39', '40'], angles: [{ label: 'Destaque', src: 'scarpinblack.jpg' }] },
+          { name: 'Scarpin Chocolate Salto Bloco', brand: 'De R$ 159,90 por R$ 119,90', price: 'R$ 119,90', note: 'Tom café profundo que harmoniza com alfaiataria e tons terrosos.', sizes: ['35', '38', '39', '40'], angles: [{ label: 'Destaque', src: 'scarpinchocolate.jpg' }] },
+          { name: 'Scarpin Nude Salto Bloco', brand: 'De R$ 159,90 por R$ 119,90', price: 'R$ 119,90', note: 'Alonga a silhueta com suavidade e elegância atemporal.', sizes: ['37', '38', '39', '40'], angles: [{ label: 'Destaque', src: 'scarpinnude.jpg' }] },
+          { name: 'Chinelo Tamanco Off-White', brand: 'Shoes Sale', price: 'R$ 139,90', note: 'Tira larga matelassê confortável para o dia a dia.', sizes: ['35', '36', '37', '38'], angles: [{ label: 'Destaque', src: 'novo10.jpg' }] }
+        ]
+      },
+      {
+        id: 3,
+        filter: 'calcados',
+        tag: 'Cofre Última Chance',
+        title: 'Última Chance | Botas R$ 99,90',
+        description: 'É agora ou nunca! Botas e coturnos selecionados por apenas R$ 99,90. Uma oportunidade especial para garantir seus favoritos!',
+        coverImg: 'estilo5.jpg',
+        items: [
+          { name: 'Bota Cano Curto Salto Bloco', brand: 'Última Chance · Valor Único', price: 'R$ 99,90', note: 'Acabamento macio e zíper lateral.', sizes: ['35', '36', '37', '38'], angles: [{ label: 'Destaque', src: 'estilo5.jpg' }] },
+          { name: 'Coturno Urbano Tratorado', brand: 'Última Chance · Valor Único', price: 'R$ 99,90', note: 'Estilo marcante e solado aderente.', sizes: ['35', '36', '37', '39'], angles: [{ label: 'Destaque', src: 'estilo6.jpg' }] }
+        ]
+      },
+      {
+        id: 4,
+        filter: 'acessorios-intima',
+        tag: 'Cofre Acessórios & Bolsas',
+        title: 'Acessórios & Bolsas',
+        description: 'Bolsas estruturadas, carteiras, brincos, cintos e acessórios que complementam e valorizam qualquer produção.',
+        coverImg: 'novo9.jpg',
+        items: [
+          { name: 'Gloss Ted Vivai Mel', brand: 'Beleza & Charme', price: 'R$ 14,90', note: 'Embalagem colecionável em formato de potinho de mel com brilho labial hidratante.', sizes: ['Único'], angles: [{ label: 'Detalhe', src: 'novo9.jpg' }] }
+        ]
+      },
+      {
+        id: 5,
+        filter: 'fitness-masculino',
+        tag: 'Cofre Fitness & Casual Libidus',
+        title: 'Fitness & Casual | Libidus',
+        description: 'Do fitness ao casual, do conforto do dia a dia à produção para um evento especial. Peças versáteis e modernas.',
+        coverImg: 'estilo8.jpg',
+        items: []
+      },
+      {
+        id: 6,
+        filter: 'fitness-masculino',
+        tag: 'Cofre Moda Masculina',
+        title: 'Moda Masculina | Fitness & Casual',
+        description: 'Do treino à rotina, do básico ao estiloso. Moda masculina fitness e casual com peças confortáveis e versáteis.',
+        coverImg: 'estilo10.jpg',
+        items: [
+          { name: 'Linha Casual & Esportiva Masculina', brand: 'Oposição / Don Carli / Libídus', price: 'Consulte na loja', note: 'Camisetas, bermudas tecnológicas e polos.', sizes: ['P', 'M', 'G', 'GG'], angles: [{ label: 'Destaque', src: 'estilo10.jpg' }] }
+        ]
+      },
+      {
+        id: 7,
+        filter: 'moda-feminina',
+        tag: 'Cofre Primavera Verão',
+        title: 'Primavera Verão | Estilo & Atitude',
+        description: 'Linha jeans, vestidos, saias, t-shirts e muito mais. Tendências e novidades que traduzem o melhor da moda feminina.',
+        coverImg: 'novo26.jpg',
+        items: [
+          { name: 'Conjunto Poá Amarração Costas', brand: 'Primavera Verão', price: 'R$ 129,90', note: 'Cropped ombro a ombro com laço traseiro e short-saia transpassado.', sizes: ['P', 'M', 'G'], angles: [{ label: 'Frente', src: 'novo26.jpg' }, { label: 'Costas & Espelho', src: 'novo31.jpg' }] },
+          { name: 'Conjunto Tropical Tucanos', brand: 'Primavera Verão', price: 'R$ 129,90', note: 'Blusa lenço com estampa exclusiva de tucanos e folhagens + short.', sizes: ['P', 'M', 'G'], angles: [{ label: 'Frente', src: 'novo27.jpg' }, { label: 'Perfil', src: 'novo28.jpg' }, { label: 'Completo', src: 'novo29.jpg' }] },
+          { name: 'Macaquinho Estampa Botânica Preto & Dourado', brand: 'Primavera Verão', price: 'Consulte na loja', note: 'Recorte estratégico nas costas com amarração em laço.', sizes: ['P', 'M', 'G'], angles: [{ label: 'Frente', src: 'novo30.jpg' }, { label: 'Costas', src: 'novo32.jpg' }] },
+          { name: 'Conjunto Listrado Saia Envelope', brand: 'Primavera Verão', price: 'Consulte na loja', note: 'Cropped de mangas bufantes e short-saia com amarração lateral.', sizes: ['P', 'M', 'G'], angles: [{ label: 'Destaque', src: 'novo24.jpg' }] },
+          { name: 'Vestido Curto Floral Araras', brand: 'Primavera Verão', price: 'Consulte na loja', note: 'Modelagem fluida e rodada com estampa tropical vibrante.', sizes: ['P', 'M', 'G'], angles: [{ label: 'Destaque', src: 'novo25.jpg' }] },
+          { name: 'Look Completo Jeans & Regata Canelada', brand: 'Linha Jeans Estilo', price: 'Peças a partir de R$ 79,90', note: 'Regata (R$ 79,90), Wide Leg (R$ 199,90), Short Jeans (R$ 209,90).', sizes: ['36', '38', '40', '42'], angles: [{ label: 'Composição', src: 'novo10.jpg' }] }
+        ]
+      },
+      {
+        id: 8,
+        filter: 'fitness-masculino',
+        tag: 'Cofre Bruna Bia Ativa',
+        title: 'Moda Fitness | Bruna Bia Ativa',
+        description: 'Roupas para o dia a dia, lazer e trabalho com conforto. Peças comfy e moda fitness versátil.',
+        coverImg: 'estilo11.jpg',
+        items: [
+          { name: 'Coleção Bruna Bia Ativa', brand: 'Bruna Bia Ativa', price: 'Consulte na loja', note: 'Conjuntos comfy e leggings de alta elasticidade.', sizes: ['P', 'M', 'G', 'GG'], angles: [{ label: 'Destaque', src: 'estilo11.jpg' }] }
+        ]
+      },
+      {
+        id: 9,
+        filter: 'acessorios-intima',
+        tag: 'Cofre Moda Íntima & Praia',
+        title: 'Moda Íntima & Praia | Feminina e Masculina',
+        description: 'Conforto e estilo em todos os momentos! Lingeries, cuecas, biquínis, maiôs e sungas.',
+        coverImg: 'estilo12.jpg',
+        items: []
+      }
+    ];
+
+    function renderVitrinesGrid(filter = 'all') {
+      const grid = document.getElementById('vitrines-grid');
+      if (!grid) return;
+
+      const filtered = filter === 'all' ? VITRINES_DATA : VITRINES_DATA.filter(v => v.filter === filter);
+
+      grid.innerHTML = filtered.map(vitrine => `
+        <article
+          onclick="openVitrineModal(${vitrine.id})"
+          class="vitrine-card group rounded-2xl border border-espresso/15 bg-linen hover:border-ruby/60 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md cursor-pointer"
+        >
+          <div>
+            <div class="relative w-full aspect-[9/16] bg-linenDark overflow-hidden border-b border-espresso/10">
+              <img
+                src="${vitrine.coverImg}"
+                alt="${vitrine.title}"
+                data-label="${vitrine.title}"
+                onerror="handleImgFallback(this)"
+                class="vitrine-cover-img w-full h-full object-cover object-top transition-transform duration-700"
+              />
+              <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-espresso/75 via-espresso/25 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-linen">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-goldLight font-semibold">${vitrine.tag}</span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <h3 class="font-editorial text-3xl text-espresso group-hover:text-ruby transition-colors leading-tight">${vitrine.title}</h3>
+              <p class="text-xs sm:text-[13px] text-espresso/75 leading-relaxed mt-2.5 line-clamp-3">${vitrine.description}</p>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-espresso/10 mt-2">
+            <span class="text-xs font-semibold text-ruby group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">Abrir cofre VIP →</span>
+            <span class="text-[10px] uppercase tracking-[0.18em] text-espresso/50">Explorar</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    let activeVitrine = null;
+    const selectedSizeByItem = {};
+    const selectedAngleByItem = {};
+
+    function openVitrineModal(vitrineId) {
+      const vitrine = VITRINES_DATA.find(v => v.id === vitrineId);
+      if (!vitrine) return;
+
+      activeVitrine = vitrine;
+      const modal = document.getElementById('vitrine-modal');
+      document.getElementById('modal-vitrine-tag').textContent = vitrine.tag;
+      document.getElementById('modal-vitrine-title').textContent = vitrine.title;
+      document.getElementById('modal-vitrine-desc').textContent = vitrine.description;
+
+      const waAllBtn = document.getElementById('modal-vitrine-wa-all');
+      waAllBtn.onclick = () => {
+        openWhatsApp(`Olá! Gostaria de ver as novidades do cofre "${vitrine.title}" da Estilo & Libídus.`);
+      };
+
+      const grid = document.getElementById('modal-products-grid');
+      if (vitrine.items.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-espresso/60 space-y-2">
+            <p class="font-editorial text-3xl">Este cofre está sendo preparado.</p>
+            <p class="text-xs">Novas fotografias e peças serão adicionadas em breve. Fale conosco no WhatsApp!</p>
+          </div>
+        `;
+      } else {
+        grid.innerHTML = vitrine.items.map((item, idx) => {
+          const itemKey = `${vitrine.id}-${idx}`;
+          if (!selectedSizeByItem[itemKey]) selectedSizeByItem[itemKey] = item.sizes[0] || '';
+          if (selectedAngleByItem[itemKey] === undefined) selectedAngleByItem[itemKey] = 0;
+
+          const currentAngle = item.angles[selectedAngleByItem[itemKey]] || item.angles[0];
+          const hasMultipleAngles = item.angles.length > 1;
+
+          return `
+            <div class="rounded-2xl border border-espresso/15 bg-linenDark/35 overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="relative w-full aspect-[9/16] bg-linenDark overflow-hidden border-b border-espresso/10">
+                  <img
+                    id="modal-item-img-${itemKey}"
+                    src="${currentAngle.src}"
+                    alt="${item.name}"
+                    data-label="${item.name}"
+                    onerror="handleImgFallback(this)"
+                    class="w-full h-full object-cover object-top"
+                  />
+                  ${hasMultipleAngles ? `
+                    <div class="absolute bottom-3 inset-x-3 flex flex-wrap justify-center gap-1.5 bg-linen/90 backdrop-blur-sm p-1.5 rounded-full border border-espresso/15">
+                      ${item.angles.map((ang, aIdx) => `
+                        <button
+                          type="button"
+                          onclick="switchItemAngle('${itemKey}', ${vitrine.id}, ${idx}, ${aIdx})"
+                          class="angle-btn-${itemKey} px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-colors cursor-pointer ${aIdx === 0 ? 'bg-espresso text-linen' : 'bg-transparent text-espresso hover:bg-espresso/10'}"
+                        >
+                          ${ang.label}
+                        </button>
+                      `).join('')}
+                    </div>
+                  ` : ''}
+                </div>
+
+                <div class="p-5">
+                  <div class="flex items-center justify-between gap-2 text-[10px] uppercase tracking-[0.18em] text-gold font-semibold">
+                    <span>${item.brand}</span>
+                    <span class="text-ruby font-bold text-xs">${item.price}</span>
+                  </div>
+                  <h4 class="font-editorial text-2xl text-espresso mt-1 leading-snug">${item.name}</h4>
+                  <p class="text-xs text-espresso/75 leading-relaxed mt-2">${item.note}</p>
+
+                  <div class="mt-4 pt-3 border-t border-espresso/10">
+                    <span class="text-[10px] uppercase tracking-[0.18em] text-espresso/60 block mb-2">Selecione o tamanho / numeração:</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      ${item.sizes.map((sz, sIdx) => `
+                        <button
+                          type="button"
+                          onclick="selectItemSize('${itemKey}', '${sz}', this)"
+                          class="size-btn-${itemKey} px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-colors cursor-pointer ${sIdx === 0 ? 'border-ruby bg-ruby text-linen' : 'border-espresso/20 bg-linen text-espresso hover:border-espresso'}"
+                        >
+                          ${sz}
+                        </button>
+                      `).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="px-5 pb-5">
+                <button
+                  type="button"
+                  onclick="reserveItemWhatsApp('${itemKey}', ${vitrine.id}, ${idx})"
+                  class="w-full py-3 px-4 rounded-full bg-espresso text-linen hover:bg-ruby transition-colors text-xs font-medium tracking-wide cursor-pointer"
+                >
+                  Reservar no WhatsApp →
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVitrineModal() {
+      const modal = document.getElementById('vitrine-modal');
+      if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function switchItemAngle(itemKey, vitrineId, itemIdx, angleIdx) {
+      const vitrine = VITRINES_DATA.find(v => v.id === vitrineId);
+      if (!vitrine) return;
+      const item = vitrine.items[itemIdx];
+      if (!item || !item.angles[angleIdx]) return;
+
+      selectedAngleByItem[itemKey] = angleIdx;
+      const imgEl = document.getElementById(`modal-item-img-${itemKey}`);
+      if (imgEl) {
+        const parent = imgEl.parentElement;
+        const oldFallback = parent ? parent.querySelector('.editorial-fallback') : null;
+        if (oldFallback) oldFallback.remove();
+
+        imgEl.dataset.fallbackApplied = 'false';
+        imgEl.style.display = 'block';
+        imgEl.src = item.angles[angleIdx].src;
+      }
+
+      document.querySelectorAll(`.angle-btn-${itemKey}`).forEach((btn, idx) => {
+        if (idx === angleIdx) {
+          btn.className = `angle-btn-${itemKey} px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-colors cursor-pointer bg-espresso text-linen`;
+        } else {
+          btn.className = `angle-btn-${itemKey} px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide transition-colors cursor-pointer bg-transparent text-espresso hover:bg-espresso/10`;
+        }
+      });
+    }
+
+    function selectItemSize(itemKey, size, clickedBtn) {
+      selectedSizeByItem[itemKey] = size;
+      document.querySelectorAll(`.size-btn-${itemKey}`).forEach(btn => {
+        btn.className = `size-btn-${itemKey} px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-colors cursor-pointer border-espresso/20 bg-linen text-espresso hover:border-espresso`;
+      });
+      if (clickedBtn) {
+        clickedBtn.className = `size-btn-${itemKey} px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-colors cursor-pointer border-ruby bg-ruby text-linen`;
+      }
+    }
+
+    function reserveItemWhatsApp(itemKey, vitrineId, itemIdx) {
+      const vitrine = VITRINES_DATA.find(v => v.id === vitrineId);
+      if (!vitrine) return;
+      const item = vitrine.items[itemIdx];
+      const chosenSize = selectedSizeByItem[itemKey] || item.sizes[0] || 'A confirmar';
+      const msg = `Olá! Tenho interesse na peça "${item.name}" (${item.price}) — Tamanho/Numeração: ${chosenSize} — do cofre "${vitrine.title}" (Estilo & Libídus). Ainda está disponível?`;
+      openWhatsApp(msg);
+    }
+
+    const PROVADOR_STEPS = [
+      { badge: 'Etapa 01 · A base', title: '01 A base — Alfaiataria & tricôs nobres', sub: 'Linha Estilo · Caimento impecável e conforto térmico', img: 'estilo2.jpg' },
+      { badge: 'Etapa 02 · A atitude', title: '02 A atitude — Estampas & recortes autorais', sub: 'Linha Libídus · Personalidade do dia para a noite', img: 'novo26.jpg' },
+      { badge: 'Etapa 03 · Nos pés', title: '03 Nos pés — Brilho, conforto & estabilidade', sub: 'Calçados · Sandálias cristal, scarpins e papetes', img: 'novo1.jpg' },
+      { badge: 'Etapa 04 · O detalhe', title: '04 O detalhe — Acabamentos que assinam o visual', sub: 'Acessórios · Brilho labial e detalhes essenciais', img: 'novo9.jpg' }
+    ];
+
+    let currentProvadorIndex = 0;
+    let provadorTimer = null;
+
+    function setProvadorStep(index, userTriggered = true) {
+      currentProvadorIndex = index;
+      const data = PROVADOR_STEPS[index];
+      if (!data) return;
+
+      const stageImg = document.getElementById('provador-stage-img');
+      if (stageImg) {
+        const parent = stageImg.parentElement;
+        const oldFallback = parent ? parent.querySelector('.editorial-fallback') : null;
+        if (oldFallback) oldFallback.remove();
+
+        stageImg.dataset.fallbackApplied = 'false';
+        stageImg.style.display = 'block';
+        stageImg.src = data.img;
+        stageImg.alt = data.title;
+        stageImg.setAttribute('data-label', data.title);
+      }
+
+      document.getElementById('provador-stage-badge').textContent = data.badge;
+      document.getElementById('provador-stage-title').textContent = data.title;
+      document.getElementById('provador-stage-sub').textContent = data.sub;
+
+      document.querySelectorAll('.provador-step').forEach((btn, idx) => {
+        const heading = btn.querySelector('span.font-editorial');
+        if (idx === index) {
+          btn.classList.add('border-espresso/25', 'bg-linenDark/70');
+          btn.classList.remove('border-espresso/15', 'bg-transparent');
+          if (heading) { heading.classList.add('text-ruby'); heading.classList.remove('text-espresso'); }
+        } else {
+          btn.classList.remove('border-espresso/25', 'bg-linenDark/70');
+          btn.classList.add('border-espresso/15', 'bg-transparent');
+          if (heading) { heading.classList.remove('text-ruby'); heading.classList.add('text-espresso'); }
+        }
+      });
+
+      document.querySelectorAll('.step-dot').forEach((dot, idx) => {
+        if (idx === index) {
+          dot.className = 'step-dot w-5 h-2 rounded-full bg-ruby transition-all';
+        } else {
+          dot.className = 'step-dot w-2 h-2 rounded-full bg-espresso/20 transition-all';
+        }
+      });
+
+      if (userTriggered) resetProvadorTimer();
+    }
+
+    function startProvadorAutoPlay() {
+      provadorTimer = setInterval(() => {
+        currentProvadorIndex = (currentProvadorIndex + 1) % PROVADOR_STEPS.length;
+        setProvadorStep(currentProvadorIndex, false);
+      }, 5000);
+    }
+
+    function resetProvadorTimer() {
+      if (provadorTimer) clearInterval(provadorTimer);
+      startProvadorAutoPlay();
+    }
+
+    const SIGNATURES_DATA = {
+      ceia: {
+        tag: 'Seleção Ceia & Festas',
+        pieces: 'Sandália Metalizada Cristal + Tricô Nobre + Bolsa Estruturada',
+        desc: 'Brilho sutil nos pés, texturas sofisticadas e acabamento em dourado para celebrar o Natal e a virada do ano com conforto absoluto.',
+        wa: 'Olá! Gostaria de receber sugestões da seleção Ceia & Festas (Assinatura da Casa) da Estilo & Libídus.'
+      },
+      verao: {
+        tag: 'Seleção Verão & Leveza',
+        pieces: 'Conjunto Tropical ou Poá + Papete Modare Brilho + Gloss Ted',
+        desc: 'Tecidos frescos com amarração nas costas e calçados anatômicos que acompanham dias ensolarados com leveza.',
+        wa: 'Olá! Gostaria de ver as opções da seleção Verão & Leveza (Assinatura da Casa) da Estilo & Libídus.'
+      },
+      libidus: {
+        tag: 'Seleção Toque Ousado Libídus',
+        pieces: 'Macaquinho Estampa Botânica + Scarpin Black + Acessórios Dourados',
+        desc: 'Recortes estratégicos e contraste marcante para quem deseja presença imediata em eventos noturnos.',
+        wa: 'Olá! Gostaria de conhecer as peças da seleção Toque Ousado Libídus (Assinatura da Casa).'
+      }
+    };
+
+    function copyStoreAddress() {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = STORE_ADDRESS;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        const label = document.getElementById('copy-addr-label');
+        if (label) {
+          label.textContent = 'Endereço copiado!';
+          setTimeout(() => { label.textContent = 'Copiar endereço'; }, 2500);
+        }
+      } catch (e) {}
+      document.body.removeChild(tempInput);
+    }
+
+    function updateLiveStoreStatus() {
+      const dot = document.getElementById('live-status-dot');
+      const text = document.getElementById('live-status-text');
+      if (!dot || !text) return;
+
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+
+      const isOpen = (day >= 1 && day <= 6 && hour >= 9 && hour < 19);
+      if (isOpen) {
+        dot.className = 'w-2 h-2 rounded-full bg-emerald-500 inline-block';
+        text.textContent = 'Loja Aberta · Rua Tito Beccon, 1392, Santiago - RS';
+      } else {
+        dot.className = 'w-2 h-2 rounded-full bg-gold inline-block';
+        text.textContent = 'Atendimento online via WhatsApp · Loja Seg–Sáb 09h às 19h';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderVitrinesGrid('all');
+      updateLiveStoreStatus();
+      startProvadorAutoPlay();
+
+      document.querySelectorAll('.vitrine-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter') || 'all';
+          document.querySelectorAll('.vitrine-filter-btn').forEach(b => {
+            b.className = 'vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-transparent text-espresso border border-espresso/20 hover:border-espresso transition-all cursor-pointer';
+          });
+          btn.className = 'vitrine-filter-btn px-4 py-2.5 rounded-full text-xs font-medium tracking-wide bg-espresso text-linen border border-espresso transition-all cursor-pointer';
+          renderVitrinesGrid(filter);
+        });
+      });
+
+      document.querySelectorAll('.provador-step').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const stepIdx = parseInt(btn.getAttribute('data-step'), 10);
+          setProvadorStep(stepIdx, true);
+        });
+      });
+
+      document.querySelectorAll('.sig-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+          const key = pill.getAttribute('data-signature');
+          const sig = SIGNATURES_DATA[key];
+          if (!sig) return;
+
+          document.querySelectorAll('.sig-pill').forEach(p => {
+            p.className = 'sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-espresso/20 bg-linen text-espresso hover:border-espresso transition-all cursor-pointer';
+          });
+          pill.className = 'sig-pill px-5 py-2.5 rounded-full text-xs font-medium tracking-wide border border-ruby bg-ruby text-linen transition-all cursor-pointer';
+
+          document.getElementById('sig-tag').textContent = sig.tag;
+          document.getElementById('sig-pieces').textContent = sig.pieces;
+          document.getElementById('sig-desc').textContent = sig.desc;
+          document.getElementById('sig-wa-btn').onclick = () => openWhatsApp(sig.wa);
+        });
+      });
+
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+      }
+
+      const modal = document.getElementById('vitrine-modal');
+      if (modal) {
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeVitrineModal(); });
+      }
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVitrineModal(); });
+    });
+  </script>
+</body>
+</html>
